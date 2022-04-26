@@ -1,0 +1,46 @@
+//====================================================================================================
+footer {
+	&__content {
+	}
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 20;
+	// .footer__container
+	&__container {
+	}
+	// .footer__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-items: flex-end;
+		text-align: right;
+		justify-content: center;
+		@include adaptiveValue("min-height", 120, 50, 768, 280, 1);
+		z-index: 1;
+	}
+	// .footer__policy
+	&__copy {
+		font-size: rem(10);
+		@include adaptiveValue("font-size", 10, 8);
+		color: $textColor2;
+	}
+	&__slogan {
+		font-family: "MuseoModerno", medium;
+		font-size: rem(16);
+		@include adaptiveValue("padding-bottom", 20, 5, 768, 280, 1);
+		line-height: 1;
+		& span {
+			color: $textColor4;
+		}
+	}
+}
+.policy {
+}
+
+//====================================================================================================

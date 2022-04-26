@@ -1,0 +1,108 @@
+//актуализирован 09/02/22 10.19
+
+//---------------------------- ▼ ▼ ▼ BURGER ▼ ▼ ▼ -------------------------------
+
+//----------------------BURGER MENU ACTIVE-------------------------
+
+.menu {
+	display: inline-flex;
+	height: 100%;
+	align-items: flex-end;
+	@media (max-width: $mobile) {
+
+	}
+	// &__icon {
+	// 	display: none;
+	// 	position: relative;
+	// 	width: rem(30);
+	// 	height: rem(20);
+	// 	cursor: pointer;
+	// 	transition: all 0.5s ease;
+	// 	border-right: 2px solid;
+	// 	border-left: 2px solid;
+	// 	border-color: transparent;
+	// 	@media (max-width: $mobile) {
+	// 		display: block;
+	// 		order: 3;
+	// 		&._active {
+	// 			border-right: 2px solid;
+	// 			border-left: 2px solid;
+	// 			border-color: $mainBorderColor;
+	// 			transition: all 0.3s ease;
+	// 			z-index: 100;
+	// 			& span {
+	// 				opacity: 0;
+	// 			}
+	// 			&::before {
+	// 				top: 45%;
+	// 				transform: rotate(-45deg);
+	// 			}
+	// 			&::after {
+	// 				bottom: 45%;
+	// 				transform: rotate(45deg);
+	// 			}
+	// 		}
+	// 	}
+	// 	& span,
+	// 	&::before,
+	// 	&::after {
+	// 		content: "";
+	// 		display: inline;
+	// 		position: absolute;
+	// 		height: rem(2);
+	// 		transition: all 0.5s ease 0s;
+	// 		background: white;
+	// 		width: 100%;
+	// 		left: 0;
+	// 	}
+	// 	&::before {
+	// 		top: 0;
+	// 	}
+	// 	&::after {
+	// 		bottom: 0;
+	// 	}
+	// 	& span {
+	// 		top: 50%;
+	// 		transform: translate(0, -50%);
+	// 	}
+	// }
+
+	&__body {
+		padding:  rem(0) rem(0) rem(30) rem(0);
+		@media (max-width: $mobile) {
+
+		}
+	}
+
+	&__list {
+		// display: flex;
+		
+		// align-self: flex-end;
+		// height: 100%;
+		// flex-wrap: wrap;
+
+
+		@media (max-width: $mobile) {
+
+		}
+	}
+
+	&__item {
+		line-height: math.div(65, 65);
+		@media (max-width: $mobile) {
+
+		}
+	}
+
+	&__link {
+
+		@media (max-width: $mobile) {
+			
+		}
+		&._active {
+
+		}
+	}
+}
+
+//---------------------------- ▲ ▲ ▲ BURGER ▲ ▲ ▲ ------------------------------
