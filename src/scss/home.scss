@@ -16,7 +16,7 @@
 		opacity: 0.6;
 		filter: blur(15px);
 		opacity: 0.4;
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			background: url("@img/mainphoto.png") 30% 0% / cover no-repeat;
 		}
 		&._shadow {
@@ -40,7 +40,7 @@
 		@include adaptiveValue("column-gap", 30, 10);
 		@include adaptiveValue("padding-top", 120, 60);
 		@include adaptiveValue("padding-bottom", 120, 50, 768, 280, 1);
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			grid-template-columns: 1fr;
 			grid-template-rows: 1.4fr minmax(rem(200), 1fr);
 			column-gap: rem(0);
@@ -66,7 +66,7 @@
 		bottom: -20%;
 		border-radius: 5px;
 	}
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		&:after {
 			display: none;
 		}
@@ -80,17 +80,17 @@
 		display: block;
 		font-family: "Michroma", sans-serif;
 		text-transform: uppercase;
-		@include adaptiveValue("font-size", 22, 16, 768, 560, 1);
+		@include adaptiveValue("font-size", 22, 16, 768, 280, 1);
 		line-height: math.div(32, 22);
 		color: $textColor2;
-		@include adaptiveValue("padding", 10, 5, 768, 560, 1);
+		@include adaptiveValue("padding", 10, 5, 768, 280, 1);
 		white-space: nowrap;
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			color: $textColor5;
 		}
 		&._tab-active {
 			color: $mainTextColor;
-			@include adaptiveValue("font-size", 36, 28, 768, 560, 1);
+			@include adaptiveValue("font-size", 36, 28, 768, 280, 1);
 			&::after {
 				content: "_";
 			}
@@ -110,8 +110,8 @@
 	&__content {
 		display: flex;
 		flex-direction: column;
-
-		@media (max-width: $mobile) {
+		overflow: hidden;
+		@media (max-width: $tablet) {
 			order: -1;
 		}
 	}
@@ -119,21 +119,87 @@
 	&__body {
 		overflow-y: auto;
 		flex: 1 0 300px;
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			padding: rem(20) rem(0) rem(0) rem(0);
 		}
 	}
 }
 
-.Home {
+
+
+
+.portfolio {
+	// .portfolio__slider
+	&__slider {
+	}
+	// .portfolio__wrapper
+	&__wrapper {
+	}
+	// .portfolio__slide
+	&__slide {
+	}
+	// .portfolio__item
+	&__item {
+
+	}
+	// .portfolio__pagination
+	&__pagination {
+	}
 }
-.section-title {
+.swiper {
 }
-.About {
+.swiper-wrapper {
 }
-.Portfolio {
+.swiper-slide {
+
 }
-.Skills {
+
+
+.portfolio-item {
+
+	max-width: 385px;
+	min-height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+	&:hover .item-text{
+		opacity: 1;
+		visibility: visible;
+	}
+	// .portfolio-item__date
+	&__date {
+	}
+	// .portfolio-item__title
+	&__title {
+		display: block;
+		flex: 1 0 100%;
+
+	}
+	// .portfolio-item__img-ibg
+	&__img  {
+
+
+	}
+	& img {
+z-index: -1;
+	}
+	// .portfolio-item__text
+	&__text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+
+	}
 }
-.Contacts {
+.item-text {
+	// .item-text__about
+	&__about {
+	}
+	// .item-text__tools
+	&__tools {
+	}
 }
+
+
