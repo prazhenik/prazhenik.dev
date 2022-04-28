@@ -927,7 +927,6 @@ input::placeholder {
   z-index: 2;
   height: calc(100vh - 240px);
   width: 100%;
-  padding: 7.5rem 0rem;
   -webkit-column-gap: 1.875rem;
      -moz-column-gap: 1.875rem;
           column-gap: 1.875rem;
@@ -1364,7 +1363,6 @@ input::placeholder {
 
   .page__content {
     height: calc(100vh - 120px);
-    padding: 3.75rem 0rem;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 200px;
