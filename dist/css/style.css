@@ -926,7 +926,7 @@ input::placeholder {
   -ms-grid-columns: 350px 1fr;
   grid-template-columns: 350px 1fr;
   z-index: 2;
-  height: 100vh;
+  height: calc(100vh - 7.5rem);
   width: 100%;
   padding: 7.5rem 0rem;
   -webkit-column-gap: 1.875rem;
@@ -983,6 +983,7 @@ input::placeholder {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+  position: relative;
 }
 
 .tabs__body {
@@ -1364,6 +1365,7 @@ input::placeholder {
     background: url("../img/mainphoto.png") 30% 0%/cover no-repeat; }
 
   .page__content {
+    height: calc(100vh - 3.75rem);
     padding: 3.75rem 0rem;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
