@@ -122,10 +122,13 @@
 		}
 	}
 	// .tabs__body
-	&__body {
+	&__body:not(:first-child) {
 		overflow-y: auto;
+		border-bottom: $backgroundColor4 2px solid;
+    	border-top: $backgroundColor4 2px solid;
+    	border-radius: 10px;
 		@media (max-width: $tablet) {
-			padding: rem(20) rem(0) rem(0) rem(0);
+			padding: rem(20) rem(10);
 			
 		}
 	}
