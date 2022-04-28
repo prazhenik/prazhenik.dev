@@ -21,8 +21,11 @@ footer {
 		align-items: flex-end;
 		text-align: right;
 		justify-content: center;
-		@include adaptiveValue("min-height", 120, 50, 768, 280, 1);
+		min-height: rem(120);
 		z-index: 1;
+		@media (max-width:$tablet){
+			min-height: rem(60);
+		}
 	}
 	// .footer__policy
 	&__copy {
@@ -33,10 +36,13 @@ footer {
 	&__slogan {
 		font-family: "MuseoModerno", medium;
 		font-size: rem(16);
-		@include adaptiveValue("padding-bottom", 20, 5, 768, 280, 1);
+		padding-bottom: rem(20);
 		line-height: 1;
 		& span {
 			color: $textColor4;
+		}
+		@media (max-width:$tablet){
+			padding-bottom: rem(5);
 		}
 	}
 }

@@ -33,3 +33,8 @@
 .swiper-button-lock {
 	display: none !important;
 }
+
+
+.swiper-container-multirow-column > .swiper-wrapper {
+   flex-direction: row;
+}

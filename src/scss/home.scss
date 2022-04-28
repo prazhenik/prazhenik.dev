@@ -32,17 +32,17 @@
 	// .page__content
 	&__content {
 		display: grid;
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 350px 1fr;
 		position: relative;
 		z-index: 2;
-		height: 100%;
+		height: 100vh;
 		width: 100%;
-		@include adaptiveValue("column-gap", 30, 10);
-		@include adaptiveValue("padding-top", 120, 60);
-		@include adaptiveValue("padding-bottom", 120, 50, 768, 280, 1);
+		padding: rem(120) rem(0);
+		column-gap: rem(30);
 		@media (max-width: $tablet) {
+			padding: rem(60) rem(0);
 			grid-template-columns: 1fr;
-			grid-template-rows: 1.4fr minmax(rem(200), 1fr);
+			grid-template-rows: 1fr 200px;
 			column-gap: rem(0);
 		}
 	}
@@ -53,7 +53,6 @@
 	position: relative;
 	padding: rem(0) rem(0) rem(0) rem(0);
 	width: 100%;
-	min-width: rem(350);
 
 	&:after {
 		content: "";
@@ -80,17 +79,22 @@
 		display: block;
 		font-family: "Michroma", sans-serif;
 		text-transform: uppercase;
-		@include adaptiveValue("font-size", 22, 16, 768, 280, 1);
+		font-size: rem(22);
 		line-height: math.div(32, 22);
 		color: $textColor2;
-		@include adaptiveValue("padding", 10, 5, 768, 280, 1);
+		padding: rem(10) rem(0);
 		white-space: nowrap;
 		@media (max-width: $tablet) {
 			color: $textColor5;
+			font-size: rem(16);
+			padding: rem(5) rem(0);
 		}
 		&._tab-active {
 			color: $mainTextColor;
-			@include adaptiveValue("font-size", 36, 28, 768, 280, 1);
+			font-size: rem(36);
+			@media (max-width:$tablet){
+				font-size: rem(28);
+			}
 			&::after {
 				content: "_";
 			}
@@ -109,8 +113,8 @@
 	// .tabs__content
 	&__content {
 		display: flex;
-		flex-direction: column;
 		overflow: hidden;
+		//align-items: center;
 		@media (max-width: $tablet) {
 			order: -1;
 		}
@@ -118,25 +122,37 @@
 	// .tabs__body
 	&__body {
 		overflow-y: auto;
-		flex: 1 0 300px;
 		@media (max-width: $tablet) {
 			padding: rem(20) rem(0) rem(0) rem(0);
+			
+		}
+	}
+	&__body section {
+
+		@media (max-width: $tablet) {
+			
+			
 		}
 	}
 }
 
 
-
+//============================================================================================================
 
 .portfolio {
+	display: flex;
+	align-items: center;
 	// .portfolio__slider
 	&__slider {
+
 	}
 	// .portfolio__wrapper
 	&__wrapper {
+
 	}
 	// .portfolio__slide
 	&__slide {
+		
 	}
 	// .portfolio__item
 	&__item {
@@ -147,59 +163,93 @@
 	}
 }
 .swiper {
+
 }
 .swiper-wrapper {
+
 }
 .swiper-slide {
-
+	
 }
 
-
+.portfolio {
+	// .portfolio__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+		min-height: 100%;
+		@media (max-width:$tablet){
+			padding:  rem(30) rem(0) rem(0) rem(0);
+		}
+	}
+	&__slider{
+		//overflow-y: auto !important;
+	}
+}
 .portfolio-item {
+	// .portfolio-item__img
+	&__img {
+		max-width: rem(600);
+		align-self: center;
+		margin:  rem(0) rem(0) rem(10) rem(0);
+		@media (max-width:$tablet){
+			max-width: rem(500);
+		}
+	}
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		}
+	// .portfolio-item__text
+	&__text {
 
-	max-width: 385px;
-	min-height: 100%;
-	overflow: hidden;
-	position: relative;
-	z-index: 2;
-	&:hover .item-text{
-		opacity: 1;
-		visibility: visible;
 	}
 	// .portfolio-item__date
 	&__date {
-	}
-	// .portfolio-item__title
-	&__title {
-		display: block;
-		flex: 1 0 100%;
+		font-size: rem(16);
+		margin:  rem(0) rem(0) rem(20) rem(0);
 
 	}
-	// .portfolio-item__img-ibg
-	&__img  {
-
-
-	}
-	& img {
-z-index: -1;
-	}
-	// .portfolio-item__text
-	&__text {
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-		visibility: hidden;
-
+	// .portfolio-item__label
+	&__label {
+		font-size: rem(22);
+		text-transform: uppercase;
+		align-self: center;
+		margin:  rem(0) rem(0) rem(30) rem(0);
+		& p::first-letter{
+			color: $textColor4;
+			font-weight: 600;
+		}
 	}
 }
 .item-text {
+
+	// .item-text__hover
+	&__description {
+		
+		font-size: rem(16);
+		line-height: math.div(32, 22);
+		& span {
+			color: $mainTextColor;
+			font-weight: 600;
+		}
+		@media (max-width:$tablet){
+			font-size: rem(12);
+		}
+	}
 	// .item-text__about
 	&__about {
+		margin:  rem(0) rem(0) rem(10) rem(0);
 	}
 	// .item-text__tools
 	&__tools {
 	}
 }
+
+
+
 
 
