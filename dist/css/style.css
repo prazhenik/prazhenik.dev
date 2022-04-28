@@ -1032,16 +1032,17 @@ input::placeholder {
   margin: 0rem 0rem 1.25rem 0rem;
 }
 
-.portfolio-item__label {
-  font-size: 1.375rem;
-  text-transform: uppercase;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.portfolio-item__header {
   margin: 0rem 0rem 1.875rem 0rem;
 }
 
-.portfolio-item__label p::first-letter {
+.portfolio-item__label {
+  display: inline-block;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+}
+
+.portfolio-item__label::first-letter {
   color: rgb(40, 120, 190);
   font-weight: 600;
 }
@@ -1398,10 +1399,6 @@ input::placeholder {
 
   .tabs__body {
     padding: 1.25rem 0rem 0rem 0rem;
-  }
-
-  .portfolio__item {
-    padding: 1.875rem 0rem 0rem 0rem;
   }
 
   .portfolio-item__img {
