@@ -925,7 +925,7 @@ input::placeholder {
   grid-template-columns: 350px 1fr;
   position: relative;
   z-index: 2;
-  height: 100vh;
+  height: calc(100vh - 240px);
   width: 100%;
   padding: 7.5rem 0rem;
   -webkit-column-gap: 1.875rem;
@@ -1363,6 +1363,7 @@ input::placeholder {
     background: url("../img/mainphoto.png") 30% 0%/cover no-repeat; }
 
   .page__content {
+    height: calc(100vh - 120px);
     padding: 3.75rem 0rem;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
