@@ -986,8 +986,11 @@ input::placeholder {
   position: relative;
 }
 
-.tabs__body {
+.tabs__body:not(:first-child) {
   overflow-y: auto;
+  border-bottom: rgb(40, 120, 190) 2px solid;
+  border-top: rgb(40, 120, 190) 2px solid;
+  border-radius: 10px;
 }
 
 .portfolio {
@@ -1400,8 +1403,8 @@ input::placeholder {
             order: -1;
   }
 
-  .tabs__body {
-    padding: 1.25rem 0rem 0rem 0rem;
+  .tabs__body:not(:first-child) {
+    padding: 1.25rem 0.625rem;
   }
 
   .portfolio-item__img {
