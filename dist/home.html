@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220428194631">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220429185608">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +21,8 @@
 			<div class="header__container">
 				<div class="header__content">
 					<a href="/home.html" class="header__logo"><img src="img/logo.svg" alt=""></a>
-					<div class="header__menu menu">
-						<button type="button" class="menu__icon icon-menu"><span></span></button>
-					</div>
+					<div class="header__lang"></div>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 			</div>
 		</header>
@@ -32,13 +31,17 @@
 			<div class="page__container">
 				<div data-tabs class="page__content">
 					<div class="tabs">
-						<nav data-tabs-titles class="tabs__navigation">
-							<button type="button" class="tabs__title _tab-active">Home</button>
-							<button type="button" class="tabs__title">About me</button>
-							<button type="button" class="tabs__title">Portfolio</button>
-							<button type="button" class="tabs__title">Skills</button>
-							<button type="button" class="tabs__title">Contacts</button>
-						</nav>
+						<div class="tabs__menu menu">
+							<nav data-tabs-titles class="tabs__navigation menu__body">
+								<button type="button" class="tabs__title menu__link _tab-active">Home</button>
+								<button type="button" class="tabs__title menu__link">About me</button>
+								<button type="button" class="tabs__title menu__link">Portfolio</button>
+								<button type="button" class="tabs__title menu__link">Skills</button>
+								<button type="button" class="tabs__title menu__link">Contacts</button>
+
+							</nav>
+						</div>
+
 					</div>
 					<div data-tabs-body class="tabs__content">
 						<div class="tabs__body">
@@ -65,31 +68,13 @@
 													<span class="portfolio-item__date">11/04/2022:</span>
 													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<a href="#" class="portfolio-item__img">
-													<picture><source srcset="img/image1.webp" type="image/webp"><img src="img/image1.png" alt=""></picture>
-												</a>
-
-												<div class="item-text__description">
-													<p class="item-text__about">
-														<span>About site:</span> Contrary to popular belief, Lorem Ipsum is not simply
-														random text. It has roots in a piece of classical Latin
-													</p>
-													<p class="item-text__tools">
-														<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-														WooCommerce
-													</p>
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_full.webp" type="image/webp"><img alt="Превью" src="img/screenshots/v-zone_full.png" class="gallery__preview"></picture>
+														</a>
+													</div>
 												</div>
-
-											</div>
-										</div>
-										<!-- Слайд -->
-										<div class="portfolio__slide swiper-slide">
-											<div class="portfolio__item portfolio-item">
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
-												</a>
-												<picture><source srcset="img/image1.webp" type="image/webp"><img class="portfolio-item__img" src="img/image1.png" alt=""></picture>
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -100,18 +85,22 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 										<!-- Слайд -->
 										<div class="portfolio__slide swiper-slide">
 											<div class="portfolio__item portfolio-item">
-
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
+												<a class="portfolio-item__header" href="#">
+													<span class="portfolio-item__date">11/04/2022:</span>
+													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<picture><source srcset="img/image1.webp" type="image/webp"><img class="portfolio-item__img" src="img/image1.png" alt=""></picture>
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_full.webp" type="image/webp"><img alt="preview" src="img/screenshots/v-zone_full.png" class="gallery__preview"></picture>
+														</a>
+													</div>
+												</div>
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -122,17 +111,22 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 										<!-- Слайд -->
 										<div class="portfolio__slide swiper-slide">
 											<div class="portfolio__item portfolio-item">
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
+												<a class="portfolio-item__header" href="#">
+													<span class="portfolio-item__date">11/04/2022:</span>
+													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<picture><source srcset="img/image1.webp" type="image/webp"><img class="portfolio-item__img" src="img/image1.png" alt=""></picture>
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_full.webp" type="image/webp"><img alt="preview" src="img/screenshots/v-zone_full.png" class="gallery__preview"></picture>
+														</a>
+													</div>
+												</div>
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -143,7 +137,6 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 									</div>
@@ -153,7 +146,6 @@
 									<div class="swiper-scrollbar"></div>
 								</div>
 							</section>
-
 						</div>
 						<div class="tabs__body">
 							<section class="Skills">
@@ -277,7 +269,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220428194631"></script>
+	<script src="js/app.min.js?_v=20220429185608"></script>
 </body>
 
 </html>

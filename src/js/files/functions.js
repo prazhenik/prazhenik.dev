@@ -474,6 +474,19 @@ document.addEventListener('keydown', function (e) {
 	}
 });
 
+// закрытие меню по клику
+const menuLinks = document.querySelectorAll('.menu__link');
+if (menuLinks.length > 0) {
+	menuLinks.forEach(menuLink => {
+		menuLink.addEventListener("click", onMenuLinkClick);
+	});
+
+	function onMenuLinkClick(e) {
+		const menuLink = e.target;
+		setTimeout(menuClose, 500);
+	}
+}
+
 
 // Модуль "показать еще" =======================================================================================================================================================================================================================
 /*

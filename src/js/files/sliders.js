@@ -37,9 +37,9 @@ function initSliders() {
 			slidesPerView: 1,
 			observer: true,
 			observeParents: true,
-			spaceBetween: 20,
+			spaceBetween: 30,
 			//loop: true,
-			autoHeight: true,
+			//autoHeight: true,
 			speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -80,7 +80,7 @@ function initSliders() {
 
 			// Брейкпоинты
 
-			//breakpoints: {
+			breakpoints: {
 				// 320: {
 				// 	slidesPerView: 1,
 				// 	spaceBetween: 0,
@@ -95,10 +95,10 @@ function initSliders() {
 				// 	spaceBetween: 20,
 				// },
 				// 1268: {
-				// 	slidesPerView: 4,
-				// 	spaceBetween: 30,
+				// 	slidesPerView: '2',
+				// 	spaceBetween: 100,
 				// },
-			//},
+			},
 
 			// События
 			on: {

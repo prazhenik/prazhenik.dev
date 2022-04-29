@@ -7,17 +7,34 @@
 	left: 0;
 	width: 100%;
 	z-index: 20;
+
+	@media (max-width:$tablet){
+		&._header-scroll:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(10px);
+			@media (max-width: $tablet) {
+			}
+		}
+	}
 	&__container {
 	}
 
 	&__content {
-		
 		display: flex;
+		position: relative;
 		align-items: center;
 		column-gap: rem(60);
-		@include adaptiveValue("height", 120, 60);
-		@media (max-width: $mobile) {
+		height: rem(120);
+		@media (max-width: $tablet) {
 			column-gap: rem(30);
+			height: rem(60);
 		}
 	}
 

@@ -9,15 +9,19 @@
 		@@include('html/_header.htm',{})
 		<main class="page">
 			<div class="page__container">
-				<div data-tabs class="page__content">				
+				<div data-tabs class="page__content">
 					<div class="tabs">
-						<nav data-tabs-titles class="tabs__navigation">
-							<button type="button" class="tabs__title _tab-active">Home</button>
-							<button type="button" class="tabs__title">About me</button>
-							<button type="button" class="tabs__title">Portfolio</button>
-							<button type="button" class="tabs__title">Skills</button>
-							<button type="button" class="tabs__title">Contacts</button>
-						</nav>
+						<div class="tabs__menu menu">
+							<nav data-tabs-titles class="tabs__navigation menu__body">
+								<button type="button" class="tabs__title menu__link _tab-active">Home</button>
+								<button type="button" class="tabs__title menu__link">About me</button>
+								<button type="button" class="tabs__title menu__link">Portfolio</button>
+								<button type="button" class="tabs__title menu__link">Skills</button>
+								<button type="button" class="tabs__title menu__link">Contacts</button>
+
+							</nav>
+						</div>
+
 					</div>
 					<div data-tabs-body class="tabs__content">
 						<div class="tabs__body">
@@ -42,33 +46,16 @@
 											<div class="portfolio__item portfolio-item">
 												<a class="portfolio-item__header" href="#">
 													<span class="portfolio-item__date">11/04/2022:</span>
-													<p class="portfolio-item__label">womazing</p> 
+													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<a href="#" class="portfolio-item__img">
-													<img src="@img/image1.png" alt="">
-												</a>
-												
-												<div class="item-text__description">
-													<p class="item-text__about">
-														<span>About site:</span> Contrary to popular belief, Lorem Ipsum is not simply
-														random text. It has roots in a piece of classical Latin
-													</p>
-													<p class="item-text__tools">
-														<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-														WooCommerce
-													</p>
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="@img/screenshots/v-zone_full.png" class="gallery__image">
+															<img alt="Превью" src="@img/screenshots/v-zone_full.png"
+																class="gallery__preview">
+														</a>
+													</div>
 												</div>
-
-											</div>
-										</div>
-										<!-- Слайд -->
-										<div class="portfolio__slide swiper-slide">
-											<div class="portfolio__item portfolio-item">
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
-												</a>
-												<img class="portfolio-item__img" src="@img/image1.png" alt="">
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -79,18 +66,23 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 										<!-- Слайд -->
 										<div class="portfolio__slide swiper-slide">
 											<div class="portfolio__item portfolio-item">
-
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
+												<a class="portfolio-item__header" href="#">
+													<span class="portfolio-item__date">11/04/2022:</span>
+													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<img class="portfolio-item__img" src="@img/image1.png" alt="">
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="@img/screenshots/v-zone_full.png" class="gallery__image">
+															<img alt="preview" src="@img/screenshots/v-zone_full.png"
+																class="gallery__preview">
+														</a>
+													</div>
+												</div>
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -101,17 +93,23 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 										<!-- Слайд -->
 										<div class="portfolio__slide swiper-slide">
 											<div class="portfolio__item portfolio-item">
-												<span class="portfolio-item__date">11/04/2022</span>
-												<a class="portfolio-item__label" href="#">
-													<div>womazing</div>
+												<a class="portfolio-item__header" href="#">
+													<span class="portfolio-item__date">11/04/2022:</span>
+													<p class="portfolio-item__label">womazing</p>
 												</a>
-												<img class="portfolio-item__img" src="@img/image1.png" alt="">
+												<div class="portfolio-item__preview item-preview">
+													<div data-gallery class="item-preview__desktop">
+														<a href="@img/screenshots/v-zone_full.png" class="gallery__image">
+															<img alt="preview" src="@img/screenshots/v-zone_full.png"
+																class="gallery__preview">
+														</a>
+													</div>
+												</div>
 												<div class="item-text__description">
 													<p class="item-text__about">
 														<span>About site:</span>Contrary to popular belief, Lorem Ipsum is not simply
@@ -122,7 +120,6 @@
 														WooCommerce
 													</p>
 												</div>
-
 											</div>
 										</div>
 									</div>
@@ -132,7 +129,6 @@
 									<div class="swiper-scrollbar"></div>
 								</div>
 							</section>
-
 						</div>
 						<div class="tabs__body">
 							<section class="Skills">
