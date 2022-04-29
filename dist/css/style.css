@@ -942,7 +942,19 @@ input::placeholder {
 }
 
 .tabs__body {
-  padding: 2.5rem 0rem 1.25rem;
+  padding: 1.25rem 0rem 1.25rem;
+}
+
+.section-title {
+  font-family: "Michroma", sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(200, 200, 200, 0.5);
+  font-size: 2.25rem;
+}
+
+.section-title::after {
+  content: "_";
 }
 
 .portfolio-item {
@@ -2502,6 +2514,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .tabs__title._tab-active {
     font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    margin: 0rem 0rem 3.125rem 0rem;
   }
 
   .item-text__description {
