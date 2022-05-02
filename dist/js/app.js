@@ -9074,7 +9074,13 @@
                         }), headerShowTimer);
                     }
                 } else {
-                    header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                    timer = setTimeout((() => {
+                        header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                    }), 0);
+                    header.classList.add("_header-fadeout");
+                    timer = setTimeout((() => {
+                        header.classList.remove("_header-fadeout");
+                    }), 500);
                     if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
                 }
                 scrollDirection = scrollTop <= 0 ? 0 : scrollTop;

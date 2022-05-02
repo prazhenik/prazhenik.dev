@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
 	&::before {
 		content: "";
 		position: fixed;
@@ -19,17 +19,16 @@
 		}
 	}
 }
-
 .page {
 	@media (max-width:$tablet){
 		padding: rem(60) rem(0) rem(0);
 	}
-	// .page__container
-	&__container {
-	}
-	// .page__content
-	&__content {
-	}
+		// .page__container
+		&__container {
+		}
+		// .page__content
+		&__content {
+		}
 }
 .tabs {
 	position: relative;
@@ -52,7 +51,7 @@
 		@media (max-width: $tablet) {
 			color: $textColor5;
 			font-size: rem(16);
-			padding: rem(5) rem(0);
+			padding: rem(10) rem(0);
 			margin: 0 auto; 
 		}
 		&._tab-active {
@@ -72,7 +71,19 @@
 	// .tabs__body
 	&__body {
 		padding: rem(20) rem(0) rem(20);
+		@media (max-width:$tablet){
+	
+		}
+		
 	}
+}
+.menu {
+		// .menu__body
+		&__body {
+		}
+		// .menu__link
+		&__link {
+		}
 }
 
 .Home {
@@ -82,30 +93,42 @@
 .section-title {
 	font-family: "Michroma", sans-serif;
 	text-transform: uppercase;
-	color: rgba(0, 0, 0, .5);
-	text-shadow: 2px 2px 4px rgba(200, 200, 200, .5);
+	text-align: center;
+	color: $mainTextColor;
+	//text-shadow: 2px 2px 4px rgba(200, 200, 200, .5);
 	font-size: rem(36);
+	position: relative;
+	//display: inline-block;
+	&::before{
+		content:'';
+		width: 100%;
+		height: rem(2);
+		background: $backgroundColor4;
+		position: absolute;
+		bottom: -15px;
+		left: 0;
+	}
 	@media (max-width:$tablet){
-		font-size: rem(36);
-		margin:  rem(0) rem(0) rem(50) rem(0);
+		font-size: rem(28);
+		margin:  rem(0) rem(0) rem(60) rem(0);
 	}
 	&::after {
 		content: "_";
 	}
 }
 .portfolio {
-	// .portfolio__slider
-	&__slider {
-	}
-	// .portfolio__wrapper
-	&__wrapper {
-	}
-	// .portfolio__slide
-	&__slide {
-	}
-	// .portfolio__item
-	&__item {
-	}
+		// .portfolio__slider
+		&__slider {
+		}
+		// .portfolio__wrapper
+		&__wrapper {
+		}
+		// .portfolio__slide
+		&__slide {
+		}
+		// .portfolio__item
+		&__item {
+		}
 }
 .swiper {
 }
@@ -113,58 +136,29 @@
 }
 .swiper-slide {
 }
+
+.portfolio {
+	// .portfolio__item
+	&__item {
+	}
+}
 .portfolio-item {
 	display: flex;
 	flex-direction: column;
 	max-width: rem(900);
+	& > *:not(:last-child){
+		margin:  rem(0) rem(0) rem(30) rem(0);
+	}
 	// .portfolio-item__header
 	&__header {
-		margin:  rem(0) rem(0) rem(30) rem(0);
 		
 	}
-	// .portfolio-item__date
-	&__date {
-		font-size: rem(16);
+	// .portfolio-item__gallery
+	&__gallery {
 
 	}
-	// .portfolio-item__label
-	&__label {
-		display: inline-block;
-		font-size: rem(22);
-		text-transform: uppercase;
-		text-align: center;
-		&::first-letter {
-			color: $textColor4;
-			font-weight: 600;
-		}
-	}
-	// .portfolio-item__preview
-	&__preview {
-	}
-}
-.item-preview {
-	// .item-preview__desctop
-	&__desktop {
-	}
-}
-.gallery {
-	// .gallery__image
-	&__image {
-		margin:  rem(0) rem(0) rem(10) rem(0);
-		& img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
-	}
-	// .gallery__preview
-	&__preview {
-		margin:  rem(0) rem(0) rem(30) rem(0);
-	}
-}
-.item-text {
-	// .item-text__description
-	&__description {
+	// .portfolio-item__text
+	&__text {
 		font-size: rem(16);
 		line-height: math.div(32, 22);
 		& span {
@@ -175,13 +169,53 @@
 			font-size: rem(12);
 		}
 	}
-	// .item-text__about
+}
+.portfolio-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	// .portfolio-item-header__date
+	&__date {
+		font-size: rem(12);
+	}
+	// .portfolio-item-header__label
+	&__label {
+		display: inline-block;
+		font-size: rem(22);
+		text-transform: uppercase;
+		text-align: center;
+		&::first-letter {
+			color: $textColor4;
+			font-weight: 600;
+		}
+	}
+}
+.gallery {
+	// .portfolio-item-gallery__image
+	&__image {
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	// .portfolio-item-gallery__preview
+	&__preview {
+	}
+}
+.portfolio-item-text {
+	& > *:not(:last-child){
+		margin:  rem(0) rem(0) rem(10) rem(0);
+	}
+	// .portfolio-item-text__about
 	&__about {
 	}
-	// .item-text__tools
+	// .portfolio-item-text__tools
 	&__tools {
 	}
 }
+
+
 .swiper-pagination {
 }
 .swiper-scrollbar {
@@ -190,8 +224,6 @@
 }
 .contacts {
 }
-
-
 
 
 

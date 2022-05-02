@@ -1,3 +1,6 @@
+//актуализирован 02/05/22 1800 // добавлена задержка remove('_header-fadeout')
+
+
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, getHash } from "../functions.js";
 // Модуль прокрутки к блоку
@@ -77,11 +80,13 @@ export function headerScroll() {
 	const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
 	let scrollDirection = 0;
 	let timer;
+	let interval;
 	document.addEventListener("windowScroll", function (e) {
 		const scrollTop = window.scrollY;
 		clearTimeout(timer);
 		if (scrollTop >= startPoint) {
 			!header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
+			// header.classList.contains('_header-scroll') ? header.classList.add('_header-fadeout') : null;
 			if (headerShow) {
 				if (scrollTop > scrollDirection) {
 					// downscroll code
@@ -93,14 +98,26 @@ export function headerScroll() {
 				timer = setTimeout(() => {
 					!header.classList.contains('_header-show') ? header.classList.add('_header-show') : null;
 				}, headerShowTimer);
+
 			}
 		} else {
-			header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
+			timer = setTimeout(() => {
+				header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
+			}, 0);
+			header.classList.add('_header-fadeout');
+			timer = setTimeout(() => {
+				header.classList.remove('_header-fadeout');
+			}, 500);
+
+
+
 			if (headerShow) {
-				header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
+				header.classList.contains('_header-show') ? header.
+					classList.remove('_header-show') : null;
 			}
 		}
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+
 	});
 }
 // Прилипающий блок
