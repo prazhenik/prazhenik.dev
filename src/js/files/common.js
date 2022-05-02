@@ -134,4 +134,27 @@
 // 	});
 // }
 
+const tabsTitles = document.querySelectorAll(".tabs__title");
+const noShadowTab = document.querySelector("._no-shadow");
+const pageWrapper = document.querySelector(".wrapper");
+console.log(noShadowTab);
+console.log(pageWrapper);
+
+if (tabsTitles.length > 0) {
+
+}
+
+
+
+
+function noShadow() {
+	if (noShadowTab.classList.contains("_tab-active")) {
+		pageWrapper.classList.add('_no-shadow')
+	} else {
+		pageWrapper.classList.remove('_no-shadow')
+	}
+}
+
+
+
 

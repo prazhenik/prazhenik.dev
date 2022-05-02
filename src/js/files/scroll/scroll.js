@@ -1,7 +1,4 @@
-//актуализирован 02/05/22 1800 // добавлена задержка remove('_header-fadeout')
-
-
-// Подключение функционала "Чертогов Фрилансера"
+// Подключение функционала
 import { isMobile, getHash } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "./gotoblock.js";
@@ -104,12 +101,6 @@ export function headerScroll() {
 			timer = setTimeout(() => {
 				header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
 			}, 0);
-			header.classList.add('_header-fadeout');
-			timer = setTimeout(() => {
-				header.classList.remove('_header-fadeout');
-			}, 500);
-
-
 
 			if (headerShow) {
 				header.classList.contains('_header-show') ? header.

@@ -9077,10 +9077,6 @@
                     timer = setTimeout((() => {
                         header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
                     }), 0);
-                    header.classList.add("_header-fadeout");
-                    timer = setTimeout((() => {
-                        header.classList.remove("_header-fadeout");
-                    }), 500);
                     if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
                 }
                 scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
@@ -10769,6 +10765,12 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             flsModules.gallery = galleyItems;
         }
+        const tabsTitles = document.querySelectorAll(".tabs__title");
+        const noShadowTab = document.querySelector("._no-shadow");
+        const pageWrapper = document.querySelector(".wrapper");
+        console.log(noShadowTab);
+        console.log(pageWrapper);
+        if (tabsTitles.length > 0) ;
         window["FLS"] = true;
         isWebp();
         addTouchClass();
