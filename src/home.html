@@ -5,20 +5,19 @@
 })
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper _noShadow">
 		@@include('html/_header.htm',{})
 		<main class="page">
 			<div class="page__container">
 				<div data-tabs class="page__content">
 					<div class="tabs">
 						<div class="tabs__menu menu">
-							<nav data-tabs-titles class="tabs__navigation menu__body">
-								<button type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
-								<button type="button" class="tabs__title menu__link">About me</button>
-								<button type="button" class="tabs__title menu__link">Portfolio</button>
-								<button type="button" class="tabs__title menu__link">Skills</button>
-								<button type="button" class="tabs__title menu__link">Contacts</button>
-
+							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
+								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
+								<button id="aboutMe" type="button" class="tabs__title menu__link">About me</button>
+								<button id="portfolio" type="button" class="tabs__title menu__link">Porftfolio</button>
+								<button id="skills" type="button" class="tabs__title menu__link">Skills</button>
+								<button id="contacts" type="button" class="tabs__title menu__link">Contacts</button>
 							</nav>
 						</div>
 
@@ -30,14 +29,14 @@
 						</div>
 						<div class="tabs__body">
 							<section class="About">
-								<h2 class="section-title">About me</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
-								maiores, possimus nemo expedita at. Asperiores, hic.
+								maiores, possimus nemo expedita at. Asperiores, hidfc.
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="portfolio">
-								<h2 class="section-title">portfolio</h2>
+								<h2 id="portfolio-title" class="section-title"></h2>
 								<!-- Оболочка слайдера -->
 								<div class="portfolio__slider swiper">
 									<!-- Двигающееся часть слайдера -->
@@ -127,14 +126,14 @@
 						</div>
 						<div class="tabs__body">
 							<section class="Skills">
-								<h2 class="section-title">Skills</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
 								maiores, possimus nemo expedita a
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="contacts">
-								<h2 class="section-title">Contacts</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
 								maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit nisi
 								facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat

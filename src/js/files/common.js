@@ -134,26 +134,69 @@
 // 	});
 // }
 
-const tabsTitles = document.querySelectorAll(".tabs__title");
-const noShadowTab = document.querySelector("._no-shadow");
+
+
+
+//-----------------------------------
+
+
+
+
+
+
+
+//---------------------------------------
+const tabsNavigation = document.getElementById('tabs__navigation');
+const activeTabsTitle = document.querySelectorAll('.tabs__title');
+const homeTab = document.getElementById('home').innerText;
 const pageWrapper = document.querySelector(".wrapper");
-console.log(noShadowTab);
-console.log(pageWrapper);
+const tabsBodies = document.querySelectorAll('.tabs__body');
+let activeTabsContentTitle
+let timeoutID;
 
-if (tabsTitles.length > 0) {
+for (let i = 0; i < tabsNavigation.children.length; i++) {
+	tabsNavigation.children[i].addEventListener('click', e => {
+		const currTubText = e.target.innerText;
 
+		setTimeout(clearSectionTitle, 1000)
+		setTimeout(typeText, 1000)
+
+		function typeText() {
+			let i = 0;
+			let txt = currTubText; /* Текст */
+			let speed = 70; /* Скорость/длительность эффекта в миллисекундах */
+
+			for (let i = 0; i < tabsBodies.length; i++) {
+				if (tabsBodies[i].classList.contains('_active-content-tab')) {
+					activeTabsContentTitle = document.querySelector('._active-content-tab .section-title')
+				}
+			}
+			function typeWriter() {
+				if (i < `${txt}`.length && activeTabsContentTitle) {
+					activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
+					i++;
+					timeoutID = setTimeout(typeWriter, speed);
+				}
+			}
+			typeWriter()
+		}
+
+		function clearSectionTitle() {
+			if (activeTabsContentTitle)
+				activeTabsContentTitle.innerHTML = '';
+			clearTimeout(timeoutID);
+		}
+		//----------удаление блюра с wrapper на табе home---------------------------
+
+		if (currTubText == homeTab) {
+			pageWrapper.classList.add('_noShadow');
+
+		} else {
+			pageWrapper.classList.remove('_noShadow');
+		};
+	})
 }
 
-
-
-
-function noShadow() {
-	if (noShadowTab.classList.contains("_tab-active")) {
-		pageWrapper.classList.add('_no-shadow')
-	} else {
-		pageWrapper.classList.remove('_no-shadow')
-	}
-}
 
 
 

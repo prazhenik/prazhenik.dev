@@ -23,7 +23,7 @@
 	<meta name="theme-color" content="#71a4f1"> <!-- theme color -->
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220502234436">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220506162101">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -31,7 +31,7 @@
 
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper _noShadow">
 		<!-- актуализирован 05/02/22 20.56 -->
 
 		<header data-scroll="10" class="header">
@@ -49,13 +49,12 @@
 				<div data-tabs class="page__content">
 					<div class="tabs">
 						<div class="tabs__menu menu">
-							<nav data-tabs-titles class="tabs__navigation menu__body">
-								<button type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
-								<button type="button" class="tabs__title menu__link">About me</button>
-								<button type="button" class="tabs__title menu__link">Portfolio</button>
-								<button type="button" class="tabs__title menu__link">Skills</button>
-								<button type="button" class="tabs__title menu__link">Contacts</button>
-
+							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
+								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
+								<button id="aboutMe" type="button" class="tabs__title menu__link">About me</button>
+								<button id="portfolio" type="button" class="tabs__title menu__link">Porftfolio</button>
+								<button id="skills" type="button" class="tabs__title menu__link">Skills</button>
+								<button id="contacts" type="button" class="tabs__title menu__link">Contacts</button>
 							</nav>
 						</div>
 
@@ -67,14 +66,14 @@
 						</div>
 						<div class="tabs__body">
 							<section class="About">
-								<h2 class="section-title">About me</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
-								maiores, possimus nemo expedita at. Asperiores, hic.
+								maiores, possimus nemo expedita at. Asperiores, hidfc.
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="portfolio">
-								<h2 class="section-title">portfolio</h2>
+								<h2 id="portfolio-title" class="section-title"></h2>
 								<!-- Оболочка слайдера -->
 								<div class="portfolio__slider swiper">
 									<!-- Двигающееся часть слайдера -->
@@ -161,14 +160,14 @@
 						</div>
 						<div class="tabs__body">
 							<section class="Skills">
-								<h2 class="section-title">Skills</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
 								maiores, possimus nemo expedita a
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="contacts">
-								<h2 class="section-title">Contacts</h2>
+								<h2 class="section-title"></h2>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
 								maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit nisi
 								facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
@@ -281,7 +280,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220502234436"></script>
+	<script src="js/app.min.js?_v=20220506162101"></script>
 </body>
 
 </html>

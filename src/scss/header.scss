@@ -16,9 +16,9 @@
 			top: rem(-60);
 			left: 0;
 			display: block;
-			background: linear-gradient(180deg, rgba(0,0,0,1) 40%, rgba(0,0,0,0.8687850140056023) 60%, rgba(0,0,0,0.6811099439775911) 80%, rgba(0,0,0,0.3477766106442577) 90%, rgba(0,0,0,0) 100%);
-			backdrop-filter: blur(2px);
-			height: rem(70);
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 1) 100%);
+			backdrop-filter: blur(4px);
+			height: rem(60);
 			transition: top 0.15s ease;
 		}
 		&._header-scroll::before {

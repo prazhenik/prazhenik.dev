@@ -1,5 +1,5 @@
 //актуализирован 17/02/22 13.56
-
+//актуализирован 05/05/22 13.56--------------класс активному контенту табов--------------------
 
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
@@ -374,10 +374,21 @@ export function tabs() {
 				tabsTitles[index].setAttribute('data-tabs-title', '');
 				tabsContentItem.setAttribute('data-tabs-item', '');
 
+
 				if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
 					tabsTitles[index].classList.add('_tab-active');
 				}
 				tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
+
+				//--------------класс активному контенту табов------------------------------
+				tabsBlock.addEventListener('click', function () {
+					tabsContentItem.classList.remove('_active-content-tab')
+					if (!tabsContentItem.hasAttribute('hidden')) {
+						tabsContentItem.classList.add('_active-content-tab')
+					}
+				})
+				//----------------------------------------------------------------
+
 			});
 		}
 	}
