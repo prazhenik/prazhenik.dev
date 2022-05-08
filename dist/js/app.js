@@ -10763,7 +10763,8 @@ PERFORMANCE OF THIS SOFTWARE.
                         mobileSettings: {
                             download: false,
                             controls: true
-                        }
+                        },
+                        scale: .5
                     })
                 });
             }));

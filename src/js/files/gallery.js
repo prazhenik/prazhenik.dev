@@ -50,8 +50,11 @@ if (galleries.length) {
 				mobileSettings: {
 					download: false,
 					controls: true,
-					
+
 				},
+
+				scale: .5,
+
 			})
 		})
 	});

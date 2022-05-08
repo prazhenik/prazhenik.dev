@@ -2,35 +2,69 @@
 	&::before {
 		content: "";
 		position: fixed;
-		top: 0;
+		top: 50%;
 		left: 0;
+		transform: translate(0, -50%);
 		width: 100%;
 		height: 100vh;
-		background: url("@img/mainphoto.png") 50% 50% / contain no-repeat;
+		background: url("@img/mainphoto.png") 45% 0% / cover no-repeat;
 		filter: blur(15px);
-		opacity: 0.4;
-		@media (max-width: $tablet) {
-			background: url("@img/mainphoto.png") 30% 0% / cover no-repeat;
+		opacity: 0.5;
+		transition: opacity .2s ease, filter .2s ease;
+		@media (min-width: $tablet) {
+			background: url("@img/mainphoto.png") 50% 50% / contain no-repeat;
 		}
 	}
+
+
 	&._noShadow::before {
 		filter: none;
-		opacity: 0.6;
+		opacity: .9;
+		transition: opacity .2s ease, filter .2s ease;
 	}
 }
 .page {
-	@media (max-width:$tablet){
-		padding: rem(60) rem(0) rem(0);
+	padding: rem(60) rem(0) rem(0);
+	@media (min-width:$tablet){
+		display: flex;
+		flex-direction: column;
+		padding: rem(120) rem(0);
+		position: relative;
+		overflow: hidden;
+		
 	}
 		// .page__container
 		&__container {
+			flex: 1 0 100%;
 		}
 		// .page__content
 		&__content {
+			@media (min-width:$tablet){
+				display: flex;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				column-gap: rem(20);
+
+			}
 		}
 }
 .tabs {
 	position: relative;
+	display: flex;
+	@media (min-width:$tablet){
+		flex: 1 0 auto;
+		@include adaptiveValue("width", 350, 255, 1920, 994, 1 );
+		// &:after > .wrapper._noShadow {
+
+		// }
+	}
+
+	&__menu {
+		align-self: flex-end;
+	}
 		// .tabs__navigation
 	&__navigation {
 		@media (min-width:$tablet){
@@ -42,29 +76,64 @@
 		display: block;
 		font-family: "Michroma", sans-serif;
 		text-transform: uppercase;
-		font-size: rem(22);
+		font-size: rem(16);
 		line-height: math.div(32, 22);
-		color: $textColor2;
+		color: $textColor5;
+		margin: 0 auto; 
 		padding: rem(10) rem(0);
 		white-space: nowrap;
-		@media (max-width: $tablet) {
-			color: $textColor5;
-			font-size: rem(16);
-			padding: rem(10) rem(0);
-			margin: 0 auto; 
+		transition: font-size .2s ease;
+		@media (min-width: $tablet) {
+			margin: 0;
+			@include adaptiveValue("font-size", 22, 16, 1920, 994, 1 );
+			color: $textColor2;
 		}
 		&._tab-active {
 
 		}
 	}
+	
 	// .tabs__content
 	&__content {
+		@media (min-width:$tablet){
+			display: flex;
+			overflow: hidden;
+		}
+
 	}
 	// .tabs__body
 	&__body {
+		position: relative;
 		padding: rem(20) rem(0) rem(20);
-		@media (max-width:$tablet){
-	
+		opacity: 0;
+		visibility: hidden;
+		&._active-content-tab{
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .5s ease;
+		}
+		@media (min-width:$tablet){
+			padding: rem(0) rem(0) rem(0) rem(23);
+			overflow-y: auto;
+			max-height: calc(100vh - 240px);
+			&:not(:first-child)::before {
+				content: "";
+				width: rem(3);
+				height: 0;
+				display: block;
+				background: $backgroundColor4;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				border-radius: 5px;
+				z-index: 30;
+				transition: height .5s ease;
+
+			}
+			&._active-content-tab:not(:first-child)::before{
+				height: 100%;
+				transition: height .5s ease;
+			}
 		}
 		
 	}
@@ -93,9 +162,9 @@
 		bottom: -15px;
 		left: 0;
 	}
-
-	@media (max-width:$tablet){
-		margin:  rem(0) rem(0) rem(60) rem(0);
+	margin:  rem(0) rem(0) rem(60) rem(0);
+	@media (min-width:$tablet){
+		display: none;
 	}
 }
 
@@ -105,10 +174,12 @@
 	text-transform: uppercase;
 	text-align: center;
 	color: $mainTextColor;
-	font-size: rem(36);
+	font-size: rem(26);
 	position: relative;
-	@media (max-width:$tablet){
-		font-size: rem(28);
+	transition: font-size .2s ease;
+	@media (min-width:$tablet){
+		@include adaptiveValue("font-size", 36, 26, 1920, 994, 1 );
+		font-size: rem(36);
 	}
 	&::after {
 		content: "_";
@@ -147,6 +218,7 @@
 	display: flex;
 	flex-direction: column;
 	max-width: rem(900);
+	margin: 0 auto;
 	& > *:not(:last-child){
 		margin:  rem(0) rem(0) rem(30) rem(0);
 	}
@@ -160,14 +232,14 @@
 	}
 	// .portfolio-item__text
 	&__text {
-		font-size: rem(16);
+		font-size: rem(12);
 		line-height: math.div(32, 22);
 		& span {
 			color: $mainTextColor;
 			font-weight: 600;
 		}
-		@media (max-width:$tablet){
-			font-size: rem(12);
+		@media (min-width:$tablet){
+			font-size: rem(16);
 		}
 	}
 }
@@ -226,8 +298,17 @@
 .contacts {
 }
 
+.contacts {
+	//overflow-y: auto;
+}
 
+.section__content{
+	//overflow-y: auto;
+}
 
+.section-text{
+	//overflow-y: auto;
+}
 
 
 
@@ -335,16 +416,16 @@
 				content: "_";
 			}
 		}
-		// &:not(:first-child)._tab-active < .tabs::after {
-		// 	content: "";
-		// 	width: rem(2);
-		// 	height: 120%;
-		// 	display: block;
-		// 	background-color: $backgroundColor4;
-		// 	position: absolute;
-		// 	right: 0;
-		// 	bottom: -20%;
-		// }
+		&:not(:first-child)._tab-active < .tabs::after {
+			content: "";
+			width: rem(2);
+			height: 120%;
+			display: block;
+			background-color: $backgroundColor4;
+			position: absolute;
+			right: 0;
+			bottom: -20%;
+		}
 	}
 	// .tabs__content
 	&__content {
