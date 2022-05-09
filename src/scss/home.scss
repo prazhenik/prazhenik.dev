@@ -56,10 +56,20 @@
 	display: flex;
 	@media (min-width:$tablet){
 		flex: 1 0 auto;
-		@include adaptiveValue("width", 350, 255, 1920, 994, 1 );
-		// &:after > .wrapper._noShadow {
-
-		// }
+		@include adaptiveValue("width", 370, 270, 1920, 994, 1 );
+			&:not(._noLine)::before {
+				content: "";
+				width: rem(3);
+				height: 120%;
+				display: block;
+				background: $backgroundColor4;
+				position: absolute;
+				right: 0;
+				bottom: -20%;
+				border-radius: 5px;
+				z-index: 30;
+				animation: lineTop .5s ease forwards;
+			}
 	}
 
 	&__menu {
@@ -80,9 +90,9 @@
 		line-height: math.div(32, 22);
 		color: $textColor5;
 		margin: 0 auto; 
-		padding: rem(10) rem(0);
+		height: rem(50);
 		white-space: nowrap;
-		transition: font-size .2s ease;
+		//transition: font-size .2s ease;
 		@media (min-width: $tablet) {
 			margin: 0;
 			@include adaptiveValue("font-size", 22, 16, 1920, 994, 1 );
@@ -104,7 +114,7 @@
 	// .tabs__body
 	&__body {
 		position: relative;
-		padding: rem(20) rem(0) rem(20);
+		//padding: rem(20) rem(0) rem(20);
 		opacity: 0;
 		visibility: hidden;
 		&._active-content-tab{
@@ -113,27 +123,8 @@
 			transition: opacity .5s ease;
 		}
 		@media (min-width:$tablet){
-			padding: rem(0) rem(0) rem(0) rem(23);
 			overflow-y: auto;
 			max-height: calc(100vh - 240px);
-			&:not(:first-child)::before {
-				content: "";
-				width: rem(3);
-				height: 0;
-				display: block;
-				background: $backgroundColor4;
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				border-radius: 5px;
-				z-index: 30;
-				transition: height .5s ease;
-
-			}
-			&._active-content-tab:not(:first-child)::before{
-				height: 100%;
-				transition: height .5s ease;
-			}
 		}
 		
 	}
@@ -176,7 +167,7 @@
 	color: $mainTextColor;
 	font-size: rem(26);
 	position: relative;
-	transition: font-size .2s ease;
+	//transition: font-size .2s ease;
 	@media (min-width:$tablet){
 		@include adaptiveValue("font-size", 36, 26, 1920, 994, 1 );
 		font-size: rem(36);
@@ -217,7 +208,8 @@
 .portfolio-item {
 	display: flex;
 	flex-direction: column;
-	max-width: rem(900);
+	width: auto;
+	max-width: rem(1100);
 	margin: 0 auto;
 	& > *:not(:last-child){
 		margin:  rem(0) rem(0) rem(30) rem(0);

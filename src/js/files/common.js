@@ -147,55 +147,77 @@
 
 //---------------------------------------
 const tabsNavigation = document.getElementById('tabs__navigation');
-const activeTabsTitle = document.querySelectorAll('.tabs__title');
 const homeTab = document.getElementById('home').innerText;
 const pageWrapper = document.querySelector(".wrapper");
+const tabs = document.querySelector(".tabs");
 const tabsBodies = document.querySelectorAll('.tabs__body');
 let activeTabsContentTitle
 let timeoutID;
+let currTubText;
+
+window.addEventListener('load', e => {
+	addHomeClasses()
+})
+
+
 
 for (let i = 0; i < tabsNavigation.children.length; i++) {
 	tabsNavigation.children[i].addEventListener('click', e => {
-		const currTubText = e.target.innerText;
-
+		currTubText = e.target.innerText;
+		homeClass()
 		setTimeout(clearSectionTitle, 1000)
 		setTimeout(typeText, 1000)
-
-		function typeText() {
-			let i = 0;
-			let txt = currTubText; /* Текст */
-			let speed = 70; /* Скорость/длительность эффекта в миллисекундах */
-
-			for (let i = 0; i < tabsBodies.length; i++) {
-				if (tabsBodies[i].classList.contains('_active-content-tab')) {
-					activeTabsContentTitle = document.querySelector('._active-content-tab .section-title')
-				}
-			}
-			function typeWriter() {
-				if (i < `${txt}`.length && activeTabsContentTitle) {
-					activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
-					i++;
-					timeoutID = setTimeout(typeWriter, speed);
-				}
-			}
-			typeWriter()
-		}
-
-		function clearSectionTitle() {
-			if (activeTabsContentTitle)
-				activeTabsContentTitle.innerHTML = '';
-			clearTimeout(timeoutID);
-		}
-		//----------удаление блюра с wrapper на табе home---------------------------
-
-		if (currTubText == homeTab) {
-			pageWrapper.classList.add('_noShadow');
-
-		} else {
-			pageWrapper.classList.remove('_noShadow');
-		};
 	})
 }
+
+function typeText() {
+	let i = 0;
+	let txt = currTubText; /* Текст */
+	let speed = 70; /* Скорость/длительность эффекта в миллисекундах */
+
+	for (let i = 0; i < tabsBodies.length; i++) {
+		if (tabsBodies[i].classList.contains('_active-content-tab')) {
+			activeTabsContentTitle = document.querySelector('._active-content-tab .section-title')
+		}
+	}
+	function typeWriter() {
+		if (i < `${txt}`.length && activeTabsContentTitle) {
+			activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
+			i++;
+			timeoutID = setTimeout(typeWriter, speed);
+		}
+	}
+	typeWriter()
+}
+
+function clearSectionTitle() {
+	if (activeTabsContentTitle)
+		activeTabsContentTitle.innerHTML = '';
+	clearTimeout(timeoutID);
+}
+//----------удаление блюра с wrapper на табе home---------------------------
+
+function addHomeClasses() {
+	pageWrapper.classList.add('_noShadow');
+	tabs.classList.add('_noLine');
+}
+
+function removeHomeClasses() {
+	pageWrapper.classList.remove('_noShadow');
+	tabs.classList.remove('_noLine');
+}
+
+function homeClass() {
+	if (currTubText == homeTab) {
+		addHomeClasses()
+	} else {
+		addHomeClasses()
+		setTimeout(removeHomeClasses, 10)
+	};
+}
+
+
+
 
 
 

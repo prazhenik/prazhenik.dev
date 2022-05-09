@@ -10771,36 +10771,54 @@ PERFORMANCE OF THIS SOFTWARE.
             flsModules.gallery = galleyItems;
         }
         const tabsNavigation = document.getElementById("tabs__navigation");
-        document.querySelectorAll(".tabs__title");
         const homeTab = document.getElementById("home").innerText;
         const pageWrapper = document.querySelector(".wrapper");
+        const common_tabs = document.querySelector(".tabs");
         const tabsBodies = document.querySelectorAll(".tabs__body");
         let activeTabsContentTitle;
         let timeoutID;
+        let currTubText;
+        window.addEventListener("load", (e => {
+            addHomeClasses();
+        }));
         for (let i = 0; i < tabsNavigation.children.length; i++) tabsNavigation.children[i].addEventListener("click", (e => {
-            const currTubText = e.target.innerText;
+            currTubText = e.target.innerText;
+            homeClass();
             setTimeout(clearSectionTitle, 1e3);
             setTimeout(typeText, 1e3);
-            function typeText() {
-                let i = 0;
-                let txt = currTubText;
-                let speed = 70;
-                for (let i = 0; i < tabsBodies.length; i++) if (tabsBodies[i].classList.contains("_active-content-tab")) activeTabsContentTitle = document.querySelector("._active-content-tab .section-title");
-                function typeWriter() {
-                    if (i < `${txt}`.length && activeTabsContentTitle) {
-                        activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
-                        i++;
-                        timeoutID = setTimeout(typeWriter, speed);
-                    }
-                }
-                typeWriter();
-            }
-            function clearSectionTitle() {
-                if (activeTabsContentTitle) activeTabsContentTitle.innerHTML = "";
-                clearTimeout(timeoutID);
-            }
-            if (currTubText == homeTab) pageWrapper.classList.add("_noShadow"); else pageWrapper.classList.remove("_noShadow");
         }));
+        function typeText() {
+            let i = 0;
+            let txt = currTubText;
+            let speed = 70;
+            for (let i = 0; i < tabsBodies.length; i++) if (tabsBodies[i].classList.contains("_active-content-tab")) activeTabsContentTitle = document.querySelector("._active-content-tab .section-title");
+            function typeWriter() {
+                if (i < `${txt}`.length && activeTabsContentTitle) {
+                    activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
+                    i++;
+                    timeoutID = setTimeout(typeWriter, speed);
+                }
+            }
+            typeWriter();
+        }
+        function clearSectionTitle() {
+            if (activeTabsContentTitle) activeTabsContentTitle.innerHTML = "";
+            clearTimeout(timeoutID);
+        }
+        function addHomeClasses() {
+            pageWrapper.classList.add("_noShadow");
+            common_tabs.classList.add("_noLine");
+        }
+        function removeHomeClasses() {
+            pageWrapper.classList.remove("_noShadow");
+            common_tabs.classList.remove("_noLine");
+        }
+        function homeClass() {
+            if (currTubText == homeTab) addHomeClasses(); else {
+                addHomeClasses();
+                setTimeout(removeHomeClasses, 10);
+            }
+        }
         window["FLS"] = true;
         isWebp();
         addTouchClass();
