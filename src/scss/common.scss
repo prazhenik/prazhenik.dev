@@ -16,7 +16,12 @@
 	100% { opacity: 0; }
 }
 
-@keyframes lineTop {
+@keyframes lineToTop {
 	from { height: 0; }
 	to { height: 120%; }
+}
+
+@keyframes lineToSides {
+	from { width: 0; }
+	to { width: 100%; }
 }

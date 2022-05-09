@@ -68,7 +68,7 @@
 				bottom: -20%;
 				border-radius: 5px;
 				z-index: 30;
-				animation: lineTop .5s ease forwards;
+				animation: lineToTop .5s ease forwards;
 			}
 	}
 
@@ -119,12 +119,14 @@
 		visibility: hidden;
 		&._active-content-tab{
 			opacity: 1;
+			
 			visibility: visible;
-			transition: opacity .5s ease;
+			transition: opacity 1.0s .5s ease;
 		}
 		@media (min-width:$tablet){
 			overflow-y: auto;
 			max-height: calc(100vh - 240px);
+			transition: opacity .5s ease;
 		}
 		
 	}
@@ -146,12 +148,13 @@
 .section-title {
 	&::before{
 		content:'';
-		width: 100%;
 		height: rem(2);
 		background: $backgroundColor4;
 		position: absolute;
 		bottom: -15px;
-		left: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: lineToSides .3s 1.7s  ease forwards;
 	}
 	margin:  rem(0) rem(0) rem(60) rem(0);
 	@media (min-width:$tablet){
