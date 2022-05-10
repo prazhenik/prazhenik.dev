@@ -23,7 +23,7 @@
 	<meta name="theme-color" content="#71a4f1"> <!-- theme color -->
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220509172220">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220510213144">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -31,13 +31,24 @@
 
 
 <body>
+	<!-- <canvas id="art"></canvas> -->
+
+	<!-- <div id="mouse-cursor" class="mouse-cursor"></div> -->
 	<div class="wrapper">
+		<canvas id='nokey' class="canvas"></canvas>
+		<!-- <div class="backround-img">
+			<picture><source srcset="img/mainphoto.webp" type="image/webp"><img class="backround-img_pc" src="img/mainphoto.png" alt="mainphoto"></picture>
+			<picture><source srcset="img/mainphoto_mob.webp" type="image/webp"><img class="backround-img_mob" src="img/mainphoto_mob.png" alt="mainphoto_mob"></picture>
+		</div> -->
+
 		<!-- актуализирован 05/02/22 20.56 -->
 
 		<header data-scroll="10" class="header">
 			<div class="header__container">
 				<div class="header__content">
-					<a href="/home.html" class="header__logo"><img src="img/logo.svg" alt=""></a>
+					<div class="header__logo">
+						<a href="/home.html"><img src="img/logo.svg" alt=""></a>
+					</div>
 					<div class="header__lang"></div>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
@@ -45,9 +56,13 @@
 		</header>
 
 		<main class="page">
+
 			<div class="page__container">
+
 				<div data-tabs class="page__content">
+
 					<div class="tabs">
+
 						<div class="tabs__menu menu">
 							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
 								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
@@ -65,183 +80,209 @@
 						</div>
 						<div class="tabs__body">
 							<section class="About">
-								<h2 class="section-title"></h2>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
-								maiores, possimus nemo expedita at. Asperiores, hidfc.
+								<h2 class="section__title"></h2>
+								<div class="section__content">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+									soluta
+									maiores, possimus nemo expedita at. Asperiores, hidfc.
+								</div>
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="portfolio">
-								<h2 id="portfolio-title" class="section-title"></h2>
-								<!-- Оболочка слайдера -->
-								<div class="portfolio__slider swiper">
-									<!-- Двигающееся часть слайдера -->
-									<div class="portfolio__wrapper swiper-wrapper">
-										<!-- Слайд -->
-										<div class="portfolio__slide swiper-slide">
-											<div class="portfolio__item portfolio-item">
-												<a class="portfolio-item__header portfolio-item-header" href="#">
-													<span class="portfolio-item-header__date">11/04/2022</span>
-													<p class="portfolio-item-header__label">virtual zone</p>
-												</a>
-												<div data-gallery class="portfolio-item__gallery gallery">
-													<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-														<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
+								<h2 id="portfolio-title" class="section__title"></h2>
+								<div class="section__content">
+									<!-- Оболочка слайдера -->
+									<div class="portfolio__slider swiper">
+										<!-- Двигающееся часть слайдера -->
+										<div class="portfolio__wrapper swiper-wrapper">
+											<!-- Слайд -->
+											<div class="portfolio__slide swiper-slide">
+												<div class="portfolio__item portfolio-item">
+													<a class="portfolio-item__header portfolio-item-header" href="#">
+														<span class="portfolio-item-header__date">11/04/2022</span>
+														<p class="portfolio-item-header__label">virtual zone</p>
 													</a>
+													<div data-gallery class="portfolio-item__gallery gallery">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
+														</a>
+													</div>
+													<div class="portfolio-item__text portfolio-item-text">
+														<p class="portfolio-item-text__about">
+															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
+															simply
+															random text. It has roots in a piece of classical Latin
+														</p>
+														<p class="portfolio-item-text__tools">
+															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
+															WooCommerce
+														</p>
+													</div>
 												</div>
-												<div class="portfolio-item__text portfolio-item-text">
-													<p class="portfolio-item-text__about">
-														<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not simply
-														random text. It has roots in a piece of classical Latin
-													</p>
-													<p class="portfolio-item-text__tools">
-														<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-														WooCommerce
-													</p>
+											</div>
+											<!-- Слайд -->
+											<div class="portfolio__slide swiper-slide">
+												<div class="portfolio__item portfolio-item">
+													<a class="portfolio-item__header portfolio-item-header" href="#">
+														<span class="portfolio-item-header__date">11/04/2022</span>
+														<p class="portfolio-item-header__label">virtual zone</p>
+													</a>
+													<div data-gallery class="portfolio-item__gallery gallery">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
+														</a>
+													</div>
+													<div class="portfolio-item__text portfolio-item-text">
+														<p class="portfolio-item-text__about">
+															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
+															simply
+															random text. It has roots in a piece of classical Latin
+														</p>
+														<p class="portfolio-item-text__tools">
+															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
+															WooCommerce
+														</p>
+													</div>
+												</div>
+											</div>
+											<!-- Слайд -->
+											<div class="portfolio__slide swiper-slide">
+												<div class="portfolio__item portfolio-item">
+													<a class="portfolio-item__header portfolio-item-header" href="#">
+														<span class="portfolio-item-header__date">11/04/2022</span>
+														<p class="portfolio-item-header__label">virtual zone</p>
+													</a>
+													<div data-gallery class="portfolio-item__gallery gallery">
+														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
+														</a>
+													</div>
+													<div class="portfolio-item__text portfolio-item-text">
+														<p class="portfolio-item-text__about">
+															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
+															simply
+															random text. It has roots in a piece of classical Latin
+														</p>
+														<p class="portfolio-item-text__tools">
+															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
+															WooCommerce
+														</p>
+													</div>
 												</div>
 											</div>
 										</div>
-										<!-- Слайд -->
-										<div class="portfolio__slide swiper-slide">
-											<div class="portfolio__item portfolio-item">
-												<a class="portfolio-item__header portfolio-item-header" href="#">
-													<span class="portfolio-item-header__date">11/04/2022</span>
-													<p class="portfolio-item-header__label">virtual zone</p>
-												</a>
-												<div data-gallery class="portfolio-item__gallery gallery">
-													<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-														<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
-													</a>
-												</div>
-												<div class="portfolio-item__text portfolio-item-text">
-													<p class="portfolio-item-text__about">
-														<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not simply
-														random text. It has roots in a piece of classical Latin
-													</p>
-													<p class="portfolio-item-text__tools">
-														<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-														WooCommerce
-													</p>
-												</div>
-											</div>
-										</div>
-										<!-- Слайд -->
-										<div class="portfolio__slide swiper-slide">
-											<div class="portfolio__item portfolio-item">
-												<a class="portfolio-item__header portfolio-item-header" href="#">
-													<span class="portfolio-item-header__date">11/04/2022</span>
-													<p class="portfolio-item-header__label">virtual zone</p>
-												</a>
-												<div data-gallery class="portfolio-item__gallery gallery">
-													<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-														<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
-													</a>
-												</div>
-												<div class="portfolio-item__text portfolio-item-text">
-													<p class="portfolio-item-text__about">
-														<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not simply
-														random text. It has roots in a piece of classical Latin
-													</p>
-													<p class="portfolio-item-text__tools">
-														<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-														WooCommerce
-													</p>
-												</div>
-											</div>
-										</div>
+										<!-- Если нужна пагинация -->
+										<div class="swiper-pagination"></div>
+										<!-- Если нужен скролбар -->
+										<div class="swiper-scrollbar"></div>
 									</div>
-									<!-- Если нужна пагинация -->
-									<div class="swiper-pagination"></div>
-									<!-- Если нужен скролбар -->
-									<div class="swiper-scrollbar"></div>
 								</div>
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="Skills">
-								<h2 class="section-title"></h2>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium soluta
-								maiores, possimus nemo expedita a
+								<h2 class="section__title"></h2>
+								<div class="section__content">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+									soluta
+									maiores, possimus nemo expedita a
+								</div>
 							</section>
 						</div>
 						<div class="tabs__body">
 							<section class="contacts">
-								<div class="section__content">
-									<h2 class="section-title"></h2>
-									<div class="section-text">
+								<div class="section__wrapper section__wrapper_contacts">
+									<h2 class="section__title"></h2>
+									<div class="section__content">
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
 										soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Repellat
 										accusamus praesentium soluta
-										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus odit
+										maiores, possimus nemo expedita at. Asperiores, hic. Iure quisquam, facere delectus
+										odit
 										nisi
 										facilis est natus exercitation
 									</div>
@@ -266,6 +307,7 @@
 				</div>
 			</div>
 		</footer>
+
 
 	</div>
 	<!-- актуализирован 06/02/22 17.12 -->
@@ -314,7 +356,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220509172220"></script>
+	<script src="js/app.min.js?_v=20220510213144"></script>
 </body>
 
 </html>

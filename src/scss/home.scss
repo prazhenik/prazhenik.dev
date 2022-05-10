@@ -1,4 +1,5 @@
 .wrapper {
+	position: relative;
 	&::before {
 		content: "";
 		position: fixed;
@@ -7,22 +8,79 @@
 		transform: translate(0, -50%);
 		width: 100%;
 		height: 100vh;
-		background: url("@img/mainphoto.png") 45% 0% / cover no-repeat;
-		filter: blur(15px);
-		opacity: 0.5;
+		background: url("@img/mainphoto_mob.png") 60% 0% / cover no-repeat;
+		opacity: .15;
+		filter: blur(5px);
 		transition: opacity .2s ease, filter .2s ease;
+		z-index: 1;
 		@media (min-width: $tablet) {
 			background: url("@img/mainphoto.png") 50% 50% / contain no-repeat;
 		}
 	}
 
-
-	&._noShadow::before {
+	&._noShadow:before {
 		filter: none;
-		opacity: .9;
+		opacity: 1;
 		transition: opacity .2s ease, filter .2s ease;
 	}
+
+	// &:after{
+	// 	content: "";
+	// 	position: fixed;
+	// 	top: 50%;
+	// 	left: 0;
+	// 	transform: translate(0, -50%);
+	// 	width: 100%;
+	// 	height: 100vh;
+	// 	z-index: 2;
+	// 	background-color: rgba(0,0,0,.9);
+	// }
+
+
+	// &._noShadow:after {
+	// 	//filter: none;
+	// 	background-color: rgba(0,0,0,.1);
+	// 	transition: opacity .2s ease, filter .2s ease;
+	// }
 }
+
+// .backround-img {
+// 	position: absolute;
+// 	height: 100%;
+// 	top: 0;
+// 	left: 0;
+// 	background-color: rgba(0, 0, 0, 0.9);
+// 		&::after{
+// 		content: '';
+// 		position: relative;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+		
+// 		z-index: 1000;
+// 	}
+	
+// }
+
+// .backround-img_pc {
+// 	display: none;
+// 	@media (min-width:$tablet){
+// 		display: block;
+// 		object-fit: contain; 
+		
+// 	}
+// }
+
+// .backround-img_mob {
+// 	display: block;
+// 	object-fit: cover;
+// 	@media (min-width:$tablet){
+// 		display: none;
+// 	}
+// }
+
+
 .page {
 	padding: rem(60) rem(0) rem(0);
 	@media (min-width:$tablet){
@@ -87,16 +145,22 @@
 		font-family: "Michroma", sans-serif;
 		text-transform: uppercase;
 		font-size: rem(16);
-		line-height: math.div(32, 22);
+		line-height: rem(40);
 		color: $textColor5;
 		margin: 0 auto; 
-		height: rem(50);
+		height: rem(40);
 		white-space: nowrap;
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
 		//transition: font-size .2s ease;
 		@media (min-width: $tablet) {
 			margin: 0;
 			@include adaptiveValue("font-size", 22, 16, 1920, 994, 1 );
 			color: $textColor2;
+			&:hover{
+				color: $mainTextColor;
+			}
 		}
 		&._tab-active {
 
@@ -115,19 +179,23 @@
 	&__body {
 		position: relative;
 		//padding: rem(20) rem(0) rem(20);
-		opacity: 0;
-		visibility: hidden;
-		&._active-content-tab{
-			opacity: 1;
-			
+
+		& .section__content{
+			opacity: 0;
+			visibility: hidden;
+		}
+		&._active-content-tab .section__content{
+			opacity: 1;		
 			visibility: visible;
-			transition: opacity 1.0s .5s ease;
+			transition: opacity 1s .5s ease;
+			@media (min-width:$tablet){
+				transition: opacity .5s ease;
+			}
 		}
-		@media (min-width:$tablet){
-			overflow-y: auto;
-			max-height: calc(100vh - 240px);
-			transition: opacity .5s ease;
-		}
+			@media (min-width:$tablet){
+				overflow-y: auto;
+				max-height: calc(100vh - 240px);
+			}
 		
 	}
 }
@@ -145,7 +213,7 @@
 .About {
 }
 
-.section-title {
+.section__title {
 	&::before{
 		content:'';
 		height: rem(2);
@@ -154,7 +222,7 @@
 		bottom: -15px;
 		left: 50%;
 		transform: translateX(-50%);
-		animation: lineToSides .3s 1.7s  ease forwards;
+		animation: lineToSides .7s 1s  ease forwards;
 	}
 	margin:  rem(0) rem(0) rem(60) rem(0);
 	@media (min-width:$tablet){
@@ -162,7 +230,7 @@
 	}
 }
 
-.section-title,
+.section__title,
 .tabs__title._tab-active {
 	font-family: "Michroma", sans-serif;
 	text-transform: uppercase;
