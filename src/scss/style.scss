@@ -201,8 +201,9 @@ body {
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
+		z-index: 3;
 		@media (min-width:$tablet){
-			z-index: 3;
+				
 		}
 		
 	}

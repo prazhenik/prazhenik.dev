@@ -283,6 +283,7 @@ body._preloader {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  z-index: 3;
 }
 
 .wrapper > * {
@@ -2646,10 +2647,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 61.99875em) {
-  .wrapper > main {
-    z-index: 3;
-  }
-
   .header__logo img {
     width: 7.5rem;
   }
