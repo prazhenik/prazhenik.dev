@@ -9,10 +9,9 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	z-index: 20;
+	z-index: 3;
 	@media (max-width:$tablet){
 		position: relative;
-		z-index: 0;
 	}
 	// .footer__container
 	&__container {
@@ -39,8 +38,10 @@ footer {
 		color: $textColor2;
 	}
 	&__slogan {
-		font-family: "MuseoModerno", medium;
-		font-size: rem(16);
+		font-family: "MuseoModerno";
+		font-weight: 300;
+		@include adaptiveValue("font-size", 20, 14, 1920, 994, 1);
+		font-size: rem(20);
 		padding-bottom: rem(20);
 		line-height: 1;
 		& span {

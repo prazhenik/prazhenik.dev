@@ -155,7 +155,7 @@ html *{
 body {
 	//position: relative;
 	// universal overlay
-	overflow: hidden;
+	//overflow: hidden;
 	&::after {
 		content: "";
 		background-color: rgba(0, 0, 0, 0.5);
@@ -201,7 +201,10 @@ body {
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
-		z-index: 3;
+		@media (min-width:$tablet){
+			z-index: 3;
+		}
+		
 	}
 	// Фикс для слайдеров
 	> * {

@@ -8,13 +8,13 @@
 		transform: translate(0, -50%);
 		width: 100%;
 		height: 100vh;
-		background: url("@img/mainphoto_mob.png") 60% 0% / cover no-repeat;
+		background: url("@img/mainphoto_mob.png") center / cover no-repeat;
 		opacity: .15;
 		filter: blur(5px);
 		transition: opacity .2s ease, filter .2s ease;
 		z-index: 1;
 		@media (min-width: $tablet) {
-			background: url("@img/mainphoto.png") 50% 50% / contain no-repeat;
+			background: url("@img/mainphoto.png") center / contain no-repeat;
 		}
 	}
 
@@ -151,12 +151,13 @@
 		height: rem(40);
 		white-space: nowrap;
 		&:not(:last-child) {
-			margin-bottom: rem(15);
+			margin-bottom: rem(20);
+			@include adaptiveValue("margin-bottom", 20, 10, 1920, 994, 1 );
 		}
 		//transition: font-size .2s ease;
 		@media (min-width: $tablet) {
 			margin: 0;
-			@include adaptiveValue("font-size", 22, 16, 1920, 994, 1 );
+			@include adaptiveValue("font-size", 26, 18, 1920, 994, 1 );
 			color: $textColor2;
 			&:hover{
 				color: $mainTextColor;
@@ -178,8 +179,10 @@
 	// .tabs__body
 	&__body {
 		position: relative;
+		// или боди оверфлоу хидден + вісота как для пк
 		//padding: rem(20) rem(0) rem(20);
-
+		//overflow-y: auto;
+		//max-height: calc(100vh - 120px);
 		& .section__content{
 			opacity: 0;
 			visibility: hidden;
@@ -216,7 +219,7 @@
 .section__title {
 	&::before{
 		content:'';
-		height: rem(2);
+		height: rem(1);
 		background: $backgroundColor4;
 		position: absolute;
 		bottom: -15px;
@@ -240,8 +243,7 @@
 	position: relative;
 	//transition: font-size .2s ease;
 	@media (min-width:$tablet){
-		@include adaptiveValue("font-size", 36, 26, 1920, 994, 1 );
-		font-size: rem(36);
+		@include adaptiveValue("font-size", 44, 30, 1920, 994, 1 );
 	}
 	&::after {
 		content: "_";

@@ -37,7 +37,7 @@
 			content: "";
 			display: inline;
 			position: absolute;
-			height: rem(2);
+			height: rem(1);
 			transition: all 0.5s ease 0s;
 			background: $mainTextColor;
 			width: 100%;
@@ -71,7 +71,7 @@
 			backdrop-filter: blur(20px);
 			transition: all 0.5s ease;
 			overflow: auto;
-			z-index: 99;
+			z-index: 4;
 			&._active {
 				transform: translateX(100%);
 			}
