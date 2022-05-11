@@ -760,7 +760,7 @@ input::placeholder {
   display: none;
   position: relative;
   top: 0;
-  width: 1.875rem;
+  width: 2.5rem;
   height: 1.25rem;
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
@@ -971,7 +971,7 @@ canvas {
 }
 
 .header__logo img {
-  width: 4.375rem;
+  width: 5rem;
 }
 
 ._popup-link {
@@ -1036,21 +1036,20 @@ canvas {
 .footer__slogan {
   font-family: "MuseoModerno";
   font-weight: 300;
-  font-size: 1.25rem;
   padding-bottom: 1.25rem;
   line-height: 1;
 }
 
-@supports (font-size: clamp( 0.875rem , 0.472462203rem  +  0.6479481641vw , 1.25rem )) {
+@supports (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
   .footer__slogan {
-    font-size: clamp( 0.875rem , 0.472462203rem  +  0.6479481641vw , 1.25rem );
+    font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem );
   }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.472462203rem  +  0.6479481641vw , 1.25rem )) {
+@supports not (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
   .footer__slogan {
     font-size: calc(
-			0.875rem + 0.375 * (100vw - 62.125rem) / 57.875
+			1rem + 0.25 * (100vw - 62.125rem) / 57.875
 		);
   }
 }
@@ -2649,6 +2648,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @media (min-width: 61.99875em) {
   .wrapper > main {
     z-index: 3;
+  }
+
+  .header__logo img {
+    width: 7.5rem;
   }
 
   .no-webp .wrapper::before{

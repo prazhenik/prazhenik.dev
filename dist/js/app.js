@@ -10820,12 +10820,13 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         }
         var canvas = document.getElementById("nokey"), can_w = parseInt(canvas.getAttribute("width")), can_h = parseInt(canvas.getAttribute("height")), ctx = canvas.getContext("2d");
-        var BALL_NUM = 20;
+        let BALL_NUM;
+        if (isMobile.any()) BALL_NUM = 30; else BALL_NUM = 150;
         var ball_color = {
-            r: 207,
-            g: 255,
-            b: 4
-        }, R = 2, balls = [], alpha_f = .03, link_line_width = .8, dis_limit = 260, mouse_ball = {
+            r: 40,
+            g: 120,
+            b: 190
+        }, R = 2, balls = [], alpha_f = .03, link_line_width = .6, dis_limit = 300, mouse_ball = {
             x: 0,
             y: 0,
             vx: 0,
