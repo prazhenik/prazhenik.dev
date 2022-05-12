@@ -10823,10 +10823,10 @@ PERFORMANCE OF THIS SOFTWARE.
         let BALL_NUM;
         if (isMobile.any()) BALL_NUM = 30; else BALL_NUM = 150;
         var ball_color = {
-            r: 40,
-            g: 120,
-            b: 190
-        }, R = 2, balls = [], alpha_f = .03, link_line_width = .6, dis_limit = 300, mouse_ball = {
+            r: 255,
+            g: 255,
+            b: 255
+        }, R = 1, balls = [], alpha_f = .01, link_line_width = .2, dis_limit = 300, mouse_ball = {
             x: 0,
             y: 0,
             vx: 0,

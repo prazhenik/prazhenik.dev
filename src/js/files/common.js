@@ -390,6 +390,7 @@ var canvas = document.getElementById('nokey'),
 // console.log(typeof can_w);
 let BALL_NUM
 
+
 import { isMobile } from "./functions.js";
 
 if (isMobile.any()) {
@@ -409,17 +410,18 @@ var ball = {
 	phase: 0
 },
 	ball_color = {
-		r: 40,
-		g: 120,
-		b: 190
+		r: 255,
+		g: 255,
+		b: 255
 	},
-	R = 2,
+	
+	R = 1,
 	balls = [],
-	alpha_f = 0.03,
-	alpha_phase = 0,
+	alpha_f = 0.01,
+	alpha_phase = 10,
 
 	// Line
-	link_line_width = .6,
+	link_line_width = .2,
 	dis_limit = 300,
 	add_mouse_point = true,
 	mouse_in = false,
