@@ -23,7 +23,7 @@
 	<meta name="theme-color" content="#71a4f1"> <!-- theme color -->
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220512132948">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220512165644">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -36,6 +36,7 @@
 	<!-- <div id="mouse-cursor" class="mouse-cursor"></div> -->
 	<div class="wrapper">
 		<canvas id='nokey' class="canvas"></canvas>
+		<!-- <canvas id='canvas' class="canvas"></canvas> -->
 		<!-- <div class="backround-img">
 			<picture><source srcset="img/mainphoto.webp" type="image/webp"><img class="backround-img_pc" src="img/mainphoto.png" alt="mainphoto"></picture>
 			<picture><source srcset="img/mainphoto_mob.webp" type="image/webp"><img class="backround-img_mob" src="img/mainphoto_mob.png" alt="mainphoto_mob"></picture>
@@ -49,7 +50,19 @@
 					<div class="header__logo">
 						<a href="/home.html"><img src="img/logo.svg" alt=""></a>
 					</div>
-					<div class="header__lang"></div>
+					<div class="header__lang lang">
+						<ul id="lang__list" class="lang__list">
+							<li class="lang__item lang__item_ua">
+								<a class="lang__link lang__link_ua " href="#">ua</a>
+							</li>
+							<li class="lang__item lang__item_ru">
+								<a class="lang__link lang__link_ru" href="#">ru</a>
+							</li>
+							<li class="lang__item lang__item_eng _current">
+								<a class="lang__link lang__link_eng " href="#">eng</a>
+							</li>
+						</ul>
+					</div>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 			</div>
@@ -356,7 +369,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220512132948"></script>
+	<script src="js/app.min.js?_v=20220512165644"></script>
 </body>
 
 </html>

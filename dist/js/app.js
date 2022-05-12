@@ -10821,12 +10821,12 @@ PERFORMANCE OF THIS SOFTWARE.
         }
         var canvas = document.getElementById("nokey"), can_w = parseInt(canvas.getAttribute("width")), can_h = parseInt(canvas.getAttribute("height")), ctx = canvas.getContext("2d");
         let BALL_NUM;
-        if (isMobile.any()) BALL_NUM = 30; else BALL_NUM = 150;
+        if (isMobile.any()) BALL_NUM = 30; else BALL_NUM = 120;
         var ball_color = {
-            r: 255,
-            g: 255,
-            b: 255
-        }, R = 1, balls = [], alpha_f = .01, link_line_width = .2, dis_limit = 300, mouse_ball = {
+            r: 200,
+            g: 200,
+            b: 200
+        }, R = 1, balls = [], alpha_f = .01, link_line_width = .3, dis_limit = 300, mouse_ball = {
             x: 0,
             y: 0,
             vx: 0,
@@ -11018,6 +11018,10 @@ PERFORMANCE OF THIS SOFTWARE.
             e = e || window.event;
             mouse_ball.x = e.pageX;
             mouse_ball.y = e.pageY;
+        }));
+        document.querySelector(".lang__list").addEventListener("click", (e => {
+            document.querySelectorAll(".lang__item").forEach((i => i.classList.remove("_current")));
+            e.target.parentElement.classList.add("_current");
         }));
         window["FLS"] = true;
         isWebp();

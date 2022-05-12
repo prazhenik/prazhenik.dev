@@ -33,10 +33,10 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		column-gap: rem(60);
+		//column-gap: rem(60);
 		height: rem(120);
 		@media (max-width: $tablet) {
-			column-gap: rem(30);
+			column-gap: rem(10);
 			height: rem(60);
 		}
 	}
@@ -47,12 +47,62 @@
 		& img{
 			width: rem(70);
 			@media (min-width:$tablet){
-				@include adaptiveValue("width", 120, 70, 1920, 994, 1 );
+				@include adaptiveValue("width", 100, 70, 1920, 994, 1 );
 			}
 		}
 	}
 
+
+		// .header__lang
+	&__lang {
+
+	}
+
 	&__menu {
+	}
+}
+
+.lang {
+	flex: 0 1 auto;
+	// .lang__list
+	&__list {
+		display: flex;
+	}
+	// .lang__item
+	&__item {
+		font-family: "MuseoModerno";
+		font-weight: 300;
+		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
+		padding: 0 rem(7);
+		color: $textColor5;
+		&:not(:last-child){
+			border-right: 1px solid $textColor2;
+		}
+		&._current{
+			color: $mainTextColor;
+		}
+		// .lang__item_ua
+		&_ua {
+		}
+		// .lang__item_ru
+		&_ru {
+		}
+		// .lang__item_eng
+		&_eng {
+		}
+	}
+	// .lang__link
+	&__link {
+		flex: 1 0 33.333%;
+		// .lang__link_ua
+		&_ua {
+		}
+		// .lang__link_ru
+		&_ru {
+		}
+		// .lang__link_eng
+		&_eng {
+		}
 	}
 }
 

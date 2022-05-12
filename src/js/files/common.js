@@ -217,169 +217,6 @@ function homeClass() {
 }
 
 
-
-//===============================================
-
-// const handleMousePos = (e) => {
-// 	const CURSOR = document.querySelector('#mouse-cursor');
-// 	const HOVER = document.querySelectorAll('button');
-// 	const { pageX: posX, pageY: posY } = e;
-
-// 	const runMouseOver = () => {
-// 		CURSOR.style.transform = 'scale(3)';
-// 		CURSOR.style.background = 'rgba(40, 120, 190, 1)' ;
-// 		CURSOR.style.mixBlendMode = 'screen';
-// 	};
-// 	HOVER.forEach(hover => hover.addEventListener('mouseenter', runMouseOver));
-
-// 	const runMouseLeave = () => {
-// 		CURSOR.style.transform = '';
-// 		CURSOR.style.background = '';
-// 		CURSOR.style.mixBlendMode = '';
-// 	};
-// 	HOVER.forEach(hover => hover.addEventListener('mouseleave', runMouseLeave));
-
-// 	return (
-// 		CURSOR.style.left = `${posX - 10}px`,
-// 		CURSOR.style.top = `${posY - 10}px`
-// 	);
-// };
-// document.addEventListener('mousemove', handleMousePos);
-
-//++++++++++++++++++++++++++++++++++++++
-
-/*'use strict'
-
-const π2 = Math.PI * 2
-
-class Circle {
-
-	constructor() {
-
-		this.n = 30                      // you may edit the number of lines 
-		this.color = 'rgba(93,0,155,.4)' // don't use anything else than rgba
-		this.speed = .5                   // lower = faster
-		this.originDivider = 2           // 2 === center
-
-		this.powered = true
-
-		this.resize()
-
-	}
-
-	resize(x, y) {
-
-		this.width = canvas.width = window.innerWidth
-		this.height = canvas.height = window.innerHeight
-
-		this.width -= 50
-		this.height -= 50
-
-		ctx.translate(25, 25)
-
-		this.x = this.width / 2 | 0
-		this.y = this.height / 2 | 0
-		this.r = this.y
-
-		x = x - 25 || this.x
-		y = y - 25 || this.y + this.height / this.originDivider // - 25
-
-		ctx.strokeStyle = this.color
-		ctx.lineWidth = 0.5
-		ctx.arc(this.x, this.y, this.r, 0, π2, false)
-		ctx.stroke()
-
-		ctx.globalCompositeOperation = 'color-dodge'
-		ctx.fillStyle = this.color.replace(/[\d\.]+\)$/g, '1)')
-
-		this.lines = []
-		for (let i = 0; i < this.n; i++) {
-
-			let vx = Math.round(Math.cos(π2 * i / (this.n)) * 100) / 100
-			let vy = Math.round(Math.sin(π2 * i / (this.n)) * 100) / 100
-
-			this.lines.push(new Line(x, y, vx, vy))
-
-		}
-
-	}
-
-	onClick(evt) {
-
-		if (evt.which === 2) {
-
-			this.powered = !this.powered
-
-		} else {
-
-			let x = evt.clientX || evt.touches && evt.touches[0].pageX
-			let y = evt.clientY || evt.touches && evt.touches[0].pageY
-
-			this.resize(x, y)
-
-		}
-
-	}
-
-	update() {
-
-		for (let line of this.lines) line.update()
-
-	}
-
-}
-
-class Line {
-
-	constructor(x, y, vx, vy) {
-
-		this.x = this.ox = x
-		this.y = this.oy = y
-
-		this.vx = vx
-		this.vy = vy
-
-	}
-
-	update() {
-
-		this.x += this.vx
-		this.y += this.vy
-
-		if (Math.sqrt(Math.pow(this.x - circle.x, 2) + Math.pow(this.y - circle.y, 2)) >= circle.r) {
-
-			let m = (this.y - circle.y) / (this.x - circle.x)
-			let q = -m * this.x + this.y
-
-			let d = (this.ox + (this.oy - q) * m) / (1 + Math.pow(m, 2))
-
-			let px = 2 * d - this.ox
-			let py = 2 * d * m - this.oy + 2 * q
-
-			this.vx = -Math.cos(Math.atan2(this.y - py, this.x - px))
-			this.vy = -Math.sin(Math.atan2(this.y - py, this.x - px))
-
-			this.ox = this.x
-			this.oy = this.y
-
-		}
-
-		ctx.fillRect(this.x, this.y, .5, .5)
-
-	}
-
-}
-
-let canvas = document.getElementById('art')
-let ctx = canvas.getContext('2d')
-
-let circle = new Circle
-window.onresize = () => circle.resize()
-document.onclick = (evt) => circle.onClick(evt)
-document.ontouchstart = (evt) => circle.onClick(evt)
-
-setInterval(() => circle.powered && circle.update(), circle.speed)*/
-
 //-------------------------------------
 
 var canvas = document.getElementById('nokey'),
@@ -396,7 +233,7 @@ import { isMobile } from "./functions.js";
 if (isMobile.any()) {
 	BALL_NUM = 30;
 } else {
-	BALL_NUM = 150;
+	BALL_NUM = 120;
 }
 
 
@@ -410,18 +247,18 @@ var ball = {
 	phase: 0
 },
 	ball_color = {
-		r: 255,
-		g: 255,
-		b: 255
+		r: 200,
+		g: 200,
+		b: 200
 	},
-	
+
 	R = 1,
 	balls = [],
 	alpha_f = 0.01,
 	alpha_phase = 10,
 
 	// Line
-	link_line_width = .2,
+	link_line_width = .3,
 	dis_limit = 300,
 	add_mouse_point = true,
 	mouse_in = false,
@@ -669,8 +506,12 @@ canvas.addEventListener('mousemove', function (e) {
 
 
 
+//=====================================================
 
-
+document.querySelector('.lang__list').addEventListener('click', e => {
+	document.querySelectorAll('.lang__item').forEach(i => i.classList.remove('_current'));
+	e.target.parentElement.classList.add('_current')
+})
 
 
 

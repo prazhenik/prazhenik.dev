@@ -959,9 +959,6 @@ canvas {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 3.75rem;
-     -moz-column-gap: 3.75rem;
-          column-gap: 3.75rem;
   height: 7.5rem;
 }
 
@@ -973,6 +970,53 @@ canvas {
 
 .header__logo img {
   width: 4.375rem;
+}
+
+.lang {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.lang__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lang__item {
+  font-family: "MuseoModerno";
+  font-weight: 300;
+  padding: 0 0.4375rem;
+  color: rgb(150, 150, 150);
+}
+
+@supports (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
+  .lang__item {
+    font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
+  .lang__item {
+    font-size: calc(
+			1rem + 0.25 * (100vw - 62.125rem) / 57.875
+		);
+  }
+}
+
+.lang__item:not(:last-child) {
+  border-right: 1px solid rgb(100, 100, 100);
+}
+
+.lang__item._current {
+  color: rgb(200, 200, 200);
+}
+
+.lang__link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 33.333%;
+          flex: 1 0 33.333%;
 }
 
 ._popup-link {
@@ -2645,16 +2689,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 61.99875em) {
-@supports (width: clamp( 4.375rem , 1.0205183585rem  +  5.3995680346vw , 7.5rem )) {
+@supports (width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem )) {
     .header__logo img {
-      width: clamp( 4.375rem , 1.0205183585rem  +  5.3995680346vw , 7.5rem );
+      width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem );
     }
 }
 
-@supports not (width: clamp( 4.375rem , 1.0205183585rem  +  5.3995680346vw , 7.5rem )) {
+@supports not (width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem )) {
     .header__logo img {
       width: calc(
-			4.375rem + 3.125 * (100vw - 62.125rem) / 57.875
+			4.375rem + 1.875 * (100vw - 62.125rem) / 57.875
 		);
     }
 }
@@ -2890,9 +2934,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .header__content {
-    -webkit-column-gap: 1.875rem;
-       -moz-column-gap: 1.875rem;
-            column-gap: 1.875rem;
+    -webkit-column-gap: 0.625rem;
+       -moz-column-gap: 0.625rem;
+            column-gap: 0.625rem;
     height: 3.75rem;
   }
 
