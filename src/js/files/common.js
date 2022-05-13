@@ -258,9 +258,9 @@ var ball = {
 	alpha_phase = 10,
 
 	// Line
-	link_line_width = .3,
+	link_line_width = .5,
 	dis_limit = 300,
-	add_mouse_point = true,
+	add_mouse_point = false,
 	mouse_in = false,
 	mouse_ball = {
 		x: 0,
@@ -509,7 +509,7 @@ canvas.addEventListener('mousemove', function (e) {
 //=====================================================
 
 document.querySelector('.lang__list').addEventListener('click', e => {
-	document.querySelectorAll('.lang__item').forEach(i => i.classList.remove('_current'));
+	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
 	e.target.parentElement.classList.add('_current')
 })
 

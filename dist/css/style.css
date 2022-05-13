@@ -943,6 +943,11 @@ canvas {
   background-color: rgba(189, 201, 25, 0);
 }
 
+section {
+  width: 100%;
+  height: 100%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -987,7 +992,6 @@ canvas {
 .lang__item {
   font-family: "MuseoModerno";
   font-weight: 300;
-  padding: 0 0.4375rem;
   color: rgb(150, 150, 150);
 }
 
@@ -1014,9 +1018,11 @@ canvas {
 }
 
 .lang__link {
+  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33.333%;
           flex: 1 0 33.333%;
+  padding: 0 0.4375rem;
 }
 
 ._popup-link {
@@ -1192,13 +1198,16 @@ canvas {
 
 .tabs__body {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .tabs__body .section__content {
   opacity: 0;
   visibility: hidden;
-  font-size: 0.875rem;
-  line-height: 1.4285714286;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .tabs__body._active-content-tab .section__content {
@@ -1210,7 +1219,7 @@ canvas {
 }
 
 .section__title {
-  margin: 0.625rem 0rem 3.125rem 0rem;
+  margin: 0rem 0rem 3.125rem 0rem;
 }
 
 .section__title::before {
@@ -1307,6 +1316,55 @@ canvas {
 }
 
 .portfolio-item-text > *:not(:last-child) {
+  margin: 0rem 0rem 0.625rem 0rem;
+}
+
+.section {
+  padding: 0.625rem 0rem 2.5rem;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 2.5rem;
+     -moz-column-gap: 2.5rem;
+          column-gap: 2.5rem;
+}
+
+.contacts__block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.contacts__block:not(:last-child) {
+  margin: 0rem 0rem 2.5rem 0rem;
+}
+
+.contacts__label {
+  font-size: 1.375rem;
+}
+
+.contacts__label:not(:last-child) {
+  margin: 0rem 0rem 1.25rem 0rem;
+}
+
+.contacts__link img {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+
+.contacts__link img:not(:last-child) {
+  margin: 0rem 0.625rem 0rem 0rem;
+}
+
+.contacts__link:not(:last-child) {
   margin: 0rem 0rem 0.625rem 0rem;
 }
 
@@ -2688,6 +2746,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   pointer-events: none;
 }
 
+@media (min-width: 36.06125em) {
+  .contacts__block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+
+  .contacts__block_location {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+  }
+}
+
 @media (min-width: 61.99875em) {
 @supports (width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem )) {
     .header__logo img {
@@ -2755,7 +2827,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .tabs:not(._noLine)::before {
     content: "";
-    width: 0.1875rem;
+    width: 0.125rem;
     height: 120%;
     display: block;
     background: rgb(40, 120, 190);
@@ -2796,6 +2868,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
+    width: 100%;
   }
 
   .tabs__body._active-content-tab .section__content {

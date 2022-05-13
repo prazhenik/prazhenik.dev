@@ -73,7 +73,6 @@
 		font-family: "MuseoModerno";
 		font-weight: 300;
 		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
-		padding: 0 rem(7);
 		color: $textColor5;
 		&:not(:last-child){
 			border-right: 1px solid $textColor2;
@@ -93,7 +92,9 @@
 	}
 	// .lang__link
 	&__link {
+		width: 100%;
 		flex: 1 0 33.333%;
+		padding: 0 rem(7);
 		// .lang__link_ua
 		&_ua {
 		}

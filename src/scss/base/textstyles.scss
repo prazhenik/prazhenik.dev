@@ -6,6 +6,8 @@
 	}
 }
 
+
+
 .gallery__title {
 	@include adaptiveValue("font-size", 24, 12);
 	line-height: math.div(28, 24);

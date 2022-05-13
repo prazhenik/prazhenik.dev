@@ -10826,7 +10826,7 @@ PERFORMANCE OF THIS SOFTWARE.
             r: 200,
             g: 200,
             b: 200
-        }, R = 1, balls = [], alpha_f = .01, link_line_width = .3, dis_limit = 300, mouse_ball = {
+        }, R = 1, balls = [], alpha_f = .01, link_line_width = .5, dis_limit = 300, mouse_ball = {
             x: 0,
             y: 0,
             vx: 0,
@@ -11020,7 +11020,7 @@ PERFORMANCE OF THIS SOFTWARE.
             mouse_ball.y = e.pageY;
         }));
         document.querySelector(".lang__list").addEventListener("click", (e => {
-            document.querySelectorAll(".lang__item").forEach((i => i.classList.remove("_current")));
+            document.querySelectorAll(".lang__item").forEach((item => item.classList.remove("_current")));
             e.target.parentElement.classList.add("_current");
         }));
         window["FLS"] = true;
