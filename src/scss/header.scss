@@ -95,6 +95,11 @@
 		width: 100%;
 		flex: 1 0 33.333%;
 		padding: 0 rem(7);
+		@media (any-hover: hover){
+			&:hover {
+				color: $mainTextColor;
+			}
+		}
 		// .lang__link_ua
 		&_ua {
 		}

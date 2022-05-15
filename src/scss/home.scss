@@ -118,7 +118,7 @@
 		@include adaptiveValue("width", 370, 270, 1920, 994, 1 );
 			&:not(._noLine)::before {
 				content: "";
-				width: rem(2);
+				width: rem(1);
 				height: 120%;
 				display: block;
 				background: $backgroundColor4;
@@ -127,7 +127,7 @@
 				bottom: -20%;
 				border-radius: 5px;
 				z-index: 30;
-				//opacity: .5;
+				opacity: .7;
 				animation: lineToTop .5s ease forwards;
 			}
 	}
@@ -382,22 +382,36 @@
 
 .section {
 	padding: rem(10) rem(0) rem(40);
+	@media (min-width:$tablet){
+		padding: 0;
+	}
 	// .section__content
 	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: rem(40);
+		row-gap: rem(80);
+		align-self: center;
+		max-width: rem(1100);
+		margin: 0 auto;
+		height: 100%;
 	}
 }
 .contacts {
-	display: flex;
-	flex-wrap: wrap;
-	column-gap: rem(40);
+	justify-content: space-between;
+	padding: 70px 0px;
+	@include adaptiveValue("padding-left",150 , 20, 1920, 980, 1 );
+	@include adaptiveValue("padding-right",150 , 20, 1920, 980, 1 );
 	// .contacts__block
 	&__block {
-		flex: 1 0 auto;
-		@media (min-width:$mobileSmall){
-			flex: 1 0 auto;  
+		flex: 0 0 auto;
+		align-self: center;
+		
+		//margin: 0 auto;
+		@media (min-width:$mobileSmall){ 
 		}
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(40) rem(0);
+			//margin:  rem(0) rem(0) rem(50) rem(0);
 		}
 		// .contacts__block_location
 		&_location {
@@ -414,9 +428,9 @@
 	}
 	// .contacts__label
 	&__label {
-		font-size: rem(22);
+		font-size: rem(26);
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(20) rem(0);
+			margin:  rem(0) rem(0) rem(25) rem(0);
 		}
 	}
 	// .contacts__list
@@ -427,21 +441,58 @@
 	}
 	// .contacts__link
 	&__link {
+		font-size: rem(22);
+		height: rem(30);
+		color: $textColor5;
+		transition: all 0.2s ease;
 		& img{
-			width: rem(25);
-			height: rem(25);
+			width: rem(30);
+			height: rem(30);
 			object-fit: cover;
-			vertical-align: middle;
+			//vertical-align: middle;
+			filter: grayscale(1);
+			border-radius: 50%;
+			transition: filter 0.2s ease;
 			&:not(:last-child) {
 				margin:  rem(0) rem(10) rem(0) rem(0);
 			}
 		}
+
+		@media (any-hover: hover){
+			&:hover {
+				color: $mainTextColor;
+				
+				transition: color 0.2s ease;
+			}
+			&:hover img{
+				position: relative;
+				filter: grayscale(0);
+				transition: filter 0.2s ease;
+				display: inline-block;
+				//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
+				&::after {
+					content: '';
+					position: absolute;  
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					transform: translate(0, 10px);
+					background-color: rgba(255, 255, 255, 1);
+					//border-radius: 50%;
+					filter: blur(3px);
+				 }
+			}
+		}
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(10) rem(0);
+			margin:  rem(0) rem(0) rem(15) rem(0);
 		}
 	}
 	// .contacts__item
 	&__item {
+		& span {
+			vertical-align: middle;
+		};
 		// .contacts__item_insta
 		&_insta {
 		}
