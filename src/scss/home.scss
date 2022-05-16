@@ -354,7 +354,7 @@
 .contacts {
 	//padding-left: rem(10);
 	//padding-right: rem(10);
-	justify-content: space-between;
+	text-align: center;
 	@media (min-width:$mobileSmall){
 		@include adaptiveValue("padding-left", 300 , 70, 1920, 992, 1 );
 		@include adaptiveValue("padding-right",300 , 70, 1920, 992, 1 );  
@@ -380,6 +380,10 @@
 		// .contacts__block_location
 		&_location {
 			flex: 1 0 100%; 
+			& .contacts__list_location li:not(:last-child){
+				display: block;
+				margin: rem(0) rem(0) rem(10) rem(0);
+			}
 			@media (min-width:$mobileSmall){
 				 
 			}
@@ -410,20 +414,21 @@
 	}
 	// .contacts__link
 	&__link {
+		display: inline-block;
 		//font-size: rem(22);
 		@include adaptiveValue("font-size",22 , 16, 1920, 768, 1);
 		//height: rem(30);
 		color: $textColor5;
 		transition: all 0.2s ease;
 		& img{
-			width: rem(25);
-			height: rem(25);
+			width: rem(50);
+			height: rem(50); 
 			object-fit: cover;
-			filter:saturate(.3);
+			filter:saturate(.7);
 			border-radius: 50%;
 			transition: filter 0.2s ease;
 			&:not(:last-child) {
-				margin:  rem(0) rem(10) rem(0) rem(0);
+				
 			}
 			@media (min-width:$mobileSmall){
 				width: rem(40);
@@ -443,33 +448,21 @@
 				transition: filter 0.2s ease;
 				display: inline-block;
 				//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
-				&::after {
-					content: '';
-					position: absolute;  
-					top: 0;
-					bottom: 0;
-					right: 0;
-					left: 0;
-					transform: translate(0, 10px);
-					background-color: rgba(255, 255, 255, 1);
-					//border-radius: 50%;
-					filter: blur(3px);
-				 }
 			}
 		}
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(10) rem(0);
+			margin:  rem(0) rem(30) rem(0) rem(0);
 			@media (min-width:$mobileSmall){
-				margin:  rem(0) rem(0) rem(15) rem(0);
+				//margin:  rem(0) rem(0) rem(15) rem(0);
 			}
 		}
 	}
 	// .contacts__item
 	&__item {
 		& span {
-			line-height: 25px;
-			vertical-align: middle;
+			display: none;
 			@media (min-width:$mobileSmall){
+				display: block;
 				line-height: 40px;
 			}
 		};
