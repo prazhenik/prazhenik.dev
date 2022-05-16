@@ -24,63 +24,7 @@
 		transition: opacity .2s ease, filter .2s ease;
 	}
 
-	// &:after{
-	// 	content: "";
-	// 	position: fixed;
-	// 	top: 50%;
-	// 	left: 0;
-	// 	transform: translate(0, -50%);
-	// 	width: 100%;
-	// 	height: 100vh;
-	// 	z-index: 2;
-	// 	background-color: rgba(0,0,0,.9);
-	// }
-
-
-	// &._noShadow:after {
-	// 	//filter: none;
-	// 	background-color: rgba(0,0,0,.1);
-	// 	transition: opacity .2s ease, filter .2s ease;
-	// }
 }
-
-// .backround-img {
-// 	position: absolute;
-// 	height: 100%;
-// 	top: 0;
-// 	left: 0;
-// 	background-color: rgba(0, 0, 0, 0.9);
-// 		&::after{
-// 		content: '';
-// 		position: relative;
-// 		width: 100%;
-// 		height: 100%;
-// 		top: 0;
-// 		left: 0;
-		
-// 		z-index: 1000;
-// 	}
-	
-// }
-
-// .backround-img_pc {
-// 	display: none;
-// 	@media (min-width:$tablet){
-// 		display: block;
-// 		object-fit: contain; 
-		
-// 	}
-// }
-
-// .backround-img_mob {
-// 	display: block;
-// 	object-fit: cover;
-// 	@media (min-width:$tablet){
-// 		display: none;
-// 	}
-// }
-
-
 .page {
 	
 	padding: rem(60) rem(0) rem(0);
@@ -153,7 +97,6 @@
 		height: rem(40);
 		white-space: nowrap;
 		&:not(:last-child) {
-			//margin-bottom: rem(10);
 			@include adaptiveValue("margin-bottom", 10, 5, 1920, 994, 1 );
 		}
 		//transition: font-size .2s ease;
@@ -183,10 +126,7 @@
 	&__body {
 		position: relative;
 		flex: 1 0 100%;
-		// или боди оверфлоу хидден + вісота как для пк
-		//padding: rem(20) rem(0) rem(20);
-		//overflow-y: auto;
-		//max-height: calc(100vh - 120px);
+		height: calc(100vh - 120px);
 		& .section__content{
 			opacity: 0;
 			visibility: hidden;
@@ -223,19 +163,17 @@
 }
 
 .section__title {
+	position: relative;
+	padding:  rem(15) rem(0);
 	&::before{
 		content:'';
 		height: rem(1);
 		background: $backgroundColor4;
 		position: absolute;
-		bottom: -15px;
+		bottom: 0px;
 		left: 50%;
 		transform: translateX(-50%);
 		animation: lineToSides .7s 1s  ease forwards;
-	}
-	margin:  rem(0) rem(0) rem(50) rem(0);
-	@media (min-width:$tablet){
-		display: none;
 	}
 }
 
@@ -245,7 +183,7 @@
 	text-transform: uppercase;
 	text-align: center;
 	color: $mainTextColor;
-	font-size: rem(24);
+	font-size: rem(25);
 	position: relative;
 	//transition: font-size .2s ease;
 	@media (min-width:$tablet){
@@ -328,6 +266,7 @@
 		font-size: rem(22);
 		text-transform: uppercase;
 		text-align: center;
+		line-height: 1;
 		&::first-letter {
 			color: $textColor4;
 			font-weight: 600;
@@ -381,7 +320,9 @@
 //--------------contacts------------------------
 
 .section {
-	padding: rem(10) rem(0) rem(40);
+	height: 100%;
+	overflow: hidden;
+	//padding: rem(10) rem(0) rem(40);
 	@media (min-width:$tablet){
 		padding: 0;
 	}
@@ -389,34 +330,58 @@
 	&__content {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: rem(40);
-		row-gap: rem(80);
-		align-self: center;
-		max-width: rem(1100);
+		gap: rem(40);
+		align-items: center;
 		margin: 0 auto;
-		height: 100%;
+		height: calc(100% - 55px); //высота section__title с отступами
+		padding:  rem(30) rem(0);
+		overflow-y: auto;
+		@media (min-width:$mobileSmall){
+			row-gap: rem(100);
+			padding:  rem(0) rem(0);
+		}
+	}
+	&__title-wrapper {
+		//position: relative;
+		//height: 40px;
+
+		//margin:  rem(0) rem(0) rem(15) rem(0);
+		@media (min-width:$tablet){
+			display: none;
+		}
 	}
 }
 .contacts {
+	//padding-left: rem(10);
+	//padding-right: rem(10);
 	justify-content: space-between;
-	padding: 70px 0px;
-	@include adaptiveValue("padding-left",150 , 20, 1920, 980, 1 );
-	@include adaptiveValue("padding-right",150 , 20, 1920, 980, 1 );
+	@media (min-width:$mobileSmall){
+		@include adaptiveValue("padding-left", 300 , 70, 1920, 992, 1 );
+		@include adaptiveValue("padding-right",300 , 70, 1920, 992, 1 );  
+	}
 	// .contacts__block
 	&__block {
-		flex: 0 0 auto;
-		align-self: center;
+		flex: 1 1 auto;
+		&:not(:last-child) {
+			//margin:  rem(0) rem(0) rem(40) rem(0);
+		}
+
 		
 		//margin: 0 auto;
-		@media (min-width:$mobileSmall){ 
+		@media (min-width:$tablet){ 
+			align-self: flex-start;
+			&:first-child {
+				align-self: flex-end;
+			}
 		}
 		&:not(:last-child) {
 			//margin:  rem(0) rem(0) rem(50) rem(0);
 		}
 		// .contacts__block_location
 		&_location {
+			flex: 1 0 100%; 
 			@media (min-width:$mobileSmall){
-				flex: 1 0 100%;  
+				 
 			}
 		}
 		// .contacts__block_socials
@@ -429,8 +394,12 @@
 	// .contacts__label
 	&__label {
 		font-size: rem(26);
+		@include adaptiveValue("font-size",26 , 18, 1920, 768, 1);
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(25) rem(0);
+			margin:  rem(0) rem(0) rem(20) rem(0);
+			@media (min-width:$mobileSmall){
+				margin:  rem(0) rem(0) rem(40) rem(0);
+			}
 		}
 	}
 	// .contacts__list
@@ -441,20 +410,24 @@
 	}
 	// .contacts__link
 	&__link {
-		font-size: rem(22);
-		height: rem(30);
+		//font-size: rem(22);
+		@include adaptiveValue("font-size",22 , 16, 1920, 768, 1);
+		//height: rem(30);
 		color: $textColor5;
 		transition: all 0.2s ease;
 		& img{
-			width: rem(30);
-			height: rem(30);
+			width: rem(25);
+			height: rem(25);
 			object-fit: cover;
-			//vertical-align: middle;
-			filter: grayscale(1);
+			filter:saturate(.3);
 			border-radius: 50%;
 			transition: filter 0.2s ease;
 			&:not(:last-child) {
 				margin:  rem(0) rem(10) rem(0) rem(0);
+			}
+			@media (min-width:$mobileSmall){
+				width: rem(40);
+				height: rem(40); 
 			}
 		}
 
@@ -466,7 +439,7 @@
 			}
 			&:hover img{
 				position: relative;
-				filter: grayscale(0);
+				filter:saturate(1);
 				transition: filter 0.2s ease;
 				display: inline-block;
 				//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
@@ -485,13 +458,20 @@
 			}
 		}
 		&:not(:last-child) {
-			margin:  rem(0) rem(0) rem(15) rem(0);
+			margin:  rem(0) rem(0) rem(10) rem(0);
+			@media (min-width:$mobileSmall){
+				margin:  rem(0) rem(0) rem(15) rem(0);
+			}
 		}
 	}
 	// .contacts__item
 	&__item {
 		& span {
+			line-height: 25px;
 			vertical-align: middle;
+			@media (min-width:$mobileSmall){
+				line-height: 40px;
+			}
 		};
 		// .contacts__item_insta
 		&_insta {

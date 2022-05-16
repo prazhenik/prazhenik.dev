@@ -155,7 +155,7 @@ html *{
 body {
 	//position: relative;
 	// universal overlay
-	//overflow: hidden;
+	overflow: hidden;
 	&::after {
 		content: "";
 		background-color: rgba(0, 0, 0, 0.5);
