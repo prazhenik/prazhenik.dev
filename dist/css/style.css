@@ -1340,7 +1340,6 @@ canvas {
 }
 
 .swiper-button-disabled {
-  pointer-events: none;
   -webkit-transition: fill 0.2s ease;
   -o-transition: fill 0.2s ease;
   transition: fill 0.2s ease;
@@ -2548,7 +2547,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     position: absolute;
     top: 50%;
     fill: rgb(255, 255, 255);
-    cursor: pointer;
     padding: 10px;
     opacity: 1;
     background: rgba(0, 0, 0, 0.7);
@@ -2591,7 +2589,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (min-width: 36.06125em) and (any-hover: hover) {
-  .swiper-button:hover {
+  .swiper-button:not(.swiper-button-disabled):hover {
+    cursor: pointer;
     background: rgb(255, 255, 255);
     fill: rgb(40, 120, 190);
     -webkit-transition: background 0.2s, fill 0.2s;

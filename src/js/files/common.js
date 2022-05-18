@@ -219,7 +219,7 @@ function homeClass() {
 
 //-------------------------------------
 
-/*var canvas = document.getElementById('nokey'),
+var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
 	ctx = canvas.getContext('2d');
@@ -504,7 +504,6 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-*/
 
 //==================languege menu style===================================
 
@@ -522,7 +521,7 @@ console.log(swiperBotton);
 
 for (let i = 0; i < swiperBotton.length; i++) {
 	swiperBotton[i].addEventListener('click', e => {
-		if (e.target.parentElement.classList.contains('swiper-button')) {
+		if (e.target.parentElement.classList.contains('swiper-button') && !e.target.parentElement.classList.contains('swiper-button-disabled')) {
 			console.log(e.target);
 			e.target.parentElement.classList.add('hello')
 			addStyle()
