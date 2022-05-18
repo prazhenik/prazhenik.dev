@@ -49,8 +49,7 @@
 				height: 100%;
 				top: 0;
 				left: 0;
-				column-gap: rem(20);
-
+				@include adaptiveValue("column-gap", 30, 15, 1200, 576, 1);
 			}
 		}
 }
@@ -115,6 +114,7 @@
 	
 	// .tabs__content
 	&__content {
+		justify-content: center;
 		@media (min-width:$tablet){
 			display: flex;
 			overflow: hidden;
@@ -125,8 +125,7 @@
 	// .tabs__body
 	&__body {
 		position: relative;
-		flex: 1 0 100%;
-		height: calc(100vh - 180px);
+		height: calc(100vh - 175px); // за вычетом header, footer, section__title height
 		& .section__content{
 			opacity: 0;
 			visibility: hidden;
@@ -212,6 +211,9 @@
 		}
 }
 .swiper {
+	//position: relative;
+	
+
 }
 .swiper-wrapper {
 }
@@ -219,6 +221,7 @@
 }
 
 .portfolio {
+	position: relative;
 	// .portfolio__item
 	&__item {
 	}
@@ -253,6 +256,8 @@
 		}
 	}
 }
+
+
 .portfolio-item-header {
 	display: flex;
 	justify-content: space-between;
@@ -300,10 +305,25 @@
 }
 
 
-.swiper-pagination {
+.swiper-button-prev,
+.swiper-button-next {
+	position: absolute;
+	top: 50%;
+	width: rem(50);
+	fill: $backgroundColor4;
+	& svg {
+
+	}
 }
-.swiper-scrollbar {
+
+.swiper-button-prev {
+	left: 0;
 }
+
+.swiper-button-next {
+	right: 0;
+}
+
 .Skills {
 }
 
@@ -323,29 +343,26 @@
 .section {
 	height: 100%;
 	overflow: hidden;
-	//padding: rem(10) rem(0) rem(40);
+	position: relative;
 	@media (min-width:$tablet){
-
+		//margin: 0 rem(-50);
 	}
 	// .section__content
 	&__content {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		margin: 0 auto;
 		height: calc(100% - 55px); //высота section__title с отступами
 		padding:  rem(30) rem(0);
 		overflow-y: auto;
+		max-width: rem(1200);
+
 		@media (min-width:$tablet){
 			height: 100%;
-			padding: 0;
+			padding: 0 rem(50);
 		}
 	}
 	&__title {
-		//position: relative;
-		//height: 40px;
-
-		//margin:  rem(0) rem(0) rem(15) rem(0);
 		@media (min-width:$tablet){
 			display: none;
 		}
@@ -355,17 +372,12 @@
 	gap: rem(40);
 	text-align: center;
 	@media (min-width:$tablet){
-		@include adaptiveValue("padding-left", 300 , 70, 1920, 992, 1 );
-		@include adaptiveValue("padding-right",300 , 70, 1920, 992, 1 );  
-	}
-	@media (min-width:$tablet){
 		text-align: start;
 		justify-content: space-between;
 	}
 	// .contacts__block
 	&__block {
 		flex: 1 1 100%;
-		
 		@media (min-width:$tablet){ 
 			align-self: center !important ; 
 		}
@@ -420,7 +432,7 @@
 			width: rem(50);
 			height: rem(50); 
 			object-fit: cover;
-			filter:saturate(.6);
+			filter:saturate(.3);
 			border-radius: 50%;
 			transition: filter 0.2s ease;
 			@media (min-width:$tablet){
@@ -428,7 +440,6 @@
 				height: rem(30); 
 				vertical-align: middle;
 				margin: rem(0) rem(10) rem(0) rem(0);
-				filter:saturate(.3);
 			}
 		}
 		@media (any-hover: hover){

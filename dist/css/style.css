@@ -1195,12 +1195,15 @@ canvas {
   }
 }
 
+.tabs__content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .tabs__body {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 100%;
-          flex: 1 0 100%;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 175px);
 }
 
 .tabs__body .section__content {
@@ -1253,6 +1256,10 @@ canvas {
   content: "_";
   -webkit-animation: flashing 1s infinite;
           animation: flashing 1s infinite;
+}
+
+.portfolio {
+  position: relative;
 }
 
 .portfolio-item {
@@ -1322,9 +1329,26 @@ canvas {
   margin: 0rem 0rem 0.625rem 0rem;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 3.125rem;
+  fill: rgb(40, 120, 190);
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
 .section {
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .section__content {
@@ -1336,10 +1360,10 @@ canvas {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
   height: calc(100% - 55px);
   padding: 1.875rem 0rem;
   overflow-y: auto;
+  max-width: 75rem;
 }
 
 .contacts {
@@ -1417,8 +1441,8 @@ canvas {
   height: 3.125rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: saturate(0.6);
-          filter: saturate(0.6);
+  -webkit-filter: saturate(0.3);
+          filter: saturate(0.3);
   border-radius: 50%;
   -webkit-transition: -webkit-filter 0.2s ease;
   transition: -webkit-filter 0.2s ease;
@@ -2556,10 +2580,29 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 100%;
     top: 0;
     left: 0;
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem;
   }
+
+@supports ((-moz-column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem )) or (column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem ))) {
+    .page__content {
+      -webkit-column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem );
+         -moz-column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem );
+              column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem )) or (column-gap: clamp( 0.9375rem , 0.0721153846rem  +  2.4038461538vw , 1.875rem ))) {
+    .page__content {
+      -webkit-column-gap: calc(
+			0.9375rem + 0.9375 * (100vw - 36rem) / 39
+		);
+         -moz-column-gap: calc(
+			0.9375rem + 0.9375 * (100vw - 36rem) / 39
+		);
+              column-gap: calc(
+			0.9375rem + 0.9375 * (100vw - 36rem) / 39
+		);
+    }
+}
 
   .tabs {
     -webkit-box-flex: 0;
@@ -2661,40 +2704,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .section__content {
     height: 100%;
-    padding: 0;
+    padding: 0 3.125rem;
   }
 
   .section__title {
     display: none;
   }
-
-@supports (padding-left: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem )) {
-    .contacts {
-      padding-left: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem );
-    }
-}
-
-@supports not (padding-left: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem )) {
-    .contacts {
-      padding-left: calc(
-			4.375rem + 14.375 * (100vw - 62rem) / 58
-		);
-    }
-}
-
-@supports (padding-right: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem )) {
-    .contacts {
-      padding-right: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem );
-    }
-}
-
-@supports not (padding-right: clamp( 4.375rem , -10.9913793103rem  +  24.7844827586vw , 18.75rem )) {
-    .contacts {
-      padding-right: calc(
-			4.375rem + 14.375 * (100vw - 62rem) / 58
-		);
-    }
-}
 
   .contacts {
     text-align: start;
@@ -2728,8 +2743,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 1.875rem;
     vertical-align: middle;
     margin: 0rem 0.625rem 0rem 0rem;
-    -webkit-filter: saturate(0.3);
-            filter: saturate(0.3);
   }
 
   .contacts__link:not(:last-child) {

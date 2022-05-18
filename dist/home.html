@@ -23,7 +23,7 @@
 	<meta name="theme-color" content="#71a4f1"> <!-- theme color -->
 	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220517142210">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220518133050">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -31,9 +31,6 @@
 
 
 <body>
-	<!-- <canvas id="art"></canvas> -->
-
-	<!-- <div id="mouse-cursor" class="mouse-cursor"></div> -->
 	<div class="wrapper">
 		<canvas id='nokey' class="canvas"></canvas>
 		<!-- актуализирован 05/02/22 20.56 -->
@@ -174,12 +171,24 @@
 												</div>
 											</div>
 										</div>
-										<!-- Если нужна пагинация -->
-										<div class="swiper-pagination"></div>
-										<!-- Если нужен скролбар -->
-										<div class="swiper-scrollbar"></div>
-									</div>
+										<div class="portfolio__navigation">
 
+										</div>
+										<botton type="botton" class="swiper-button-prev">
+											<svg viewBox="0 0 129 129" enable-background="new 0 0 129 129">
+												<g>
+													<path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" />
+												</g>
+											</svg>
+										</botton>
+										<botton type="botton" class="swiper-button-next">
+											<svg viewBox="0 0 129 129" enable-background="new 0 0 129 129">
+												<g>
+													<path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
+												</g>
+											</svg>
+										</botton>
+									</div>
 								</div>
 							</section>
 						</div>
@@ -280,53 +289,7 @@
 
 
 	</div>
-	<!-- актуализирован 06/02/22 17.12 -->
-
-	<!---------------------------------simple popup-------------------------------->
-	<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
-		</div>
-	</div>
-</div>
--->
-
-	<!---------------------------------popup with forms-------------------------------->
-	<div id="popup" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content popup__content_callback">
-				<button data-close type="button" class="popup__close popup__close_callback">
-					<svg class="close-icon" width="30" height="30" viewBox="0 0 14 14" fill="red">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 0.292893C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L12.2929 0.292893C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893Z" fill="red" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="red" />
-					</svg>
-				</button>
-				<form action="sendmail.php" data-ajax="true" method="POST" class="form popup__form form-callback">
-					<h3 class="form-callback__title">TITLE</h3>
-					<div class="form-callback__item inputs__item">
-						<input id="formName" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" data-value="Your name*" placeholder="Your name*" class="form-callback__input input _text _req">
-					</div>
-					<div class="form-callback__item inputs__item">
-						<input id="formEmail" autocomplete="off" type="text" name="form[email]" data-required="email" data-error="Incorrect e-mail address" placeholder="example@ex.com" data-value="E-mail*" class="form-callback__input input _email _req">
-					</div>
-					<div class="form-callback__item inputs__item">
-						<input id="formPhone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="" data-value="Your phone*" class="form-callback__input input _phone _req">
-					</div>
-					<div class="form-callback__item inputs__item">
-						<textarea id="имя блока-textarea" autocomplete="off" name="form[textarea]" data-error="Please write your message" placeholder="" data-value="Message*" class="имя блока__textarea _req"></textarea>
-					</div>
-					<button type="submit" class="form__submit form-callback__submit btn">SUBMIT</button>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!---------------------------------popup whis forms-------------------------------->
-
-	<script src="js/app.min.js?_v=20220517142210"></script>
+	<script src="js/app.min.js?_v=20220518133050"></script>
 </body>
 
 </html>

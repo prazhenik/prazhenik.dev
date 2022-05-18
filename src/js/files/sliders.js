@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, {Pagination, Mousewheel } from 'swiper';
+import Swiper, { Pagination, Mousewheel, Navigation } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -33,7 +33,7 @@ function initSliders() {
 		new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Pagination, Mousewheel],
+			modules: [Navigation , Mousewheel],
 			slidesPerView: 1,
 			observer: true,
 			observeParents: true,
@@ -58,11 +58,11 @@ function initSliders() {
 
 			// Пагинация
 
-			pagination: {
+			/*pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-
+			*/
 
 			// Скроллбар
 			/*
@@ -73,10 +73,10 @@ function initSliders() {
 			*/
 
 			// Кнопки "влево/вправо"
-			// navigation: {
-			// 	prevEl: '.swiper-button-prev',
-			// 	nextEl: '.swiper-button-next',
-			// },
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
 
 			// Брейкпоинты
 

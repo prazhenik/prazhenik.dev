@@ -219,7 +219,7 @@ function homeClass() {
 
 //-------------------------------------
 
-var canvas = document.getElementById('nokey'),
+/*var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
 	ctx = canvas.getContext('2d');
@@ -504,7 +504,7 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-
+*/
 
 //=====================================================
 
