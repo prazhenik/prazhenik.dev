@@ -347,6 +347,12 @@
 	text-align: right;
 }
 
+.swiper-button-disabled {
+	//opacity: 0;
+	pointer-events: none;
+	transition: fill .2s ease;
+	fill: rgba(80,80,80,1);
+}
 
 .Skills {
 }

@@ -33,12 +33,12 @@ function initSliders() {
 		new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation , Mousewheel],
+			modules: [Navigation],
 			slidesPerView: 1,
 			observer: true,
 			observeParents: true,
 			spaceBetween: 30,
-			loop: true,
+			//loop: true,
 			//autoHeight: true,
 			speed: 800,
 			//touchRatio: 0,

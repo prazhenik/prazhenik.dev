@@ -1339,6 +1339,14 @@ canvas {
   text-align: right;
 }
 
+.swiper-button-disabled {
+  pointer-events: none;
+  -webkit-transition: fill 0.2s ease;
+  -o-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
+  fill: rgb(80, 80, 80);
+}
+
 .section {
   height: 100%;
   overflow: hidden;

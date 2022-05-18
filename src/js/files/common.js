@@ -521,7 +521,7 @@ console.log(swiperBotton);
 
 
 for (let i = 0; i < swiperBotton.length; i++) {
-	swiperBotton[i].addEventListener('', e => {
+	swiperBotton[i].addEventListener('click', e => {
 		if (e.target.parentElement.classList.contains('swiper-button')) {
 			console.log(e.target);
 			e.target.parentElement.classList.add('hello')
