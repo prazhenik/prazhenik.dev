@@ -506,14 +506,58 @@ canvas.addEventListener('mousemove', function (e) {
 
 */
 
-//=====================================================
+//==================languege menu style===================================
 
 document.querySelector('.lang__list').addEventListener('click', e => {
 	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
 	e.target.parentElement.classList.add('_current')
 })
 
+//==================slider navi style===================================
 
+const swiperBottons = document.querySelectorAll('.swiper-button')
+const swiperBotton = document.getElementsByClassName('swiper-button')
+console.log(swiperBotton);
+
+
+for (let i = 0; i < swiperBotton.length; i++) {
+	swiperBotton[i].addEventListener('', e => {
+		if (e.target.parentElement.classList.contains('swiper-button')) {
+			console.log(e.target);
+			e.target.parentElement.classList.add('hello')
+			addStyle()
+			setTimeout(deleteStyle, 800)
+			function addStyle() {
+				e.target.parentElement.style.background = 'rgba(255,255,255,1)';
+				e.target.parentElement.style.fill = 'rgba(40,120,190,1)';
+				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'none'
+			}
+			function deleteStyle() {
+				e.target.parentElement.style.background = '';
+				e.target.parentElement.style.fill = '';
+				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'auto'
+			}
+		} else {
+			e.preventDefault
+		}
+	})
+}
+
+
+
+
+
+
+
+// swiperBotton.forEach(item => item.addEventListener('click', e => {
+// 	console.log(e.target);
+// }))
+
+// swiperBottons.addEventListener('click', e => {
+// 	console.log(e);
+// 	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
+// 	e.target.parentElement.classList.add('_current')
+// })
 
 
 

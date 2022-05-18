@@ -7726,6 +7726,7 @@
                 observer: true,
                 observeParents: true,
                 spaceBetween: 30,
+                loop: true,
                 speed: 800,
                 navigation: {
                     prevEl: ".swiper-button-prev",
@@ -10682,6 +10683,27 @@ PERFORMANCE OF THIS SOFTWARE.
         document.querySelector(".lang__list").addEventListener("click", (e => {
             document.querySelectorAll(".lang__item").forEach((item => item.classList.remove("_current")));
             e.target.parentElement.classList.add("_current");
+        }));
+        document.querySelectorAll(".swiper-button");
+        const swiperBotton = document.getElementsByClassName("swiper-button");
+        console.log(swiperBotton);
+        for (let i = 0; i < swiperBotton.length; i++) swiperBotton[i].addEventListener("", (e => {
+            if (e.target.parentElement.classList.contains("swiper-button")) {
+                console.log(e.target);
+                e.target.parentElement.classList.add("hello");
+                addStyle();
+                setTimeout(deleteStyle, 800);
+                function addStyle() {
+                    e.target.parentElement.style.background = "rgba(255,255,255,1)";
+                    e.target.parentElement.style.fill = "rgba(40,120,190,1)";
+                    document.querySelector(".portfolio-item__gallery").style.pointerEvents = "none";
+                }
+                function deleteStyle() {
+                    e.target.parentElement.style.background = "";
+                    e.target.parentElement.style.fill = "";
+                    document.querySelector(".portfolio-item__gallery").style.pointerEvents = "auto";
+                }
+            } else e.preventDefault;
         }));
         window["FLS"] = true;
         isWebp();

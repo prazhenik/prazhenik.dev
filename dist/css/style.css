@@ -1258,10 +1258,6 @@ canvas {
           animation: flashing 1s infinite;
 }
 
-.portfolio {
-  position: relative;
-}
-
 .portfolio-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1329,20 +1325,18 @@ canvas {
   margin: 0rem 0rem 0.625rem 0rem;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  position: absolute;
-  top: 50%;
-  width: 3.125rem;
-  fill: rgb(40, 120, 190);
+.swiper-button {
+  display: none;
 }
 
 .swiper-button-prev {
-  left: 0;
+  left: -1px;
+  text-align: left;
 }
 
 .swiper-button-next {
-  right: 0;
+  right: -1px;
+  text-align: right;
 }
 
 .section {
@@ -1363,7 +1357,7 @@ canvas {
   height: calc(100% - 55px);
   padding: 1.875rem 0rem;
   overflow-y: auto;
-  max-width: 75rem;
+  max-width: 68.75rem;
 }
 
 .contacts {
@@ -2540,6 +2534,64 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   pointer-events: none;
 }
 
+@media (min-width: 36.06125em) {
+  .swiper-button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    fill: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-transition: background 0.2s, fill 0.2s;
+    -o-transition: background 0.2s, fill 0.2s;
+    transition: background 0.2s, fill 0.2s;
+  }
+
+@supports (height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem )) {
+    .swiper-button {
+      height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem );
+    }
+}
+
+@supports not (height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem )) {
+    .swiper-button {
+      height: calc(
+			3.75rem + 1.25 * (100vw - 62rem) / 58
+		);
+    }
+}
+
+@supports (height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem )) {
+    .swiper-button svg {
+      height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem );
+    }
+}
+
+@supports not (height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem )) {
+    .swiper-button svg {
+      height: calc(
+			2.5rem + 1.25 * (100vw - 62rem) / 58
+		);
+    }
+}
+
+  .swiper-button path {
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 36.06125em) and (any-hover: hover) {
+  .swiper-button:hover {
+    background: rgb(255, 255, 255);
+    fill: rgb(40, 120, 190);
+    -webkit-transition: background 0.2s, fill 0.2s;
+    -o-transition: background 0.2s, fill 0.2s;
+    transition: background 0.2s, fill 0.2s;
+  }
+}
+
 @media (min-width: 61.99875em) {
 @supports (width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem )) {
     .header__logo img {
@@ -2704,7 +2756,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .section__content {
     height: 100%;
-    padding: 0 3.125rem;
+    padding: 0;
   }
 
   .section__title {

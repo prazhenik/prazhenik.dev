@@ -221,7 +221,7 @@
 }
 
 .portfolio {
-	position: relative;
+	//position: relative;
 	// .portfolio__item
 	&__item {
 	}
@@ -305,24 +305,48 @@
 }
 
 
-.swiper-button-prev,
-.swiper-button-next {
+
+
+.swiper-button {
+	display: none;
+@media (min-width:$mobileSmall){
+	display: block;
 	position: absolute;
 	top: 50%;
-	width: rem(50);
-	fill: $backgroundColor4;
+	@include adaptiveValue("height",80 ,60, 1920,992,1 );
+	fill: $textColor3;
+	cursor: pointer;
+	padding: 10px;
+	opacity: 1;
+	background: rgba(0,0,0,0.7);
+	transition: background .2s, fill .2s;
 	& svg {
-
+		@include adaptiveValue("height",60 ,40, 1920,992,1 );
+	} 
+	@media (any-hover: hover){
+		&:hover{
+			background: rgba(255,255,255,1);
+			fill: $backgroundColor4;
+			transition: background .2s, fill .2s;
+		}
 	}
+	& path {
+		pointer-events: none;
+	}
+}
 }
 
 .swiper-button-prev {
-	left: 0;
+	
+	left: -1px;
+	text-align: left;
 }
 
 .swiper-button-next {
-	right: 0;
+	right: -1px;
+	text-align: right;
 }
+
 
 .Skills {
 }
@@ -355,11 +379,10 @@
 		height: calc(100% - 55px); //высота section__title с отступами
 		padding:  rem(30) rem(0);
 		overflow-y: auto;
-		max-width: rem(1200);
-
+		max-width: rem(1100);
 		@media (min-width:$tablet){
 			height: 100%;
-			padding: 0 rem(50);
+			padding: 0;
 		}
 	}
 	&__title {
