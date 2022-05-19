@@ -218,7 +218,7 @@ function homeClass() {
 
 
 //-------------------------------------
-
+/*
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -504,7 +504,7 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-
+*/
 //==================languege menu style===================================
 
 document.querySelector('.lang__list').addEventListener('click', e => {
@@ -522,8 +522,6 @@ console.log(swiperBotton);
 for (let i = 0; i < swiperBotton.length; i++) {
 	swiperBotton[i].addEventListener('click', e => {
 		if (e.target.parentElement.classList.contains('swiper-button') && !e.target.parentElement.classList.contains('swiper-button-disabled')) {
-			console.log(e.target);
-			e.target.parentElement.classList.add('hello')
 			addStyle()
 			setTimeout(deleteStyle, 800)
 			function addStyle() {
@@ -537,26 +535,35 @@ for (let i = 0; i < swiperBotton.length; i++) {
 				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'auto'
 			}
 		} else {
-			e.preventDefault
+			e.preventDefault()
 		}
+	})
+}
+
+//==================contacts__link style===================================
+
+const contactsLinks = document.querySelectorAll('.contacts__link img')
+
+for (let i = 0; i < contactsLinks.length; i++) {
+	contactsLinks[i].addEventListener('click', e => {
+		e.preventDefault()
+		addStyle()
+		setTimeout(deleteStyle, 300)
+		
+		function addStyle() {
+			e.target.style.filter = 'saturate(100%)';
+		}
+		function deleteStyle() {
+			window.location = e.target.closest('a').href;
+			e.target.style.filter = '';
+		}
+
 	})
 }
 
 
 
 
-
-
-
-// swiperBotton.forEach(item => item.addEventListener('click', e => {
-// 	console.log(e.target);
-// }))
-
-// swiperBottons.addEventListener('click', e => {
-// 	console.log(e);
-// 	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
-// 	e.target.parentElement.classList.add('_current')
-// })
 
 
 

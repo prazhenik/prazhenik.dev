@@ -1326,7 +1326,52 @@ canvas {
 }
 
 .swiper-button {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  fill: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: background 0.2s, fill 0.2s;
+  -o-transition: background 0.2s, fill 0.2s;
+  transition: background 0.2s, fill 0.2s;
+  line-height: 0;
+}
+
+.swiper-button svg {
+  padding: 10px;
+}
+
+@supports (width: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem )) {
+  .swiper-button svg {
+    width: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem );
+  }
+}
+
+@supports not (width: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem )) {
+  .swiper-button svg {
+    width: calc(
+			3.125rem + 1.875 * (100vw - 17.5rem) / 102.5
+		);
+  }
+}
+
+@supports (height: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem )) {
+  .swiper-button svg {
+    height: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem );
+  }
+}
+
+@supports not (height: clamp( 3.125rem , 2.8048780488rem  +  1.8292682927vw , 5rem )) {
+  .swiper-button svg {
+    height: calc(
+			3.125rem + 1.875 * (100vw - 17.5rem) / 102.5
+		);
+  }
+}
+
+.swiper-button path {
+  pointer-events: none;
 }
 
 .swiper-button-prev {
@@ -2541,64 +2586,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   pointer-events: none;
 }
 
-@media (min-width: 36.06125em) {
-  .swiper-button {
-    display: block;
-    position: absolute;
-    top: 50%;
-    fill: rgb(255, 255, 255);
-    padding: 10px;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.7);
-    -webkit-transition: background 0.2s, fill 0.2s;
-    -o-transition: background 0.2s, fill 0.2s;
-    transition: background 0.2s, fill 0.2s;
-  }
-
-@supports (height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem )) {
-    .swiper-button {
-      height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem );
-    }
-}
-
-@supports not (height: clamp( 3.75rem , 2.4137931034rem  +  2.1551724138vw , 5rem )) {
-    .swiper-button {
-      height: calc(
-			3.75rem + 1.25 * (100vw - 62rem) / 58
-		);
-    }
-}
-
-@supports (height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem )) {
-    .swiper-button svg {
-      height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem );
-    }
-}
-
-@supports not (height: clamp( 2.5rem , 1.1637931034rem  +  2.1551724138vw , 3.75rem )) {
-    .swiper-button svg {
-      height: calc(
-			2.5rem + 1.25 * (100vw - 62rem) / 58
-		);
-    }
-}
-
-  .swiper-button path {
-    pointer-events: none;
-  }
-}
-
-@media (min-width: 36.06125em) and (any-hover: hover) {
-  .swiper-button:not(.swiper-button-disabled):hover {
-    cursor: pointer;
-    background: rgb(255, 255, 255);
-    fill: rgb(40, 120, 190);
-    -webkit-transition: background 0.2s, fill 0.2s;
-    -o-transition: background 0.2s, fill 0.2s;
-    transition: background 0.2s, fill 0.2s;
-  }
-}
-
 @media (min-width: 61.99875em) {
 @supports (width: clamp( 4.375rem , 2.3623110151rem  +  3.2397408207vw , 6.25rem )) {
     .header__logo img {
@@ -2958,6 +2945,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .lang__link:hover {
     color: rgb(200, 200, 200);
+  }
+
+  .swiper-button:not(.swiper-button-disabled):hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    fill: rgb(40, 120, 190);
+    -webkit-transition: background 0.2s, fill 0.2s;
+    -o-transition: background 0.2s, fill 0.2s;
+    transition: background 0.2s, fill 0.2s;
   }
 
   .contacts__link:hover {

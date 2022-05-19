@@ -308,20 +308,18 @@
 
 
 .swiper-button {
-	display: none;
-@media (min-width:$mobileSmall){
 	display: block;
 	position: absolute;
 	top: 50%;
-	@include adaptiveValue("height",80 ,60, 1920,992,1 );
-	fill: $textColor3;
-	
-	padding: 10px;
 	opacity: 1;
+	fill: $textColor3;
 	background: rgba(0,0,0,0.7);
 	transition: background .2s, fill .2s;
+	line-height: 0;
 	& svg {
-		@include adaptiveValue("height",60 ,40, 1920,992,1 );
+		@include adaptiveValue("width",80 ,50);
+		@include adaptiveValue("height",80 ,50);
+		padding: 10px;
 	} 
 	@media (any-hover: hover){
 		&:not(.swiper-button-disabled):hover{
@@ -335,7 +333,7 @@
 		pointer-events: none;
 	}
 }
-}
+
 
 .swiper-button-prev {
 	
@@ -351,6 +349,7 @@
 .swiper-button-disabled {
 	transition: fill .2s ease;
 	fill: rgba(80,80,80,1);
+
 }
 
 .Skills {
