@@ -27,28 +27,29 @@ $letterSpacing: 0.02;
 $mainTextColor: rgba(200, 200, 200, 1); // Цвет шрифта по умолчанию
 $textColor2: rgba(100, 100, 100, 1); //menu
 $textColor3: rgba(255, 255, 255, 1); //menu active
-$textColor4: rgba(40, 120, 190, 1);
+$textColor4: rgba(10, 250, 215, 1);
 $textColor5: rgba(150, 150, 150, 1);
+$textColor6: rgba(250, 30, 85, 1);
 //$textColor5: ;
 
 // цвета фонов
-$mainBackgroundColor: rgba(0, 0, 0, 1); //Цвет фона по умолчанию
+$mainBackgroundColor: rgba(0, 10, 40, 1); //Цвет фона по умолчанию
 $backgroundColor2: rgba(0, 0, 0, 0.7); // overlays _lock
 $backgroundColor3: rgba(0, 0, 0, 0.3);
-$backgroundColor4: rgba(40, 120, 190, 1);
+$backgroundColor4: rgba(10, 250, 215, 1);
 // $backgroundColor5: rgba(220, 220, 220, 0.3);
-// $backgroundColor6: rgba(0, 160, 255, 1);
+$backgroundColor6: rgba(250, 30, 85, 1);
 
 // цвета границ
 $mainBorderColor: rgba(255, 255, 255, 0.08); //Цвет границ по умолчанию
-//$borderColor2: rgba(255, 255, 255, .08);
+$borderColor2: rgba(250, 30, 85, 1);
 // $borderColor3: rgba(0, 0, 0, 1);
 // $borderColor4: rgba(0, 160, 255, 1);
 //$borderColor5: ;
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
-$minWidth: 280;
+$minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
