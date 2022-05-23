@@ -218,7 +218,7 @@ function homeClass() {
 
 
 //-------------------------------------
-/*
+
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -247,12 +247,12 @@ var ball = {
 	phase: 0
 },
 	ball_color = {
-		r: 200,
-		g: 200,
-		b: 200
+		r: 10,
+		g: 250,
+		b: 215
 	},
 
-	R = 1,
+	R = 1.2,
 	balls = [],
 	alpha_f = 0.01,
 	alpha_phase = 10,
@@ -504,13 +504,13 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-*/
+
 //==================languege menu style===================================
 
-document.querySelector('.lang__list').addEventListener('click', e => {
-	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
-	e.target.parentElement.classList.add('_current')
-})
+// document.querySelector('.lang__list').addEventListener('click', e => {
+// 	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
+// 	e.target.parentElement.classList.add('_current')
+// })
 
 //==================slider navi style===================================
 
@@ -549,7 +549,7 @@ for (let i = 0; i < contactsLinks.length; i++) {
 		e.preventDefault()
 		addStyle()
 		setTimeout(deleteStyle, 300)
-		
+
 		function addStyle() {
 			e.target.style.filter = 'saturate(100%)';
 		}
@@ -560,10 +560,6 @@ for (let i = 0; i < contactsLinks.length; i++) {
 
 	})
 }
-
-
-
-
 
 
 

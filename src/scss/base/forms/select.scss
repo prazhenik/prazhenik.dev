@@ -5,39 +5,46 @@
 	// .select__body
 	&__body {
 		position: relative;
+		font-family: "MuseoModerno";
+		font-weight: 300;
+		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
 	}
 	// .select__title
 	&__title {
 		color: inherit;
-		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		text-align: center;
 		cursor: pointer;
-		width: 100%;
-		border-radius: 4px;
+		min-width: rem(50);
+
 	}
 	// .select__value
 	&__value {
+		position: relative;
 		display: flex;
 		align-items: center;
+		color: $textColor3;
 		height: rem(30);
-		padding: 0 rem(15);
-		gap: rem(10);
 		> * {
 			flex: 1 1 auto;
 		}
-		&:after {
+		&:after,
+		&::before {
 			content: "";
-			align-self: stretch;
-			flex: 0 0 10px;
-			transition: all 0.3s ease 0s;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			._select-open & {
-				transform: rotate(-180deg);
-			}
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50% );
+			width: 1px;
+			height: 20px;
+			background: $backgroundColor6;
 		}
+		&::before {
+			left: 0;
+		}
+	
+		&:after{
+			right: 0;
+		}
+
 		&._select-pseudo-label {
 			&::before {
 				content: attr(data-pseudo-label);
@@ -56,17 +63,11 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		color: $textColor5;
 		position: absolute;
-		top: 29px;
-		border-radius: 0 0 4px 4px;
+		top: 33px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
-		border-top: 0;
-		border: 1px solid #d9d9d9;
-		border-top: 0;
-		padding: 10px 0px 5px 0px;
 	}
 	// .select__scroll
 	&__scroll {
@@ -84,16 +85,18 @@
 	// .select__option
 	&__option {
 		width: 100%;
-		text-align: left;
+		text-align: center;
 		cursor: pointer;
-		padding: 5px 15px;
+		padding: 5px 0;
 		color: inherit;
+		transition: color .2s ease;
 		&._select-selected {
-			background-color: #eee;
+			
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				color: $mainTextColor;
+				transition: color .2s ease;
 			}
 		}
 	}

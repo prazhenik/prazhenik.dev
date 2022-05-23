@@ -26,7 +26,7 @@ function removeActiveMenu() {
 //открываем и закрываем меню по клику на иконку бургера
 if (menuButton != null) {
 	delay = 500;
-	//анимация при наведении на кнопку
+	/*//анимация при наведении на кнопку
 	menuButton.addEventListener("mouseover", function (e) {
 		if (iconMenu.classList.contains("_active")) {
 			iconMenu.classList.remove("_hover");
@@ -37,7 +37,7 @@ if (menuButton != null) {
 	//анимация при уходе с кнопки
 	menuButton.addEventListener("mouseout", function (e) {
 		iconMenu.classList.remove("_hover");
-	});
+	});*/
 
 
 	//анимация при клике

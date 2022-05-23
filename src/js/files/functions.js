@@ -309,7 +309,6 @@ export function spollers() {
 export function tabs() {
 	const tabs = document.querySelectorAll('[data-tabs]');
 	let tabsActiveHash = [];
-
 	if (tabs.length > 0) {
 		const hash = getHash();
 		if (hash && hash.startsWith('tab-')) {
@@ -334,6 +333,8 @@ export function tabs() {
 			});
 		}
 	}
+
+	
 	// Установка позиций заголовков
 	function setTitlePosition(tabsMediaArray, matchMedia) {
 		tabsMediaArray.forEach(tabsMediaItem => {
@@ -342,8 +343,10 @@ export function tabs() {
 			let tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
 			let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
 			let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
+
 			tabsTitleItems = Array.from(tabsTitleItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
 			tabsContentItems = Array.from(tabsContentItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
+
 			tabsContentItems.forEach((tabsContentItem, index) => {
 				if (matchMedia.matches) {
 					tabsContent.append(tabsTitleItems[index]);
@@ -369,7 +372,7 @@ export function tabs() {
 		}
 		if (tabsContent.length) {
 			tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
-			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
+			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock == item.classList.contains('tabs__title'));
 			tabsContent.forEach((tabsContentItem, index) => {
 				tabsTitles[index].setAttribute('data-tabs-title', '');
 				tabsContentItem.setAttribute('data-tabs-item', '');

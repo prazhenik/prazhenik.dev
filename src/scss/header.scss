@@ -33,10 +33,10 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		//column-gap: rem(60);
+		column-gap: rem(60);
 		height: rem(120);
 		@media (max-width: $tablet) {
-			column-gap: rem(10);
+			column-gap: rem(20);
 			height: rem(60);
 		}
 	}
@@ -63,10 +63,10 @@
 }
 
 .lang {
-	flex: 0 1 auto;
+	//flex: 0 1 auto;
 	// .lang__list
 	&__list {
-		display: flex;
+		//display: flex;
 	}
 	// .lang__item
 	&__item {
@@ -74,11 +74,15 @@
 		font-weight: 300;
 		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
 		color: $textColor5;
+
 		&:not(:last-child){
-			border-right: 1px solid $textColor2;
+			//border-right: 1px solid $borderColor2;
 		}
 		&._current{
+			overflow: hidden;
 			color: $mainTextColor;
+			font-weight: 500;
+			border-bottom: 1px solid $borderColor2;
 		}
 		// .lang__item_ua
 		&_ua {

@@ -24,7 +24,7 @@ footer {
 		flex-direction: column;
 		position: relative;
 		align-items: flex-end;
-		text-align: right;
+		text-align: left;
 		justify-content: center;
 		height: rem(120);
 		z-index: 1;
@@ -41,11 +41,12 @@ footer {
 	&__slogan {
 		font-family: "MuseoModerno";
 		font-weight: 300;
-		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
+		@include adaptiveValue("font-size", 18, 16, 1920, 994, 1);
 		padding-bottom: rem(20);
 		line-height: 1;
 		& span {
 			color: $textColor4;
+			@include adaptiveValue("font-size", 26, 20, 1200, 576, 1);
 		}
 		@media (max-width:$tablet){
 			padding-bottom: rem(5);

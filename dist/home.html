@@ -11,6 +11,7 @@
 	<meta name="keywords" content="website frontend developer webdesign">
 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 	<link rel="canonical" href="https://prazhenik.dev/">
+	<meta name="google-site-verification" content="ceIuK8b_niL40PqUN3sczZt-JByS6rhAuLy6Mbmv3xI" />
 	<!-- OG Tags -->
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
@@ -28,7 +29,7 @@
 	<meta name="theme-color" content="#000B25"> <!-- theme color -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220522210527">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220523162428">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -47,17 +48,11 @@
 						<a href="/home.html"><img src="img/logo3.svg" alt=""></a>
 					</div>
 					<div class="header__lang lang">
-						<ul id="lang__list" class="lang__list">
-							<li class="lang__item lang__item_ua">
-								<a class="lang__link lang__link_ua " href="#">ua</a>
-							</li>
-							<li class="lang__item lang__item_ru">
-								<a class="lang__link lang__link_ru" href="#">ru</a>
-							</li>
-							<li class="lang__item lang__item_eng _current">
-								<a class="lang__link lang__link_eng " href="#">eng</a>
-							</li>
-						</ul>
+						<select name="form[lang]" class="lang__form">
+							<option value="ua" selected>ua</option>
+							<option value="ru">ru</option>
+							<option value="en">en</option>
+						</select>
 					</div>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
@@ -71,21 +66,24 @@
 						<div class="tabs__menu menu">
 							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
 								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
-								<button id="aboutMe" type="button" class="tabs__title menu__link">About me</button>
+								<button id="aboutMe" type="button" class="tabs__title menu__link"><a href="#"></a> About me</button>
 								<button id="portfolio" type="button" class="tabs__title menu__link">Porftfolio</button>
 								<button id="skills" type="button" class="tabs__title menu__link">Skills</button>
 								<button id="contacts" type="button" class="tabs__title menu__link">Contacts</button>
 							</nav>
+
 						</div>
 					</div>
 					<div data-tabs-body class="tabs__content">
-						<div class="tabs__body">
+						<div class="tabs__body _active-content-tab">
 							<section class="section">
 								<div class="section__content home">
-									<h1 class="home__maintitle">
-										websites for <span>people</span>
+									<h1 class="home__main-title">
+										websites <br> for <span>people</span>
 									</h1>
-									<button type="button menu__link">get start</button>
+									<button type="button" class="home__button menu__link">
+										get start
+									</button>
 								</div>
 							</section>
 						</div>
@@ -301,7 +299,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20220522210527"></script>
+	<script src="js/app.min.js?_v=20220523162428"></script>
 </body>
 
 </html>
