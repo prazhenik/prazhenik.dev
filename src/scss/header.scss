@@ -6,26 +6,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 5;
 
-	@media (max-width:$tablet){
-		&:before{
-			content:'';
-			position: absolute;
-			width: 100%;
-			top: rem(-60);
-			left: 0;
-			display: block;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 1) 100%);
-			backdrop-filter: blur(4px);
-			height: rem(60);
-			transition: top 0.15s ease;
-		}
-		&._header-scroll::before {
-			top: rem(0);
-			transition: top 0.15s ease;
-		}
-	}
 	&__container {
 	}
 
@@ -33,11 +14,9 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		column-gap: rem(60);
-		height: rem(120);
+		height: rem(60);
 		@media (max-width: $tablet) {
-			column-gap: rem(20);
-			height: rem(60);
+
 		}
 	}
 
@@ -73,7 +52,7 @@
 		font-family: "MuseoModerno";
 		font-weight: 300;
 		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
-		color: $textColor5;
+		color: $textColor2;
 
 		&:not(:last-child){
 			//border-right: 1px solid $borderColor2;

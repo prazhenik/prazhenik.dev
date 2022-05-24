@@ -24,12 +24,13 @@
 	<meta property="og:image" content="img/preview.jpg">
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="article:modified_time" content="2022-2-03T08:26:49+00:00">
+	<meta name="googlebot" content="notranslate" />
 	<!-- Styling -->
 	<meta name="msapplication-TileColor" content="#71a4f1">
 	<meta name="theme-color" content="#000B25"> <!-- theme color -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220523162428">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220524151956">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -47,238 +48,180 @@
 					<div class="header__logo">
 						<a href="/home.html"><img src="img/logo3.svg" alt=""></a>
 					</div>
-					<div class="header__lang lang">
-						<select name="form[lang]" class="lang__form">
-							<option value="ua" selected>ua</option>
-							<option value="ru">ru</option>
-							<option value="en">en</option>
-						</select>
-					</div>
+
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 			</div>
 		</header>
 
 		<main class="page">
-			<div class="page__container">
-				<div data-tabs class="page__content">
-					<div class="tabs">
+			<div data-tabs class="page__content">
+				<div class="page__tabs tabs">
+					<aside class="page__navigation">
+						<div class="page__lang lang">
+							<select name="form[lang]" class="lang__form">
+								<option value="ua" selected>ua</option>
+								<option value="ru">ru</option>
+								<option value="en">en</option>
+							</select>
+						</div>
 						<div class="tabs__menu menu">
 							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
-								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">Home</button>
-								<button id="aboutMe" type="button" class="tabs__title menu__link"><a href="#"></a> About me</button>
-								<button id="portfolio" type="button" class="tabs__title menu__link">Porftfolio</button>
-								<button id="skills" type="button" class="tabs__title menu__link">Skills</button>
-								<button id="contacts" type="button" class="tabs__title menu__link">Contacts</button>
+								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">
+									<span>
+										Home
+									</span>
+								</button>
+								<button id="aboutMe" type="button" class="tabs__title menu__link"><a href="#"></a>
+									<span>
+										About me
+									</span>
+								</button>
+								<button id="portfolio" type="button" class="tabs__title menu__link">
+									<span>
+										Porftfolio
+									</span>
+								</button>
+								<button id="skills" type="button" class="tabs__title menu__link">
+									<span>
+										Skills
+									</span>
+								</button>
+								<button id="contacts" type="button" class="tabs__title menu__link">
+									<span>
+										Contacts
+									</span>
+								</button>
 							</nav>
-
 						</div>
-					</div>
-					<div data-tabs-body class="tabs__content">
-						<div class="tabs__body _active-content-tab">
-							<section class="section">
+					</aside>
+				</div>
+				<div data-tabs-body class="tabs__content tabs">
+					<div class="tabs__body _active-content-tab">
+						<section class="section">
+							<div class="section__container">
 								<div class="section__content home">
-									<h1 class="home__main-title">
-										websites <br> for <span>people</span>
-									</h1>
+									<div class="home__text">
+										<h1 class="home__title">
+											Hi, I’m <span>Illia Prazhenik</span>
+										</h1>
+										<p class="home__subtitle">
+											I love to create reliable websites that are easy to use for the average user.
+										</p>
+									</div>
 									<button type="button" class="home__button menu__link">
-										get start
+										my works
 									</button>
 								</div>
-							</section>
-						</div>
-						<div class="tabs__body">
-							<section class="section">
-								<h2 class="section__title"></h2>
-								<div class="section__content about">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
-									soluta
-									maiores, possimus nemo expedita at. Asperiores, hidfc.
-								</div>
-							</section>
-						</div>
-						<div class="tabs__body">
-							<section class="section">
-								<h2 class="section__title"></h2>
-								<div class="section__content portfolio">
-									<!-- Оболочка слайдера -->
-									<div class="portfolio__slider swiper">
-										<!-- Двигающееся часть слайдера -->
-										<div class="portfolio__wrapper swiper-wrapper">
-											<!-- Слайд -->
-											<div class="portfolio__slide swiper-slide">
-												<div class="portfolio__item portfolio-item">
-													<a class="portfolio-item__header portfolio-item-header" href="#">
-														<span class="portfolio-item-header__date">11/04/2022</span>
-														<p class="portfolio-item-header__label">virtual zone</p>
+							</div>
+						</section>
+					</div>
+					<div class="tabs__body">
+						<section class="section">
+							<h2 class="section__title"></h2>
+							<div class="section__content about">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+								soluta
+								maiores, possimus nemo expedita at. Asperiores, hidfc.
+							</div>
+						</section>
+					</div>
+					<div class="tabs__body">
+						<section class="section">
+							<h2 class="section__title"></h2>
+							<div class="section__content portfolio">
+								<!-- Оболочка слайдера -->
+								<div class="portfolio__slider swiper">
+									<!-- Двигающееся часть слайдера -->
+									<div class="portfolio__wrapper swiper-wrapper">
+										<!-- Слайд -->
+										<div class="portfolio__slide swiper-slide">
+											<div class="portfolio__item portfolio-item">
+												<div data-gallery class="portfolio-item__gallery gallery">
+													<a href="img/screenshots/v-zone_full.png" class="gallery__image">
+														<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
 													</a>
-													<div data-gallery class="portfolio-item__gallery gallery">
-														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
-														</a>
-													</div>
-													<div class="portfolio-item__text portfolio-item-text">
-														<p class="portfolio-item-text__about">
-															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
-															simply
-															random text. It has roots in a piece of classical Latin
-														</p>
-														<p class="portfolio-item-text__tools">
-															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-															WooCommerce
-														</p>
-													</div>
-												</div>
-											</div>
-											<!-- Слайд -->
-											<div class="portfolio__slide swiper-slide">
-												<div class="portfolio__item portfolio-item">
-													<a class="portfolio-item__header portfolio-item-header" href="#">
-														<span class="portfolio-item-header__date">11/04/2022</span>
-														<p class="portfolio-item-header__label">virtual zone</p>
-													</a>
-													<div data-gallery class="portfolio-item__gallery gallery">
-														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
-														</a>
-													</div>
-													<div class="portfolio-item__text portfolio-item-text">
-														<p class="portfolio-item-text__about">
-															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
-															simply
-															random text. It has roots in a piece of classical Latin
-														</p>
-														<p class="portfolio-item-text__tools">
-															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-															WooCommerce
-														</p>
-													</div>
-												</div>
-											</div>
-											<!-- Слайд -->
-											<div class="portfolio__slide swiper-slide">
-												<div class="portfolio__item portfolio-item">
-													<a class="portfolio-item__header portfolio-item-header" href="#">
-														<span class="portfolio-item-header__date">11/04/2022</span>
-														<p class="portfolio-item-header__label">virtual zone</p>
-													</a>
-													<div data-gallery class="portfolio-item__gallery gallery">
-														<a href="img/screenshots/v-zone_full.png" class="gallery__image">
-															<picture><source srcset="img/screenshots/v-zone_preview.webp" type="image/webp"><img alt="virtual-zone" src="img/screenshots/v-zone_preview.jpg" class="portfolio-item-gallery__preview gallery__preview"></picture>
-														</a>
-													</div>
-													<div class="portfolio-item__text portfolio-item-text">
-														<p class="portfolio-item-text__about">
-															<span>About site: </span>Contrary to popular belief, Lorem Ipsum is not
-															simply
-															random text. It has roots in a piece of classical Latin
-														</p>
-														<p class="portfolio-item-text__tools">
-															<span>Tools: </span>SCSS, JS, GULP, PHP, MySQL, WORDPRESS + REDUX +
-															WooCommerce
-														</p>
-													</div>
 												</div>
 											</div>
 										</div>
-										<div class="portfolio__navigation">
-
-										</div>
-										<botton type="botton" class="swiper-button swiper-button-prev">
-											<svg viewBox="15 5 129 129" enable-background="new 0 0 129 129">
-												<g>
-													<path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" />
-												</g>
-											</svg>
-										</botton>
-										<botton type="botton" class="swiper-button swiper-button-next">
-											<svg viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-												<g>
-													<path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
-												</g>
-											</svg>
-										</botton>
 									</div>
 								</div>
-							</section>
-						</div>
-						<div class="tabs__body">
-							<section class="section">
-								<h2 class="section__title"></h2>
-								<div class="section__content skills">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
-									soluta
-									maiores, possimus nemo expedita a
+							</div>
+						</section>
+					</div>
+					<div class="tabs__body">
+						<section class="section">
+							<h2 class="section__title"></h2>
+							<div class="section__content skills">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+								soluta
+								maiores, possimus nemo expedita a
+							</div>
+						</section>
+					</div>
+					<div class="tabs__body">
+						<section class="section">
+							<h2 class="section__title"></h2>
+							<div class="section__content contacts">
+								<div class="contacts__block contacts__block_location">
+									<h3 class="contacts__label">location</h3>
+									<ul class="contacts__list contacts__list_location">
+										<li class="contacts__link">
+											<div class="contacts__item">Kyiv/UKR - Budva/MNG</div>
+										</li>
+										<li class="contacts__link">
+											<a class="contacts__item" href="tel:+380680971971">+38 068 0 971 971</a>
+										</li>
+									</ul>
 								</div>
-							</section>
-						</div>
-						<div class="tabs__body">
-							<section class="section">
-								<h2 class="section__title"></h2>
-								<div class="section__content contacts">
-									<div class="contacts__block contacts__block_location">
-										<h3 class="contacts__label">location</h3>
-										<ul class="contacts__list contacts__list_location">
-											<li class="contacts__link">
-												<div class="contacts__item">Kyiv/UKR - Budva/MNG</div>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item" href="tel:+380680971971">+38 068 0 971 971</a>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item" href="mailto:prazhenik.dev@gmail.com">prazhenik.dev@gmail.com</a>
-											</li>
-										</ul>
-									</div>
-									<div class="contacts__block contacts__block_socials">
-										<h3 class="contacts__label">socials</h3>
-										<ul class="contacts__list contacts__list_socials">
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_insta" target="_blank" href="https://www.instagram.com/prazhenik.dev/">
-													<img src="img/icons//ig-instagram.svg" alt="insta-logo">
-													<span>@prazhenik.dev</span>
-												</a>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_fb" target="_blank" href="https://www.facebook.com/prazhenik.dev/">
-													<img src="img/icons/facebook-app.svg" alt="fb-logo">
-													<span>prazhenik.dev</span>
-												</a>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_ln" target="_blank" href="https://www.linkedin.com/in/illia-prazhenik-191b063b/">
-													<img src="img/icons/linkedin-app.svg" alt="ln-logo">
-													<span>Illia Prazhenik</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-									<div class="contacts__block contacts__block_messengers">
-										<h3 class="contacts__label">messengers</h3>
-										<ul class="contacts__list">
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_whatsapp" target="_blank" href="https://wa.me/380680971971">
-													<img src="img/icons/wa-whatsapp.svg" alt="whatsapp-logo">
-													<span>+38 068 0 971 971</span>
-												</a>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_viber" target="_blank" href="viber://chat?number=%2B380680971971">
-													<img src="img/icons/viber-square-color.svg" alt="viber-logo">
-													<span>+38 068 0 971 971</span>
-												</a>
-											</li>
-											<li class="contacts__link">
-												<a class="contacts__item contacts__item_telegram" target="_blank" href="https://t.me/ill2000">
-													<img src="img/icons/telegram-color.svg" alt="telegram-logo">
-													<span>@prazhenik.dev</span>
-												</a>
-											</li>
-										</ul>
-									</div>
+								<div class="contacts__block contacts__block_socials">
+									<h3 class="contacts__label">socials</h3>
+									<ul class="contacts__list contacts__list_socials">
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_insta" target="_blank" href="https://www.instagram.com/prazhenik.dev/">
+												<img src="img/icons//ig-instagram.svg" alt="insta-logo">
+												<span>@prazhenik.dev</span>
+											</a>
+										</li>
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_fb" target="_blank" href="https://www.facebook.com/prazhenik.dev/">
+												<img src="img/icons/facebook-app.svg" alt="fb-logo">
+												<span>prazhenik.dev</span>
+											</a>
+										</li>
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_ln" target="_blank" href="https://www.linkedin.com/in/illia-prazhenik-191b063b/">
+												<img src="img/icons/linkedin-app.svg" alt="ln-logo">
+												<span>Illia Prazhenik</span>
+											</a>
+										</li>
+									</ul>
 								</div>
-							</section>
-						</div>
+								<div class="contacts__block contacts__block_messengers">
+									<h3 class="contacts__label">messengers</h3>
+									<ul class="contacts__list">
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_whatsapp" target="_blank" href="https://wa.me/380680971971">
+												<img src="img/icons/wa-whatsapp.svg" alt="whatsapp-logo">
+												<span>+38 068 0 971 971</span>
+											</a>
+										</li>
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_viber" target="_blank" href="viber://chat?number=%2B380680971971">
+												<img src="img/icons/viber-square-color.svg" alt="viber-logo">
+												<span>+38 068 0 971 971</span>
+											</a>
+										</li>
+										<li class="contacts__link">
+											<a class="contacts__item contacts__item_telegram" target="_blank" href="https://t.me/ill2000">
+												<img src="img/icons/telegram-color.svg" alt="telegram-logo">
+												<span>@prazhenik.dev</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</section>
 					</div>
 				</div>
 			</div>
@@ -286,10 +229,6 @@
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__content">
-
-					<div class="footer__slogan">
-						<p>websites <br> for <span>people</span></p>
-					</div>
 					<div class="footer__copy">
 						<span>Copyright © 2021 prazhenik.dev. All rights reserved.</span>
 					</div>
@@ -297,9 +236,8 @@
 			</div>
 		</footer>
 
-
 	</div>
-	<script src="js/app.min.js?_v=20220523162428"></script>
+	<script src="js/app.min.js?_v=20220524151956"></script>
 </body>
 
 </html>

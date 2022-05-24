@@ -22,7 +22,7 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		color: $textColor3;
+		color: $mainTextColor;
 		height: rem(30);
 		> * {
 			flex: 1 1 auto;
@@ -63,7 +63,7 @@
 	}
 	// .select__options
 	&__options {
-		color: $textColor5;
+		color: $textColor2;
 		position: absolute;
 		top: 33px;
 		min-width: 100%;

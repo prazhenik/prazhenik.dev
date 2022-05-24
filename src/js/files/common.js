@@ -146,79 +146,79 @@
 
 
 //---------------------------------------
-const tabsNavigation = document.getElementById('tabs__navigation');
-const homeTab = document.getElementById('home').innerText;
-const pageWrapper = document.querySelector(".wrapper");
-const tabs = document.querySelector(".tabs");
-const tabsBodies = document.querySelectorAll('.tabs__body');
-let activeTabsContentTitle
-let timeoutID;
-let currTubText;
+// const tabsNavigation = document.getElementById('tabs__navigation');
+// const homeTab = document.getElementById('home').innerText;
+// const pageWrapper = document.querySelector(".wrapper");
+// const tabs = document.querySelector(".tabs");
+// const tabsBodies = document.querySelectorAll('.tabs__body');
+// let activeTabsContentTitle
+// let timeoutID;
+// let currTubText;
 
-window.addEventListener('load', e => {
-	addHomeClasses()
-})
+// window.addEventListener('load', e => {
+// 	addHomeClasses()
+// })
 
 
 
-for (let i = 0; i < tabsNavigation.children.length; i++) {
-	tabsNavigation.children[i].addEventListener('click', e => {
-		currTubText = e.target.innerText;
-		homeClass()
-		setTimeout(clearSectionTitle, 1000)
-		setTimeout(typeText, 1000)
-	})
-}
+// for (let i = 0; i < tabsNavigation.children.length; i++) {
+// 	tabsNavigation.children[i].addEventListener('click', e => {
+// 		currTubText = e.target.innerText;
+// 		homeClass()
+// 		setTimeout(clearSectionTitle, 1000)
+// 		setTimeout(typeText, 1000)
+// 	})
+// }
 
-function typeText() {
-	let i = 0;
-	let txt = currTubText; /* Текст */
-	let speed = 70; /* Скорость/длительность эффекта в миллисекундах */
+// function typeText() {
+// 	let i = 0;
+// 	let txt = currTubText; /* Текст */
+// 	let speed = 70; /* Скорость/длительность эффекта в миллисекундах */
 
-	for (let i = 0; i < tabsBodies.length; i++) {
-		if (tabsBodies[i].classList.contains('_active-content-tab')) {
-			activeTabsContentTitle = document.querySelector('._active-content-tab .section__title')
-		}
-	}
-	function typeWriter() {
-		if (i < `${txt}`.length && activeTabsContentTitle) {
-			activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
-			i++;
-			timeoutID = setTimeout(typeWriter, speed);
-		}
-	}
-	typeWriter()
-}
+// 	for (let i = 0; i < tabsBodies.length; i++) {
+// 		if (tabsBodies[i].classList.contains('_active-content-tab')) {
+// 			activeTabsContentTitle = document.querySelector('._active-content-tab .section__title')
+// 		}
+// 	}
+// 	function typeWriter() {
+// 		if (i < `${txt}`.length && activeTabsContentTitle) {
+// 			activeTabsContentTitle.innerHTML += `${txt}`.charAt(i);
+// 			i++;
+// 			timeoutID = setTimeout(typeWriter, speed);
+// 		}
+// 	}
+// 	typeWriter()
+// }
 
-function clearSectionTitle() {
-	if (activeTabsContentTitle)
-		activeTabsContentTitle.innerHTML = '';
-	clearTimeout(timeoutID);
-}
+// function clearSectionTitle() {
+// 	if (activeTabsContentTitle)
+// 		activeTabsContentTitle.innerHTML = '';
+// 	clearTimeout(timeoutID);
+// }
 //----------удаление блюра с wrapper на табе home---------------------------
 
-function addHomeClasses() {
-	pageWrapper.classList.add('_noShadow');
-	tabs.classList.add('_noLine');
-}
+// function addHomeClasses() {
+// 	pageWrapper.classList.add('_noShadow');
+// 	tabs.classList.add('_noLine');
+// }
 
-function removeHomeClasses() {
-	pageWrapper.classList.remove('_noShadow');
-	tabs.classList.remove('_noLine');
-}
+// function removeHomeClasses() {
+// 	pageWrapper.classList.remove('_noShadow');
+// 	tabs.classList.remove('_noLine');
+// }
 
-function homeClass() {
-	if (currTubText == homeTab) {
-		addHomeClasses()
-	} else {
-		addHomeClasses()
-		setTimeout(removeHomeClasses, 10)
-	};
-}
+// function homeClass() {
+// 	if (currTubText == homeTab) {
+// 		addHomeClasses()
+// 	} else {
+// 		addHomeClasses()
+// 		setTimeout(removeHomeClasses, 10)
+// 	};
+// }
 
 
 //-------------------------------------
-
+/*
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -504,41 +504,37 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-
+*/
 //==================languege menu style===================================
 
-// document.querySelector('.lang__list').addEventListener('click', e => {
-// 	document.querySelectorAll('.lang__item').forEach(item => item.classList.remove('_current'));
-// 	e.target.parentElement.classList.add('_current')
-// })
 
 //==================slider navi style===================================
 
-const swiperBottons = document.querySelectorAll('.swiper-button')
-const swiperBotton = document.getElementsByClassName('swiper-button')
-console.log(swiperBotton);
+// const swiperBottons = document.querySelectorAll('.swiper-button')
+// const swiperBotton = document.getElementsByClassName('swiper-button')
+// console.log(swiperBotton);
 
 
-for (let i = 0; i < swiperBotton.length; i++) {
-	swiperBotton[i].addEventListener('click', e => {
-		if (e.target.parentElement.classList.contains('swiper-button') && !e.target.parentElement.classList.contains('swiper-button-disabled')) {
-			addStyle()
-			setTimeout(deleteStyle, 800)
-			function addStyle() {
-				e.target.parentElement.style.background = 'rgba(255,255,255,1)';
-				e.target.parentElement.style.fill = 'rgba(40,120,190,1)';
-				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'none'
-			}
-			function deleteStyle() {
-				e.target.parentElement.style.background = '';
-				e.target.parentElement.style.fill = '';
-				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'auto'
-			}
-		} else {
-			e.preventDefault()
-		}
-	})
-}
+// for (let i = 0; i < swiperBotton.length; i++) {
+// 	swiperBotton[i].addEventListener('click', e => {
+// 		if (e.target.parentElement.classList.contains('swiper-button') && !e.target.parentElement.classList.contains('swiper-button-disabled')) {
+// 			addStyle()
+// 			setTimeout(deleteStyle, 800)
+// 			function addStyle() {
+// 				e.target.parentElement.style.background = 'rgba(255,255,255,1)';
+// 				e.target.parentElement.style.fill = 'rgba(40,120,190,1)';
+// 				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'none'
+// 			}
+// 			function deleteStyle() {
+// 				e.target.parentElement.style.background = '';
+// 				e.target.parentElement.style.fill = '';
+// 				document.querySelector('.portfolio-item__gallery').style.pointerEvents = 'auto'
+// 			}
+// 		} else {
+// 			e.preventDefault()
+// 		}
+// 	})
+// }
 
 //==================contacts__link style===================================
 
