@@ -110,28 +110,21 @@
 }
 
 .section {
-	display: flex;
-	align-items: center;
 	height: 100%;
 	overflow: hidden;
 	position: relative;
 	padding: rem(60) rem(0) rem(30);
 	@include adaptiveValue("padding-right", 80 ,65, 768, 320, 1 );
 		&__container {
-			flex: 1 1 auto;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
 		}
 		// .section__content
 		&__content {
-		
 			width: 100%;
-			//height: 100%;
-
-			
-			//margin: 0 auto;
-	
-			//height: calc(100% - 55px); //высота section__title с отступами
-			//padding:  rem(30) rem(0);
-			overflow-y: auto;
 			@media (min-width:$tablet){
 				
 			}
@@ -206,6 +199,14 @@
 .swiper-slide {
 }
 .portfolio-item {
+		display: flex;
+	flex-direction: column;
+	width: auto;
+	max-width: rem(1100);
+	margin: 0 auto;
+	& > *:not(:last-child){
+		margin:  rem(0) rem(0) rem(30) rem(0);
+	}
 		// .portfolio-item__gallery
 		&__gallery {
 		}
@@ -213,6 +214,7 @@
 .gallery {
 		// .gallery__image
 		&__image {
+			
 		}
 		// .gallery__preview
 		&__preview {
@@ -226,10 +228,33 @@
 .skills {
 }
 .contacts {
+	gap: rem(40);
+	text-align: center;
+	@media (min-width:$tablet){
+		text-align: start;
+		justify-content: space-between;
+	}
 		// .contacts__block
 		&__block {
+			flex: 1 1 100%;
+			@media (min-width:$tablet){ 
+				align-self: center !important ; 
+			}
+			&:not(:first-child) {
+				@media (min-width:$tablet){
+					flex: 0 1 auto;	
+				}
+			}
+			&:not(:last-child) {
+				margin:  rem(0) rem(0) rem(40) rem(0);
+			}
 			// .contacts__block_location
 			&_location {
+			align-self: flex-end;
+				& .contacts__list_location li:not(:last-child){
+					display: block;
+					margin: rem(0) rem(0) rem(10) rem(0);
+				}
 			}
 			// .contacts__block_socials
 			&_socials {
@@ -240,6 +265,14 @@
 		}
 		// .contacts__label
 		&__label {
+			font-size: rem(26);
+			@include adaptiveValue("font-size",26 , 18, 1920, 768, 1);
+			&:not(:last-child) {
+				margin:  rem(0) rem(0) rem(20) rem(0);
+				@media (min-width:$tablet){
+					margin:  rem(0) rem(0) rem(40) rem(0);
+				}
+			}
 		}
 		// .contacts__list
 		&__list {
@@ -252,9 +285,56 @@
 		}
 		// .contacts__link
 		&__link {
+			display: inline;
+			@include adaptiveValue("font-size",22 , 16, 1920, 768, 1);
+			color: $textColor2;
+			transition: all 0.2s ease;
+			@media (min-width:$tablet){
+				display: block;  
+			}
+			& img{
+				width: rem(50);
+				height: rem(50); 
+				object-fit: cover;
+				filter:saturate(.3);
+				border-radius: 50%;
+				transition: filter 0.2s ease;
+				@media (min-width:$tablet){
+					width: rem(30);
+					height: rem(30); 
+					vertical-align: middle;
+					margin: rem(0) rem(10) rem(0) rem(0);
+				}
+			}
+			@media (any-hover: hover){
+				&:hover {
+					color: $mainTextColor;		
+					transition: color 0.2s ease;
+				}
+				&:hover img{
+					position: relative;
+					filter:saturate(1);
+					transition: filter 0.2s ease;
+					display: inline-block;
+					//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
+				}
+			}
+			&:not(:last-child) {
+				margin:  rem(0) rem(30) rem(0) rem(0);
+				@media (min-width:$tablet){
+					margin:  rem(0) rem(0) rem(10) rem(0);
+				}
+			}
 		}
 		// .contacts__item
 		&__item {
+			& span {
+				display: none;
+				@media (min-width:$tablet){
+					display: inline;
+					line-height: 40px;
+				}
+			};
 			// .contacts__item_insta
 			&_insta {
 			}
@@ -280,500 +360,501 @@
 
 
 
+/*
 
-
-// .wrapper {
-// 	
-// }
-// .page {
-// 	padding: rem(60) rem(0) rem(0);
-// 	@media (min-width:$tablet){
-// 		display: flex;
-// 		flex-direction: column;
-// 		padding: rem(120) rem(0);
-// 		position: relative;
-// 		overflow: hidden;
-// 	}
-// 		// .page__container
-// 		&__container {
-// 			flex: 1 0 100%;
-// 		}
-// 		// .page__content
-// 		&__content {
-// 			@media (min-width:$tablet){
-// 				display: flex;
-// 				position: relative;
-// 				width: 100%;
-// 				height: 100%;
-// 				top: 0;
-// 				left: 0;
-// 				@include adaptiveValue("column-gap", 30, 15, 1200, 576, 1);
-// 			}
-// 		}
-// }
-// .tabs {
-// 	position: relative;
-// 	display: flex;
-// 	@media (min-width:$tablet){
-// 		flex: 0 0 auto;
-// 		@include adaptiveValue("width", 370, 270, 1920, 994, 1 );
-
-// 	}
-
-// 	&__menu {
-// 		align-self: flex-end;
-// 	}
-// 		// .tabs__navigation
-// 	&__navigation {
-// 		@media (min-width:$tablet){
+.wrapper {
 	
-// 		}
-// 	}
+}
+.page {
+	padding: rem(60) rem(0) rem(0);
+	@media (min-width:$tablet){
+		display: flex;
+		flex-direction: column;
+		padding: rem(120) rem(0);
+		position: relative;
+		overflow: hidden;
+	}
+		// .page__container
+		&__container {
+			flex: 1 0 100%;
+		}
+		// .page__content
+		&__content {
+			@media (min-width:$tablet){
+				display: flex;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				@include adaptiveValue("column-gap", 30, 15, 1200, 576, 1);
+			}
+		}
+}
+.tabs {
+	position: relative;
+	display: flex;
+	@media (min-width:$tablet){
+		flex: 0 0 auto;
+		@include adaptiveValue("width", 370, 270, 1920, 994, 1 );
+
+	}
+
+	&__menu {
+		align-self: flex-end;
+	}
+		// .tabs__navigation
+	&__navigation {
+		@media (min-width:$tablet){
+	
+		}
+	}
 
 
 	
-// 	// .tabs__title
-// 	&__title {
-// 		display: block;
-// 		font-family: "Michroma", sans-serif;
-// 		text-transform: uppercase;
-// 		font-size: rem(16);
-// 		line-height: rem(40);
-// 		color: $textColor2;
-// 		margin: 0 auto;
-// 		height: rem(40);
-// 		white-space: nowrap;
-// 		&:not(:last-child) {
-// 			//@include adaptiveValue("margin-bottom", 10, 5, 1920, 994, 1 );
-// 			margin-bottom: rem(10); 
-// 		}
-// 		//transition: font-size .2s ease;
-// 		@media (min-width: $tablet) {
-// 			margin: 0;
-// 			@include adaptiveValue("font-size", 22, 15, 1920, 994, 1 );
-// 			color: $textColor2;
-// 			&:hover{
-// 				color: $mainTextColor;
-// 			}
-// 		}
-// 		&._tab-active {
+	// .tabs__title
+	&__title {
+		display: block;
+		font-family: "Michroma", sans-serif;
+		text-transform: uppercase;
+		font-size: rem(16);
+		line-height: rem(40);
+		color: $textColor2;
+		margin: 0 auto;
+		height: rem(40);
+		white-space: nowrap;
+		&:not(:last-child) {
+			//@include adaptiveValue("margin-bottom", 10, 5, 1920, 994, 1 );
+			margin-bottom: rem(10); 
+		}
+		//transition: font-size .2s ease;
+		@media (min-width: $tablet) {
+			margin: 0;
+			@include adaptiveValue("font-size", 22, 15, 1920, 994, 1 );
+			color: $textColor2;
+			&:hover{
+				color: $mainTextColor;
+			}
+		}
+		&._tab-active {
 
-// 		}
-// 	}
+		}
+	}
 	
-// 	// .tabs__content
-// 	&__content {
-// 		justify-content: center;
-// 		@media (min-width:$tablet){
-// 			display: flex;
-// 			overflow: hidden;
-// 			width: 100%;
-// 		}
+	// .tabs__content
+	&__content {
+		justify-content: center;
+		@media (min-width:$tablet){
+			display: flex;
+			overflow: hidden;
+			width: 100%;
+		}
 
-// 	}
-// 	// .tabs__body
-// 	&__body {
-// 		flex: 1 1 auto;
-// 		position: relative;
-// 		height: calc(100vh - 175px); // за вычетом header, footer, section__title height
-// 		& .section__content{
-// 			opacity: 0;
-// 			visibility: hidden;
-// 			font-size: rem(16);
-// 			line-height: math.div(20 ,16 );
-// 		}
-// 		&._active-content-tab .section__content{
-// 			opacity: 1;		
-// 			visibility: visible;
-// 			transition: opacity 1s .5s ease;
-// 			@media (min-width:$tablet){
-// 				transition: opacity .5s ease;
-// 			}
-// 		}
-// 			@media (min-width:$tablet){
-// 				overflow-y: auto;
-// 				max-height: calc(100vh - 240px);
-// 			}
+	}
+	// .tabs__body
+	&__body {
+		flex: 1 1 auto;
+		position: relative;
+		height: calc(100vh - 175px); // за вычетом header, footer, section__title height
+		& .section__content{
+			opacity: 0;
+			visibility: hidden;
+			font-size: rem(16);
+			line-height: math.div(20 ,16 );
+		}
+		&._active-content-tab .section__content{
+			opacity: 1;		
+			visibility: visible;
+			transition: opacity 1s .5s ease;
+			@media (min-width:$tablet){
+				transition: opacity .5s ease;
+			}
+		}
+			@media (min-width:$tablet){
+				overflow-y: auto;
+				max-height: calc(100vh - 240px);
+			}
 		
-// 	}
-// }
-// .menu {
-// 		// .menu__body
-// 		&__body {
-// 		}
-// 		// .menu__link
-// 		&__link {
-// 		}
-// }
+	}
+}
+.menu {
+		// .menu__body
+		&__body {
+		}
+		// .menu__link
+		&__link {
+		}
+}
 
-// .Home {
-// }
-// .About {
-// }
-
-
+.Home {
+}
+.About {
+}
 
 
 
 
-// }
-// .portfolio {
-// 		// .portfolio__slider
-// 		&__slider {
-// 		}
-// 		// .portfolio__wrapper
-// 		&__wrapper {
-// 		}
-// 		// .portfolio__slide
-// 		&__slide {
-// 		}
-// 		// .portfolio__item
-// 		&__item {
-// 		}
-// }
-// .swiper {
-// 	//position: relative;
+
+
+}
+.portfolio {
+		// .portfolio__slider
+		&__slider {
+		}
+		// .portfolio__wrapper
+		&__wrapper {
+		}
+		// .portfolio__slide
+		&__slide {
+		}
+		// .portfolio__item
+		&__item {
+		}
+}
+.swiper {
+	//position: relative;
 	
 
-// }
-// .swiper-wrapper {
-// }
-// .swiper-slide {
-// }
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
 
-// .portfolio {
-// 	//position: relative;
-// 	// .portfolio__item
-// 	&__item {
-// 	}
-// }
-// .portfolio-item {
-// 	display: flex;
-// 	flex-direction: column;
-// 	width: auto;
-// 	max-width: rem(1100);
-// 	margin: 0 auto;
-// 	& > *:not(:last-child){
-// 		margin:  rem(0) rem(0) rem(30) rem(0);
-// 	}
-// 	// .portfolio-item__header
-// 	&__header {
+.portfolio {
+	//position: relative;
+	// .portfolio__item
+	&__item {
+	}
+}
+.portfolio-item {
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	max-width: rem(1100);
+	margin: 0 auto;
+	& > *:not(:last-child){
+		margin:  rem(0) rem(0) rem(30) rem(0);
+	}
+	// .portfolio-item__header
+	&__header {
 		
-// 	}
-// 	// .portfolio-item__gallery
-// 	&__gallery {
+	}
+	// .portfolio-item__gallery
+	&__gallery {
 
-// 	}
-// 	// .portfolio-item__text
-// 	&__text {
-// 		font-size: rem(12);
-// 		line-height: math.div(32, 22);
-// 		& span {
-// 			color: $mainTextColor;
-// 			font-weight: 600;
-// 		}
-// 		@media (min-width:$tablet){
-// 			font-size: rem(16);
-// 		}
-// 	}
-// }
-
-
-// .portfolio-item-header {
-// 	display: flex;
-// 	justify-content: space-between;
-// 	align-items: flex-end;
-// 	// .portfolio-item-header__date
-// 	&__date {
-// 		font-size: rem(12);
-// 	}
-// 	// .portfolio-item-header__label
-// 	&__label {
-// 		display: inline-block;
-// 		font-size: rem(22);
-// 		text-transform: uppercase;
-// 		text-align: center;
-// 		line-height: 1;
-// 		&::first-letter {
-// 			color: $textColor3;
-// 			font-weight: 600;
-// 		}
-// 	}
-// }
-// .gallery {
-// 	// .portfolio-item-gallery__image
-// 	&__image {
-// 		& img {
-// 			width: 100%;
-// 			height: 100%;
-// 			object-fit: contain;
-// 		}
-// 	}
-// 	// .portfolio-item-gallery__preview
-// 	&__preview {
-// 	}
-// }
-// .portfolio-item-text {
-// 	& > *:not(:last-child){
-// 		margin:  rem(0) rem(0) rem(10) rem(0);
-// 	}
-// 	// .portfolio-item-text__about
-// 	&__about {
-// 	}
-// 	// .portfolio-item-text__tools
-// 	&__tools {
-// 	}
-// }
+	}
+	// .portfolio-item__text
+	&__text {
+		font-size: rem(12);
+		line-height: math.div(32, 22);
+		& span {
+			color: $mainTextColor;
+			font-weight: 600;
+		}
+		@media (min-width:$tablet){
+			font-size: rem(16);
+		}
+	}
+}
 
 
-
-
-// .swiper-button {
-// 	display: block;
-// 	position: absolute;
-// 	top: 50%;
-// 	opacity: 1;
-// 	fill: $textColor3;
-// 	background: rgba(0,0,0,0.7);
-// 	transition: background .2s, fill .2s;
-// 	line-height: 0;
-// 	& svg {
-// 		@include adaptiveValue("width",80 ,50);
-// 		@include adaptiveValue("height",80 ,50);
-// 		padding: 10px;
-// 	} 
-// 	@media (any-hover: hover){
-// 		&:not(.swiper-button-disabled):hover{
-// 			cursor: pointer;
-// 			background: rgba(255,255,255,1);
-// 			fill: $backgroundColor4;
-// 			transition: background .2s, fill .2s;
-// 		}
-// 	}
-// 	& path {
-// 		pointer-events: none;
-// 	}
-// }
-
-
-// .Skills {
-// }
+.portfolio-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	// .portfolio-item-header__date
+	&__date {
+		font-size: rem(12);
+	}
+	// .portfolio-item-header__label
+	&__label {
+		display: inline-block;
+		font-size: rem(22);
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 1;
+		&::first-letter {
+			color: $textColor3;
+			font-weight: 600;
+		}
+	}
+}
+.gallery {
+	// .portfolio-item-gallery__image
+	&__image {
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	// .portfolio-item-gallery__preview
+	&__preview {
+	}
+}
+.portfolio-item-text {
+	& > *:not(:last-child){
+		margin:  rem(0) rem(0) rem(10) rem(0);
+	}
+	// .portfolio-item-text__about
+	&__about {
+	}
+	// .portfolio-item-text__tools
+	&__tools {
+	}
+}
 
 
 
-// .section__content{
 
-// }
+.swiper-button {
+	display: block;
+	position: absolute;
+	top: 50%;
+	opacity: 1;
+	fill: $textColor3;
+	background: rgba(0,0,0,0.7);
+	transition: background .2s, fill .2s;
+	line-height: 0;
+	& svg {
+		@include adaptiveValue("width",80 ,50);
+		@include adaptiveValue("height",80 ,50);
+		padding: 10px;
+	} 
+	@media (any-hover: hover){
+		&:not(.swiper-button-disabled):hover{
+			cursor: pointer;
+			background: rgba(255,255,255,1);
+			fill: $backgroundColor4;
+			transition: background .2s, fill .2s;
+		}
+	}
+	& path {
+		pointer-events: none;
+	}
+}
 
-// .section-text{
-// 	//overflow-y: auto;
-// }
 
-
-// //--------------contacts------------------------
-
-// .section {
-// 	height: 100%;
-// 	overflow: hidden;
-// 	position: relative;
-// 	@media (min-width:$tablet){
-// 		//margin: 0 rem(-50);
-// 	}
-// 	// .section__content
-// 	&__content {
-// 		display: flex;
-// 		flex-wrap: wrap;
-// 		align-content: center;
-// 		margin: 0 auto;
-// 		min-height: rem(300);
-// 		height: calc(100% - 55px); //высота section__title с отступами
-// 		padding:  rem(30) rem(0);
-// 		overflow-y: auto;
-// 		max-width: rem(1100);
-// 		@media (min-width:$tablet){
-// 			height: 100%;
-// 			padding: 0;
-// 		}
-// 	}
-// 	&__title {
-// 		@media (min-width:$tablet){
-// 			display: none;
-// 		}
-// 	}
-// }
-// .contacts {
-// 	gap: rem(40);
-// 	text-align: center;
-// 	@media (min-width:$tablet){
-// 		text-align: start;
-// 		justify-content: space-between;
-// 	}
-// 	// .contacts__block
-// 	&__block {
-// 		flex: 1 1 100%;
-// 		@media (min-width:$tablet){ 
-// 			align-self: center !important ; 
-// 		}
-// 		&:not(:first-child) {
-// 			@media (min-width:$tablet){
-// 				flex: 0 1 auto;	
-// 			}
-// 		}
-// 		// .contacts__block_location
-// 		&_location {
-// 			align-self: flex-end;
-// 			& .contacts__list_location li:not(:last-child){
-// 				display: block;
-// 				margin: rem(0) rem(0) rem(10) rem(0);
-// 			}
-// 		}
-// 		// .contacts__block_socials
-// 		&_socials {
-// 		}
-// 		// .contacts__block_messengers
-// 		&_messengers {
-// 			align-self: flex-start;
-// 		}
-// 	}
-// 	// .contacts__label
-// 	&__label {
-// 		font-size: rem(26);
-// 		@include adaptiveValue("font-size",26 , 18, 1920, 768, 1);
-// 		&:not(:last-child) {
-// 			margin:  rem(0) rem(0) rem(20) rem(0);
-// 			@media (min-width:$tablet){
-// 				margin:  rem(0) rem(0) rem(40) rem(0);
-// 			}
-// 		}
-// 	}
-// 	// .contacts__list
-// 	&__list {
-// 		// .contacts__list_socials
-// 		&_socials {
-// 		}
-// 	}
-// 	// .contacts__link
-// 	&__link {
-// 		display: inline;
-// 		@include adaptiveValue("font-size",22 , 16, 1920, 768, 1);
-// 		color: $textColor2;
-// 		transition: all 0.2s ease;
-// 		@media (min-width:$tablet){
-// 			display: block;  
-// 		}
-// 		& img{
-// 			width: rem(50);
-// 			height: rem(50); 
-// 			object-fit: cover;
-// 			filter:saturate(.3);
-// 			border-radius: 50%;
-// 			transition: filter 0.2s ease;
-// 			@media (min-width:$tablet){
-// 				width: rem(30);
-// 				height: rem(30); 
-// 				vertical-align: middle;
-// 				margin: rem(0) rem(10) rem(0) rem(0);
-// 			}
-// 		}
-// 		@media (any-hover: hover){
-// 			&:hover {
-// 				color: $mainTextColor;		
-// 				transition: color 0.2s ease;
-// 			}
-// 			&:hover img{
-// 				position: relative;
-// 				filter:saturate(1);
-// 				transition: filter 0.2s ease;
-// 				display: inline-block;
-// 				//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
-// 			}
-// 		}
-// 		&:not(:last-child) {
-// 			margin:  rem(0) rem(30) rem(0) rem(0);
-// 			@media (min-width:$tablet){
-// 				margin:  rem(0) rem(0) rem(10) rem(0);
-// 			}
-// 		}
-// 	}
-// 	// .contacts__item
-// 	&__item {
-// 		& span {
-// 			display: none;
-// 			@media (min-width:$tablet){
-// 				display: inline;
-// 				line-height: 40px;
-// 			}
-// 		};
-// 		// .contacts__item_insta
-// 		&_insta {
-// 		}
-// 		// .contacts__item_fb
-// 		&_fb {
-
-// 		}
-// 		// .contacts__item_ln
-// 		&_ln {
-// 		}
-// 		// .contacts__item_whatsapp
-// 		&_whatsapp {
-// 		}
-// 		// .contacts__item_viber
-// 		&_viber {
-// 		}
-// 		// .contacts__item_telegram
-// 		&_telegram {
-// 		}
-// 	}
-// }
+.Skills {
+}
 
 
 
-// //----------------home----------------------
+.section__content{
 
-// .section {
-// 	// .section__content
-// 	&__content {
-// 	}
-// }
-// .home {
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// align-items: flex-end;
-// transform: translateY(20%);
-// flex-wrap: nowrap;
-// @media (min-width:$tablet){
-// 	transform: translateY(0%);
-// }
-// 	// .home__maintitle
-// 	&__main-title {
-// 		font-family: 'MuseoModerno';
-// 		font-weight: 500;
-// 		color: $textColor3;
-// 		@include adaptiveValue("font-size",90 , 45, 768, 320, 1);
-// 		line-height: math.div(100 ,100 );
-// 		//letter-spacing: 40%;
-// 		&:not(:last-child) {
-// 			margin:  rem(0) rem(0) rem(50) rem(0);
-// 		}
-// 		& span {
-// 			@include adaptiveValue("font-size",130 , 65, 768, 320, 1);
-// 			line-height: math.div(100 ,150 );
-// 			color: $textColor3;
-// 			letter-spacing: 0;
-// 		}
-// 	}
-// 	&__button{
-// 		@include adaptiveValue("width",240 ,180, 992, 320, 1);
-// 		@include adaptiveValue("height",80 , 60, 992, 320, 1);
-// 		@include adaptiveValue("font-size",30 ,24, 992, 320, 1);
-// 		border-right: $borderColor2 1px solid;
-// 		border-bottom: $borderColor2 1px solid;
-// 		font-size: rem(30);
-// 		&:hover{
-// 			background: rgba(10, 250, 215, .2);
-// 		}
-// 	}
-// }
+}
 
-// //----------------home----------------------
+.section-text{
+	//overflow-y: auto;
+}
+
+
+//--------------contacts------------------------
+
+.section {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	@media (min-width:$tablet){
+		//margin: 0 rem(-50);
+	}
+	// .section__content
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		margin: 0 auto;
+		min-height: rem(300);
+		height: calc(100% - 55px); //высота section__title с отступами
+		padding:  rem(30) rem(0);
+		overflow-y: auto;
+		max-width: rem(1100);
+		@media (min-width:$tablet){
+			height: 100%;
+			padding: 0;
+		}
+	}
+	&__title {
+		@media (min-width:$tablet){
+			display: none;
+		}
+	}
+}
+.contacts {
+	gap: rem(40);
+	text-align: center;
+	@media (min-width:$tablet){
+		text-align: start;
+		justify-content: space-between;
+	}
+	// .contacts__block
+	&__block {
+		flex: 1 1 100%;
+		@media (min-width:$tablet){ 
+			align-self: center !important ; 
+		}
+		&:not(:first-child) {
+			@media (min-width:$tablet){
+				flex: 0 1 auto;	
+			}
+		}
+		// .contacts__block_location
+		&_location {
+			align-self: flex-end;
+			& .contacts__list_location li:not(:last-child){
+				display: block;
+				margin: rem(0) rem(0) rem(10) rem(0);
+			}
+		}
+		// .contacts__block_socials
+		&_socials {
+		}
+		// .contacts__block_messengers
+		&_messengers {
+			align-self: flex-start;
+		}
+	}
+	// .contacts__label
+	&__label {
+		font-size: rem(26);
+		@include adaptiveValue("font-size",26 , 18, 1920, 768, 1);
+		&:not(:last-child) {
+			margin:  rem(0) rem(0) rem(20) rem(0);
+			@media (min-width:$tablet){
+				margin:  rem(0) rem(0) rem(40) rem(0);
+			}
+		}
+	}
+	// .contacts__list
+	&__list {
+		// .contacts__list_socials
+		&_socials {
+		}
+	}
+	// .contacts__link
+	&__link {
+		display: inline;
+		@include adaptiveValue("font-size",22 , 16, 1920, 768, 1);
+		color: $textColor2;
+		transition: all 0.2s ease;
+		@media (min-width:$tablet){
+			display: block;  
+		}
+		& img{
+			width: rem(50);
+			height: rem(50); 
+			object-fit: cover;
+			filter:saturate(.3);
+			border-radius: 50%;
+			transition: filter 0.2s ease;
+			@media (min-width:$tablet){
+				width: rem(30);
+				height: rem(30); 
+				vertical-align: middle;
+				margin: rem(0) rem(10) rem(0) rem(0);
+			}
+		}
+		@media (any-hover: hover){
+			&:hover {
+				color: $mainTextColor;		
+				transition: color 0.2s ease;
+			}
+			&:hover img{
+				position: relative;
+				filter:saturate(1);
+				transition: filter 0.2s ease;
+				display: inline-block;
+				//box-shadow: 0px 10px 3px 4px rgba(54, 81, 201, 0.432);
+			}
+		}
+		&:not(:last-child) {
+			margin:  rem(0) rem(30) rem(0) rem(0);
+			@media (min-width:$tablet){
+				margin:  rem(0) rem(0) rem(10) rem(0);
+			}
+		}
+	}
+	// .contacts__item
+	&__item {
+		& span {
+			display: none;
+			@media (min-width:$tablet){
+				display: inline;
+				line-height: 40px;
+			}
+		};
+		// .contacts__item_insta
+		&_insta {
+		}
+		// .contacts__item_fb
+		&_fb {
+
+		}
+		// .contacts__item_ln
+		&_ln {
+		}
+		// .contacts__item_whatsapp
+		&_whatsapp {
+		}
+		// .contacts__item_viber
+		&_viber {
+		}
+		// .contacts__item_telegram
+		&_telegram {
+		}
+	}
+}
+
+
+
+//----------------home----------------------
+
+.section {
+	// .section__content
+	&__content {
+	}
+}
+.home {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+transform: translateY(20%);
+flex-wrap: nowrap;
+@media (min-width:$tablet){
+	transform: translateY(0%);
+}
+	// .home__maintitle
+	&__main-title {
+		font-family: 'MuseoModerno';
+		font-weight: 500;
+		color: $textColor3;
+		@include adaptiveValue("font-size",90 , 45, 768, 320, 1);
+		line-height: math.div(100 ,100 );
+		//letter-spacing: 40%;
+		&:not(:last-child) {
+			margin:  rem(0) rem(0) rem(50) rem(0);
+		}
+		& span {
+			@include adaptiveValue("font-size",130 , 65, 768, 320, 1);
+			line-height: math.div(100 ,150 );
+			color: $textColor3;
+			letter-spacing: 0;
+		}
+	}
+	&__button{
+		@include adaptiveValue("width",240 ,180, 992, 320, 1);
+		@include adaptiveValue("height",80 , 60, 992, 320, 1);
+		@include adaptiveValue("font-size",30 ,24, 992, 320, 1);
+		border-right: $borderColor2 1px solid;
+		border-bottom: $borderColor2 1px solid;
+		font-size: rem(30);
+		&:hover{
+			background: rgba(10, 250, 215, .2);
+		}
+	}
+}
+
+//----------------home----------------------
+*/
