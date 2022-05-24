@@ -2,12 +2,28 @@
 // Снипет (HTML): sel
 .select {
 	position: relative;
+	&::before{
+		content:'';
+		position: absolute;
+		width: rem(35);
+		height: rem(25);
+		top: rem(3);
+		left: 50%;
+		transform: translate( -50%, 0);
+		border: $mainBorderColor 1px solid;
+		border-radius: 7px;
+		background-color: $mainBackgroundColor;
+	}
+	&._select-open::before{
+		height: rem(95);
+	}
 	// .select__body
 	&__body {
 		position: relative;
 		font-family: "MuseoModerno";
 		font-weight: 300;
-		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
+		font-size: rem(20);
+
 	}
 	// .select__title
 	&__title {
@@ -65,7 +81,7 @@
 	&__options {
 		color: $textColor2;
 		position: absolute;
-		top: 33px;
+		top: 32px;
 		min-width: 100%;
 		left: 0;
 	}

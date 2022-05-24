@@ -434,24 +434,30 @@ input::placeholder {
   position: relative;
 }
 
+.select::before {
+  content: "";
+  position: absolute;
+  width: 2.1875rem;
+  height: 1.5625rem;
+  top: 0.1875rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  border: rgb(180, 180, 180) 1px solid;
+  border-radius: 7px;
+  background-color: rgb(0, 8, 24);
+}
+
+.select._select-open::before {
+  height: 5.9375rem;
+}
+
 .select__body {
   position: relative;
   font-family: "MuseoModerno";
   font-weight: 300;
-}
-
-@supports (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
-  .select__body {
-    font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem );
-  }
-}
-
-@supports not (font-size: clamp( 1rem , 0.7316414687rem  +  0.4319654428vw , 1.25rem )) {
-  .select__body {
-    font-size: calc(
-			1rem + 0.25 * (100vw - 62.125rem) / 57.875
-		);
-  }
+  font-size: 1.25rem;
 }
 
 .select__title {
@@ -520,7 +526,7 @@ input::placeholder {
 .select__options {
   color: rgb(180, 180, 180);
   position: absolute;
-  top: 33px;
+  top: 32px;
   min-width: 100%;
   left: 0;
 }
@@ -1019,7 +1025,7 @@ canvas {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   padding: 0rem 0rem 1.25rem 0rem;
   background-color: rgb(22, 23, 23);
   z-index: 1;
@@ -1090,25 +1096,25 @@ canvas {
   transition: color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-@supports (font-size: clamp( 1.125rem , 0.9431818182rem  +  0.9090909091vw , 1.625rem )) {
+@supports (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
   .tabs__title span {
-    font-size: clamp( 1.125rem , 0.9431818182rem  +  0.9090909091vw , 1.625rem );
+    font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.125rem , 0.9431818182rem  +  0.9090909091vw , 1.625rem )) {
+@supports not (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
   .tabs__title span {
     font-size: calc(
-			1.125rem + 0.5 * (100vw - 20rem) / 55
+			1rem + 0.5 * (100vw - 20rem) / 55
 		);
   }
 }
 
 .tabs__title._tab-active span {
   color: rgb(10, 250, 215);
-  -webkit-transform: scale(1.25);
-      -ms-transform: scale(1.25);
-          transform: scale(1.25);
+  -webkit-transform: scale(1.35);
+      -ms-transform: scale(1.35);
+          transform: scale(1.35);
   -webkit-transition: color 0.2s ease, -webkit-transform 0.2s ease;
   transition: color 0.2s ease, -webkit-transform 0.2s ease;
   -o-transition: color 0.2s ease, transform 0.2s ease;

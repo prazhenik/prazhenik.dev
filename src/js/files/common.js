@@ -218,7 +218,7 @@
 
 
 //----------------canvas-----------------
-
+/*
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -233,7 +233,7 @@ import { isMobile } from "./functions.js";
 if (isMobile.any()) {
 	BALL_NUM = 30;
 } else {
-	BALL_NUM = 120;
+	BALL_NUM = 100;
 }
 
 
@@ -503,7 +503,7 @@ canvas.addEventListener('mousemove', function (e) {
 	mouse_ball.y = e.pageY;
 	// console.log(mouse_ball);
 });
-
+*/
 
 //==================languege menu style===================================
 

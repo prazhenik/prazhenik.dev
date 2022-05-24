@@ -25,7 +25,7 @@
 			position: fixed;
 			top: 0;
 			right: 0;
-			height: 100vh;
+			height: 100%;
 			@include adaptiveValue("min-width",80 ,65, 768, 320, 1 );
 			padding:  rem(0) rem(0) rem(20) rem(0);
 			background-color: $backgroundColor2;
@@ -58,7 +58,7 @@
 			& span {
 				text-transform: uppercase;
 				text-align: center;
-				@include adaptiveValue("font-size",26 ,18, 1200, 320, 1 );
+				@include adaptiveValue("font-size",24 ,16, 1200, 320, 1 );
 				color: $textColor2;
 				writing-mode: vertical-lr;
 				padding: rem(5);
@@ -67,7 +67,7 @@
 			}
 			&._tab-active span{
 				color: $textColor3;
-				transform: scale(1.25);
+				transform: scale(1.35);
 				transition: color .2s ease, transform .2s ease;
 				@media (min-width:$tablet){
 					

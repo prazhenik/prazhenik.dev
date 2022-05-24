@@ -40,7 +40,7 @@ $backgroundColor5: rgba(10, 250, 215, 0.2); // btn hover cover
 $backgroundColor6: rgba(250, 30, 85, 1); // red accents
 
 // цвета границ
-$mainBorderColor: rgba(255, 255, 255, 0.08); //Цвет границ по умолчанию
+$mainBorderColor: rgba(180, 180, 180, 1); //Цвет границ по умолчанию
 $borderColor2: rgba(250, 30, 85, 1);
 // $borderColor3: rgba(0, 0, 0, 1);
 // $borderColor4: rgba(0, 160, 255, 1);
@@ -155,6 +155,8 @@ html *{
 body {
 	//position: relative;
 	// universal overlay
+	//height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+	//height: calc(var(--vh, 1vh) * 100);
 	overflow: hidden;
 	&::after {
 		content: "";
