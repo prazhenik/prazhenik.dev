@@ -118,7 +118,7 @@
 	padding: rem(60) rem(0) rem(30);
 	@include adaptiveValue("padding-right", 80 ,65, 768, 320, 1 );
 		&__container {
-			flex: 1 0 auto;
+			flex: 1 1 auto;
 		}
 		// .section__content
 		&__content {
@@ -141,29 +141,43 @@
 		}
 }
 .home {
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
+	@include adaptiveValue("padding-right",150 ,0, 1920, 578,1);
+	text-align: right;
+	margin-top: 20%;
 		// .home__text
 		&__text {
-			text-align: justify;
-			max-width: rem(410);
+			margin-left: auto;
+			
+			max-width: rem(420);
+			&:not(:last-child) {
+				margin-bottom: rem(40);
+			}
 		}
 		// .home__title
 		&__title {
-			
+			@include adaptiveValue("font-size", 40, 24, 1200, 578, 1);
+			&:not(:last-child) {
+				margin-bottom: rem(25);
+			}
+			& span {
+				color: $textColor3
+			}
 		}
 		// .home__subtitle
 		&__subtitle {
+			@include adaptiveValue("font-size", 26, 18, 1200, 578, 1);
+			line-height: math.div(32 , 26);
+			text-align: justify;
 		}
 		// .home__button
 		&__button {
-			@include adaptiveValue("width",240 ,180, 992, 320, 1);
-			@include adaptiveValue("height",80 , 60, 992, 320, 1);
-			@include adaptiveValue("font-size",30 ,24, 992, 320, 1);
+			font-family: 'MuseoModerno';
+			font-weight: 500;
+			@include adaptiveValue("width",240 ,160, 992, 320, 1);
+			@include adaptiveValue("height",80 , 50, 992, 320, 1);
+			@include adaptiveValue("font-size",30 ,22, 992, 320, 1);
 			border-right: $borderColor2 1px solid;
 			border-bottom: $borderColor2 1px solid;
-			font-size: rem(30);
 			&:hover{
 				background: rgba(10, 250, 215, .2);
 			}

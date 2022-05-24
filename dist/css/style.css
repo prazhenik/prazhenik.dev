@@ -559,65 +559,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-.page-title {
-  display: inline-block;
-  font-weight: 900;
-}
-
-@supports (font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 3.75rem )) {
-  .page-title {
-    font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 3.75rem );
-  }
-}
-
-@supports not (font-size: clamp( 1.25rem , 0.75rem  +  2.5vw , 3.75rem )) {
-  .page-title {
-    font-size: calc(
-			1.25rem + 2.5 * (100vw - 20rem) / 100
-		);
-  }
-}
-
-.gallery__title {
-  line-height: 1.1666666667;
-  font-weight: 700;
-}
-
-@supports (font-size: clamp( 0.75rem , 0.6rem  +  0.75vw , 1.5rem )) {
-  .gallery__title {
-    font-size: clamp( 0.75rem , 0.6rem  +  0.75vw , 1.5rem );
-  }
-}
-
-@supports not (font-size: clamp( 0.75rem , 0.6rem  +  0.75vw , 1.5rem )) {
-  .gallery__title {
-    font-size: calc(
-			0.75rem + 0.75 * (100vw - 20rem) / 100
-		);
-  }
-}
-
-.popup__title {
-  line-height: 1.1428571429;
-  margin: 0 0 5.75rem 0;
-  margin-bottom: 2.1875rem;
-  font-weight: 700;
-}
-
-@supports (font-size: clamp( 1.875rem , 1.75rem  +  0.625vw , 2.5rem )) {
-  .popup__title {
-    font-size: clamp( 1.875rem , 1.75rem  +  0.625vw , 2.5rem );
-  }
-}
-
-@supports not (font-size: clamp( 1.875rem , 1.75rem  +  0.625vw , 2.5rem )) {
-  .popup__title {
-    font-size: calc(
-			1.875rem + 0.625 * (100vw - 20rem) / 100
-		);
-  }
-}
-
 .button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1212,8 +1153,8 @@ canvas {
 
 .section__container {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .section__content {
@@ -1222,65 +1163,119 @@ canvas {
 }
 
 .home {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-left: auto;
+  text-align: right;
+  margin-top: 20%;
+}
+
+@supports (padding-right: clamp( 0.0000000625rem , -4.0378166021rem  +  11.1773471684vw , 9.375rem )) {
+  .home {
+    padding-right: clamp( 0.0000000625rem , -4.0378166021rem  +  11.1773471684vw , 9.375rem );
+  }
+}
+
+@supports not (padding-right: clamp( 0.0000000625rem , -4.0378166021rem  +  11.1773471684vw , 9.375rem )) {
+  .home {
+    padding-right: calc(
+			0.0000000625rem + 9.3749999375 * (100vw - 36.125rem) / 83.875
+		);
+  }
 }
 
 .home__text {
+  margin-left: auto;
+  max-width: 26.25rem;
+}
+
+.home__text:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+@supports (font-size: clamp( 1.5rem , 0.5707395498rem  +  2.5723472669vw , 2.5rem )) {
+  .home__title {
+    font-size: clamp( 1.5rem , 0.5707395498rem  +  2.5723472669vw , 2.5rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.5rem , 0.5707395498rem  +  2.5723472669vw , 2.5rem )) {
+  .home__title {
+    font-size: calc(
+			1.5rem + 1 * (100vw - 36.125rem) / 38.875
+		);
+  }
+}
+
+.home__title:not(:last-child) {
+  margin-bottom: 1.5625rem;
+}
+
+.home__title span {
+  color: rgb(10, 250, 215);
+}
+
+.home__subtitle {
+  line-height: 1.2307692308;
   text-align: justify;
-  max-width: 25.625rem;
+}
+
+@supports (font-size: clamp( 1.125rem , 0.6603697749rem  +  1.2861736334vw , 1.625rem )) {
+  .home__subtitle {
+    font-size: clamp( 1.125rem , 0.6603697749rem  +  1.2861736334vw , 1.625rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.125rem , 0.6603697749rem  +  1.2861736334vw , 1.625rem )) {
+  .home__subtitle {
+    font-size: calc(
+			1.125rem + 0.5 * (100vw - 36.125rem) / 38.875
+		);
+  }
 }
 
 .home__button {
+  font-family: "MuseoModerno";
+  font-weight: 500;
   border-right: rgb(250, 30, 85) 1px solid;
   border-bottom: rgb(250, 30, 85) 1px solid;
-  font-size: 1.875rem;
 }
 
-@supports (width: clamp( 11.25rem , 9.4642857143rem  +  8.9285714286vw , 15rem )) {
+@supports (width: clamp( 10rem , 7.619047619rem  +  11.9047619048vw , 15rem )) {
   .home__button {
-    width: clamp( 11.25rem , 9.4642857143rem  +  8.9285714286vw , 15rem );
+    width: clamp( 10rem , 7.619047619rem  +  11.9047619048vw , 15rem );
   }
 }
 
-@supports not (width: clamp( 11.25rem , 9.4642857143rem  +  8.9285714286vw , 15rem )) {
+@supports not (width: clamp( 10rem , 7.619047619rem  +  11.9047619048vw , 15rem )) {
   .home__button {
     width: calc(
-			11.25rem + 3.75 * (100vw - 20rem) / 42
+			10rem + 5 * (100vw - 20rem) / 42
 		);
   }
 }
 
-@supports (height: clamp( 3.75rem , 3.1547619048rem  +  2.9761904762vw , 5rem )) {
+@supports (height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 5rem )) {
   .home__button {
-    height: clamp( 3.75rem , 3.1547619048rem  +  2.9761904762vw , 5rem );
+    height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 5rem );
   }
 }
 
-@supports not (height: clamp( 3.75rem , 3.1547619048rem  +  2.9761904762vw , 5rem )) {
+@supports not (height: clamp( 3.125rem , 2.2321428571rem  +  4.4642857143vw , 5rem )) {
   .home__button {
     height: calc(
-			3.75rem + 1.25 * (100vw - 20rem) / 42
+			3.125rem + 1.875 * (100vw - 20rem) / 42
 		);
   }
 }
 
-@supports (font-size: clamp( 1.5rem , 1.3214285714rem  +  0.8928571429vw , 1.875rem )) {
+@supports (font-size: clamp( 1.375rem , 1.1369047619rem  +  1.1904761905vw , 1.875rem )) {
   .home__button {
-    font-size: clamp( 1.5rem , 1.3214285714rem  +  0.8928571429vw , 1.875rem );
+    font-size: clamp( 1.375rem , 1.1369047619rem  +  1.1904761905vw , 1.875rem );
   }
 }
 
-@supports not (font-size: clamp( 1.5rem , 1.3214285714rem  +  0.8928571429vw , 1.875rem )) {
+@supports not (font-size: clamp( 1.375rem , 1.1369047619rem  +  1.1904761905vw , 1.875rem )) {
   .home__button {
     font-size: calc(
-			1.5rem + 0.375 * (100vw - 20rem) / 42
+			1.375rem + 0.5 * (100vw - 20rem) / 42
 		);
   }
 }

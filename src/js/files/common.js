@@ -217,8 +217,8 @@
 // }
 
 
-//-------------------------------------
-/*
+//----------------canvas-----------------
+
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -504,7 +504,7 @@ canvas.addEventListener('mousemove', function (e) {
 	// console.log(mouse_ball);
 });
 
-*/
+
 //==================languege menu style===================================
 
 
