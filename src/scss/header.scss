@@ -2,7 +2,7 @@
 
 //====================================================================================================
 .header {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -14,7 +14,7 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		height: rem(60);
+		height: var(--header-height);
 		@media (max-width: $tablet) {
 
 		}
@@ -58,7 +58,7 @@
 			//border-right: 1px solid $borderColor2;
 		}
 		&._current{
-			overflow: hidden;
+			//overflow: hidden;
 			color: $mainTextColor;
 			font-weight: 500;
 			border-bottom: 1px solid $borderColor2;

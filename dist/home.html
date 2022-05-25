@@ -30,7 +30,7 @@
 	<meta name="theme-color" content="#000B25"> <!-- theme color -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220525012143">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220525210727">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -55,48 +55,44 @@
 		</header>
 
 		<main class="page">
-			<div data-tabs class="page__content">
-				<div class="page__tabs tabs">
-					<aside class="page__navigation">
-						<div class="page__lang lang">
-							<select name="form[lang]" class="lang__form">
-								<option value="ua" selected>ua</option>
-								<option value="ru">ru</option>
-								<option value="en">en</option>
-							</select>
-						</div>
-						<div class="tabs__menu menu">
-							<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation menu__body">
-								<button id="home" type="button" class="tabs__title menu__link _no-shadow _tab-active">
-									<span>
-										Home
-									</span>
-								</button>
-								<button id="aboutMe" type="button" class="tabs__title menu__link"><a href="#"></a>
-									<span>
-										About me
-									</span>
-								</button>
-								<button id="portfolio" type="button" class="tabs__title menu__link">
-									<span>
-										Porftfolio
-									</span>
-								</button>
-								<button id="skills" type="button" class="tabs__title menu__link">
-									<span>
-										Skills
-									</span>
-								</button>
-								<button id="contacts" type="button" class="tabs__title menu__link">
-									<span>
-										Contacts
-									</span>
-								</button>
-							</nav>
-						</div>
-					</aside>
+			<div data-tabs class="page__content tabs">
+				<div class="tabs__controls controls">
+					<div class="lang">
+						<select name="form[lang]" class="lang__form">
+							<option value="ua" selected>ua</option>
+							<option value="ru">ru</option>
+							<option value="en">en</option>
+						</select>
+					</div>
+					<nav id="tabs__navigation" data-tabs-titles class="tabs__navigation">
+						<button id="home" type="button" class="tabs__title _tab-active">
+							<span>
+								Home
+							</span>
+						</button>
+						<button id="aboutMe" type="button" class="tabs__title"><a href="#"></a>
+							<span>
+								About me
+							</span>
+						</button>
+						<button id="portfolio" type="button" class="tabs__title">
+							<span>
+								Porftfolio
+							</span>
+						</button>
+						<button id="skills" type="button" class="tabs__title">
+							<span>
+								Skills
+							</span>
+						</button>
+						<button id="contacts" type="button" class="tabs__title">
+							<span>
+								Contacts
+							</span>
+						</button>
+					</nav>
 				</div>
-				<div data-tabs-body class="tabs__content tabs">
+				<div data-tabs-body class="tabs__content">
 					<div class="tabs__body _active-content-tab">
 						<section class="section">
 							<div class="section__container">
@@ -120,9 +116,24 @@
 						<section class="section">
 							<div class="section__container">
 								<div class="section__content about">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
-									soluta
-									maiores, possimus nemo expedita at. Asperiores, hidfc.
+									<div class="flex-wrapper">
+										<div class="flex-el">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+											soluta
+											maiores, possimus nemo expedita at. Asperiores, hidfc.
+										</div>
+										<div class="flex-el">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+											soluta
+											maiores, possimus nemo expedita at. Asperiores, hidfc.
+										</div>
+										<div class="flex-el">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat accusamus praesentium
+											soluta
+											maiores, possimus nemo expedita at. Asperiores, hidfc.
+										</div>
+									</div>
+
 								</div>
 							</div>
 						</section>
@@ -227,7 +238,7 @@
 											</li>
 											<li class="contacts__link">
 												<a class="contacts__item contacts__item_telegram" target="_blank" href="https://t.me/ill2000">
-													<img src="img/icons/telegram-color.svg" alt="telegram-logo">
+													<img src="img/icons/telegram.svg" alt="telegram-logo">
 													<span>@prazhenik.dev</span>
 												</a>
 											</li>
@@ -251,7 +262,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20220525012143"></script>
+	<script src="js/app.min.js?_v=20220525210727"></script>
 </body>
 
 </html>
