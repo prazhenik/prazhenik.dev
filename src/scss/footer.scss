@@ -5,9 +5,9 @@ footer {
 }
 
 .footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
+	// position: fixed;
+	// bottom: 0;
+	// left: 0;
 	width: 100%;
 	@media (max-width:$tablet){
 
@@ -20,7 +20,7 @@ footer {
 	&__content {
 		display: flex;
 		align-items: center;
-		height: rem(30);
+		height: var(--footer-height);
 		@media (max-width:$tablet){
 		}
 	}
