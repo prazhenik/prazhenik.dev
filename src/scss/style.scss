@@ -157,7 +157,7 @@ body {
 	// universal overlay
 	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
 	height: calc(var(--vh, 1vh) * 100);
-	//overflow: hidden;
+	overflow: hidden;
 	&::after {
 		content: "";
 		background-color: rgba(0, 0, 0, 0.5);
