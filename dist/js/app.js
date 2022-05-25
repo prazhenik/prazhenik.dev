@@ -3618,8 +3618,10 @@
                 }
             }
         }
-        let vh = .01 * window.innerHeight;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        window.addEventListener("resize", (() => {
+            let vh = .01 * window.innerHeight;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }));
         class Popup {
             constructor(options) {
                 let config = {
