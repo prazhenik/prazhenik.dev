@@ -219,6 +219,13 @@ h6 {
   }
 }
 
+body {
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
 body::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
@@ -994,13 +1001,6 @@ canvas {
 			0.5rem + 0.125 * (100vw - 20rem) / 100
 		);
   }
-}
-
-.wrapper {
-  height: 100vh;
-  /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-  overflow: hidden;
 }
 
 .page {
