@@ -1076,6 +1076,10 @@ canvas {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: auto;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
 }
 
 @supports (row-gap: clamp( 1.25rem , 0.3846153846rem  +  2.4038461538vw , 1.875rem )) {
