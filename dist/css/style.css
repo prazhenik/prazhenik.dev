@@ -996,6 +996,13 @@ canvas {
   }
 }
 
+.wrapper {
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
 .page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1024,9 +1031,11 @@ canvas {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  height: 100%;
-  background: -o-repeating-linear-gradient(145deg, #222, #222 10px, #333 10px, #333 20px, #444 20px, #444 30px);
-  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px, #444 20px, #444 30px);
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  background-color: rgb(22, 23, 23);
   padding-bottom: 1.875rem;
   overflow-y: auto;
 }
@@ -1104,16 +1113,16 @@ canvas {
   transition: color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-@supports (font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem )) {
+@supports (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
   .tabs__title span {
-    font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem );
+    font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem )) {
+@supports not (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
   .tabs__title span {
     font-size: calc(
-			1.125rem + 0.375 * (100vw - 20rem) / 55
+			1rem + 0.5 * (100vw - 20rem) / 55
 		);
   }
 }
