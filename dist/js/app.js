@@ -3618,10 +3618,12 @@
                 }
             }
         }
-        window.addEventListener("resize", (() => {
+        function mobileFullscreen() {
             let vh = .01 * window.innerHeight;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
-        }));
+        }
+        window.addEventListener("load", mobileFullscreen);
+        window.addEventListener("resize", mobileFullscreen);
         class Popup {
             constructor(options) {
                 let config = {
