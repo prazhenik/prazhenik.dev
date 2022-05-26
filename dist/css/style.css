@@ -220,14 +220,14 @@ h6 {
 }
 
 html {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   position: fixed;
   overflow: hidden;
 }
 
 body {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   position: fixed;
   overflow: hidden;
@@ -1034,8 +1034,8 @@ canvas {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   overflow: hidden;
-  height: calc(100vh - var(--footer-height));
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100 - var(--footer-height));
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .tabs__controls {
@@ -2904,9 +2904,9 @@ flex-wrap: nowrap;
   }
 }
 
-@media (max-width: 48em) and (orientation: landscape) {
+@media (max-width: 62em) and (orientation: landscape) {
   .tabs__controls {
-    padding-right: 0.625rem;
+    padding: 0 0.625rem;
   }
 
   .tabs__navigation {
