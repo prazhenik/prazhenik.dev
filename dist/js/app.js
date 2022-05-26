@@ -8590,7 +8590,7 @@
         }), 0);
         var canvas = document.getElementById("nokey"), can_w = parseInt(canvas.getAttribute("width")), can_h = parseInt(canvas.getAttribute("height")), ctx = canvas.getContext("2d");
         let BALL_NUM;
-        if (isMobile.any()) BALL_NUM = 30; else BALL_NUM = 100;
+        if (isMobile.any()) BALL_NUM = 15; else BALL_NUM = 60;
         var ball_color = {
             r: 10,
             g: 250,

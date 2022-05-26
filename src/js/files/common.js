@@ -233,9 +233,9 @@ let BALL_NUM
 import { isMobile } from "./functions.js";
 
 if (isMobile.any()) {
-	BALL_NUM = 30;
+	BALL_NUM = 15;
 } else {
-	BALL_NUM = 100;
+	BALL_NUM = 60;
 }
 
 
