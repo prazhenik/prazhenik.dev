@@ -60,21 +60,16 @@
 				transition: opacity .3s ease, border-bottom .3s ease;
 
 			}
-			&:hover span{
-				border-left: $border-color-button 1px solid;
-				transition: border-left .3s ease;
-			}
 			@media (any-hover: hover){
-				&:hover:before{
-					//opacity: 1;
-					//transition: opacity .3s ease;
-					
+				&:hover{
+					border-left: $border-color-button 1px solid;
+					transition: border-left .3s ease;
 				}
 			}
+
 			& span {
 				display: inline-block;
 				text-transform: uppercase;
-				//text-align: center;
 				margin: rem(0) auto;
 				@include adaptiveValue("font-size",24 ,16, 1200, 768, 1 );
 				color: $text-color-menu;
