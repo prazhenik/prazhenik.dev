@@ -1,5 +1,7 @@
 //актуализирован 17/02/22 13.56
 
+
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -30,13 +32,13 @@ body {
 	height: 100%;
 }
 body {
-	color: $mainTextColor;
-	background-color: $mainBackgroundColor;
+	color: $text-color-major;
+	background-color:  $background-color-major;
 	line-height: 1;
-	font-family: $fontFamily;
-	font-size: $fontSize;
-	font-weight: $fontWeight;
-	letter-spacing: $letterSpacing + em;
+	font-family: $font-family-major;
+	font-size: $font-size-major;
+	font-weight: $font-weight-major;
+	letter-spacing: $letter-spacing-major;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -47,7 +49,7 @@ body {
 input,
 button,
 textarea {
-	font-family: $fontFamily;
+	font-family: $font-family-major;
 	font-size: inherit;
 	vertical-align: middle;
 	background-color: inherit;

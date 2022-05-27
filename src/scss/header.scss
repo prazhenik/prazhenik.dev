@@ -6,7 +6,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: $mainBackgroundColor;
+	background-color: ($background-color-major);
 	z-index: 1;
 	&__container {
 	}
@@ -15,7 +15,7 @@
 		display: flex;
 		position: relative;
 		align-items: center;
-		height: var(--header-height);
+		height: ($header-height);
 		@media (max-width: $tablet) {
 
 		}
@@ -27,7 +27,7 @@
 		& img{
 			width: rem(70);
 			@media (min-width:$tablet){
-				@include adaptiveValue("width", 100, 70, 1920, 994, 1 );
+				@include adaptiveValue("width", 100, 70, 1200, 576, 1 );
 			}
 		}
 	}
@@ -50,19 +50,17 @@
 	}
 	// .lang__item
 	&__item {
-		font-family: "MuseoModerno";
-		font-weight: 300;
-		@include adaptiveValue("font-size", 20, 16, 1920, 994, 1);
-		color: $textColor2;
+		font-family: ($font-family-other-1);
+		@include adaptiveValue("font-size", 20, 14, 1200, 576, 1);
 
 		&:not(:last-child){
 			//border-right: 1px solid $borderColor2;
 		}
 		&._current{
 			//overflow: hidden;
-			color: $mainTextColor;
+			//color: $mainTextColor;
 			font-weight: 500;
-			border-bottom: 1px solid $borderColor2;
+			border-bottom: 1px solid ($border-color-other-1);
 		}
 		// .lang__item_ua
 		&_ua {
@@ -81,7 +79,7 @@
 		padding: 0 rem(7);
 		@media (any-hover: hover){
 			&:hover {
-				color: $mainTextColor;
+				//color: $mainTextColor;
 			}
 		}
 		// .lang__link_ua
