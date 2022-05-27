@@ -18,7 +18,7 @@
 			position: relative;
 			z-index: 2;
 			text-align: center;
-			background-color: $background-color-menu;
+			//background-color: $background-color-menu;
 			@media (max-width: em(992)) and (orientation: landscape){
 				padding: 0 rem(10);
 			
@@ -46,17 +46,48 @@
 		&__title {
 			flex: 1 1 auto;
 			cursor: auto;
+			position: relative;
+
+			&:before{
+				content: '';
+				position: absolute;
+				width: rem(1);
+				height: 100%;
+				top: 0;
+				left: 0;
+				//background-color: $background-color-button-active;
+				//opacity: 0;
+				transition: opacity .3s ease, border-bottom .3s ease;
+
+			}
+			&:hover span{
+				border-left: $border-color-button 1px solid;
+				transition: border-left .3s ease;
+			}
+			@media (any-hover: hover){
+				&:hover:before{
+					//opacity: 1;
+					//transition: opacity .3s ease;
+					
+				}
+			}
 			& span {
+				display: inline-block;
 				text-transform: uppercase;
-				text-align: center;
+				//text-align: center;
+				margin: rem(0) auto;
 				@include adaptiveValue("font-size",24 ,16, 1200, 768, 1 );
 				color: $text-color-menu;
 				writing-mode: vertical-lr;
 				padding: rem(5);
 				cursor: pointer;
 				transition: color .2s ease, transform .2s ease;
+				border-left: transparent 1px solid;
+				transition: border-left .3s ease;
 				@media (max-width: em(992)) and (orientation: landscape){
 					writing-mode: unset;  
+					font-size: rem(16);
+					max-height: rem(15);
 				}
 			}
 			&._tab-active span{
@@ -67,11 +98,8 @@
 		}
 		// .tabs__content
 		&__content {
-
 			width: 100%;
-			//padding-top:  rem(60);
-			padding: rem(90) rem(0) rem(60);
-			padding: calc($header-height) + rem(0) rem(0) calc($footer-height) + rem(0);
+			padding: $header-height rem(0) $footer-height;
 		}
 		// .tabs__body
 		&__body {
@@ -115,6 +143,9 @@
 .home {
 	text-align: end;
 	padding-top: 15%;
+		@media (max-width: em(992)) and (orientation: landscape){
+			padding-top: 0;
+		}
 	@include adaptiveValue("padding-right",150 ,0, 1200, 576, 1 );
 		// .home__text
 		&__text {
@@ -126,9 +157,9 @@
 			}
 		}
 		// .home__title
-		&__title {
-			
-			@include adaptiveValue("font-size", 40, 24, 1200, 320, 1);
+		&__title {	
+			@include adaptiveValue("font-size", 40, 23, 1200, 320, 1);
+			line-height: math.div(40 , 30);
 			&:not(:last-child) {
 				margin-bottom: rem(25);
 			}
