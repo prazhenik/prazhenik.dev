@@ -61,24 +61,21 @@
 
 			}
 			@media (any-hover: hover){
-				&:hover{
+				&:hover span{
 					border-left: $border-color-button 1px solid;
 					transition: border-left .3s ease;
 				}
 			}
 
 			& span {
-				display: inline-block;
 				text-transform: uppercase;
-				margin: rem(0) auto;
+				padding: rem(5);
 				@include adaptiveValue("font-size",24 ,16, 1200, 768, 1 );
 				color: $text-color-menu;
 				writing-mode: vertical-lr;
-				padding: rem(5);
 				cursor: pointer;
-				transition: color .2s ease, transform .2s ease;
 				border-left: transparent 1px solid;
-				transition: border-left .3s ease;
+				transition: border-left .3s ease, color .2s ease, transform .2s ease;
 				@media (max-width: em(992)) and (orientation: landscape){
 					writing-mode: unset;  
 					font-size: rem(16);

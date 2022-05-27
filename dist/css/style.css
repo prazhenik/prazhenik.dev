@@ -1070,24 +1070,19 @@ canvas {
 }
 
 .tabs__title span {
-  display: inline-block;
   text-transform: uppercase;
-  margin: 0rem auto;
+  padding: 0.3125rem;
   color: rgb(190, 255, 7);
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
-  padding: 0.3125rem;
   cursor: pointer;
-  -webkit-transition: color 0.2s ease, -webkit-transform 0.2s ease;
-  transition: color 0.2s ease, -webkit-transform 0.2s ease;
-  -o-transition: color 0.2s ease, transform 0.2s ease;
-  transition: color 0.2s ease, transform 0.2s ease;
-  transition: color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
   border-left: transparent 1px solid;
-  -webkit-transition: border-left 0.3s ease;
-  -o-transition: border-left 0.3s ease;
-  transition: border-left 0.3s ease;
+  -webkit-transition: border-left 0.3s ease, color 0.2s ease, -webkit-transform 0.2s ease;
+  transition: border-left 0.3s ease, color 0.2s ease, -webkit-transform 0.2s ease;
+  -o-transition: border-left 0.3s ease, color 0.2s ease, transform 0.2s ease;
+  transition: border-left 0.3s ease, color 0.2s ease, transform 0.2s ease;
+  transition: border-left 0.3s ease, color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 @supports (font-size: clamp( 1rem , 0.1111111111rem  +  1.8518518519vw , 1.5rem )) {
@@ -3011,7 +3006,7 @@ flex-wrap: nowrap;
             transform: scale(1.15);
   }
 
-  .tabs__title:hover {
+  .tabs__title:hover span {
     border-left: rgba(190, 250, 7, 0.8) 1px solid;
     -webkit-transition: border-left 0.3s ease;
     -o-transition: border-left 0.3s ease;
