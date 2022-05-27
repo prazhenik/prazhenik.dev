@@ -1064,9 +1064,6 @@ canvas {
   height: 100%;
   top: 0;
   left: 0;
-  -webkit-transition: opacity 0.3s ease, border-bottom 0.3s ease;
-  -o-transition: opacity 0.3s ease, border-bottom 0.3s ease;
-  transition: opacity 0.3s ease, border-bottom 0.3s ease;
 }
 
 .tabs__title span {
@@ -2950,6 +2947,10 @@ flex-wrap: nowrap;
 }
 
 @media (max-width: 62em) and (orientation: landscape) {
+  canvas {
+    z-index: -1;
+  }
+
   .tabs__controls {
     padding: 0 0.625rem;
   }
