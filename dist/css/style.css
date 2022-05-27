@@ -1069,13 +1069,6 @@ canvas {
   transition: opacity 0.3s ease, border-bottom 0.3s ease;
 }
 
-.tabs__title:hover span {
-  border-left: rgba(190, 250, 7, 0.8) 1px solid;
-  -webkit-transition: border-left 0.3s ease;
-  -o-transition: border-left 0.3s ease;
-  transition: border-left 0.3s ease;
-}
-
 .tabs__title span {
   display: inline-block;
   text-transform: uppercase;
@@ -3016,6 +3009,13 @@ flex-wrap: nowrap;
     -webkit-transform: scale(1.15);
         -ms-transform: scale(1.15);
             transform: scale(1.15);
+  }
+
+  .tabs__title:hover {
+    border-left: rgba(190, 250, 7, 0.8) 1px solid;
+    -webkit-transition: border-left 0.3s ease;
+    -o-transition: border-left 0.3s ease;
+    transition: border-left 0.3s ease;
   }
 
   .contacts__link:hover {
