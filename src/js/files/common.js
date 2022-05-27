@@ -220,7 +220,9 @@
 
 
 //----------------canvas-----------------
-/*
+
+
+
 var canvas = document.getElementById('nokey'),
 	can_w = parseInt(canvas.getAttribute('width')),
 	can_h = parseInt(canvas.getAttribute('height')),
@@ -233,9 +235,9 @@ let BALL_NUM
 import { isMobile } from "./functions.js";
 
 if (isMobile.any()) {
-	BALL_NUM = 15;
+	BALL_NUM = 25;
 } else {
-	BALL_NUM = 60;
+	BALL_NUM = 100;
 }
 
 
@@ -249,9 +251,9 @@ var ball = {
 	phase: 0
 },
 	ball_color = {
-		r: 10,
-		g: 250,
-		b: 215
+		r: 190,
+		g: 255,
+		b: 7
 	},
 
 	R = 1.2,
@@ -261,8 +263,8 @@ var ball = {
 
 	// Line
 	link_line_width = .5,
-	dis_limit = 300,
-	add_mouse_point = false,
+	dis_limit = 260,
+	add_mouse_point = true,
 	mouse_in = false,
 	mouse_ball = {
 		x: 0,
@@ -505,7 +507,7 @@ canvas.addEventListener('mousemove', function (e) {
 	mouse_ball.y = e.pageY;
 	// console.log(mouse_ball);
 });
-*/
+
 
 //==================languege menu style===================================
 
