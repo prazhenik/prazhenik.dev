@@ -10,9 +10,9 @@
 		top: rem(3);
 		left: 50%;
 		transform: translate( -50%, 0);
-		border: $mainBorderColor 1px solid;
+		border: $border-color-button 1px solid;
 		border-radius: 7px;
-		background-color: $mainBackgroundColor;
+		background-color: $background-color-major;
 	}
 	&._select-open::before{
 		height: rem(95);
@@ -20,7 +20,7 @@
 	// .select__body
 	&__body {
 		position: relative;
-		font-family: "MuseoModerno";
+		font-family: $font-family-other-1;
 		font-weight: 300;
 		font-size: rem(20);
 	}
@@ -39,21 +39,21 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		color: $mainTextColor;
+		color: $text-color-major;
 		height: rem(30);
 		> * {
 			flex: 1 1 auto;
 		}
-		&:after,
-		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			transform: translate(0, -50% );
-			width: 1px;
-			height: 20px;
-			background: $backgroundColor6;
-		}
+		// &:after,
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	transform: translate(0, -50% );
+		// 	width: 1px;
+		// 	height: 20px;
+		// 	background: $background-color-other-1;
+		// }
 		&::before {
 			left: 0;
 		}
@@ -80,7 +80,7 @@
 	}
 	// .select__options
 	&__options {
-		color: $textColor2;
+		color: $text-color-secondary;
 		position: absolute;
 		top: 32px;
 		min-width: 100%;
@@ -112,7 +112,7 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				color: $mainTextColor;
+				color: $text-color-major;
 				transition: color .2s ease;
 			}
 		}

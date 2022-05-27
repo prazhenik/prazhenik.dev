@@ -1,0 +1,77 @@
+
+
+// ================================= FONT roots ================================= 
+
+//font family
+$font-family-major: 'Montserrat', sans-serif; //general document font family
+$font-family-other-1: 'MuseoModerno', sans-serif; //element font family
+//$font-family-other-2: 'Montserrat', sans-serif; //element font family
+
+//font size
+$font-size-major: rem(25); //general document font size
+$font-size-main-title: rem(25); //main title font size (hero)
+$font-size-main-subtitle: rem(25); //main subtitle font size (hero)
+
+$font-size-section-title: rem(25); //section title font size
+$font-size-section-subtitle: rem(25); //section subtitle font size
+
+$font-size-menu-links-pc: rem(25); //header menu links on pc @media font size
+$font-size-menu-links-mobile: rem(25);  //header (burger) menu links on mobile @media font size
+
+$font-size-btn-text: rem(25); //botton text font size
+$font-size-links-text:  rem(25); //links text font size
+
+//font weight
+$font-weight-major: 300; //general document font weight
+
+//letter spacing
+$letter-spacing-major: 0.02em; //general document letter spacing
+
+// ================================== COLORS roots ==============================
+
+//text colors
+$text-color-major: rgba(255, 255, 255, 1); //general document text color
+
+$text-color-secondary: rgba(180, 180, 180, 1);
+
+$text-color-menu: rgba(190, 255, 7, 1); //menu links text color
+$text-color-menu-active: rgba(255, 255, 255, 1); //active menu links text color
+
+$text-color-btn: rgba(180, 180, 180, 1); //menu links text color
+$text-color-btn-active: rgba(255, 255, 255, 1); //active menu links text color
+
+$text-color-links: rgba(180, 180, 180, 1); //a links text color
+$text-color-links-active: rgba(10, 250, 215, 1); //a links text color
+
+$text-color-other-1: rgba(0, 8, 24, 1); //other text color
+$text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title span
+//$text-color-other-3: rgba(10, 250, 215, 1); //other text color
+
+//bacground colors
+$background-color-major: rgba(0, 8, 24, 1); //Цвет фона по умолчанию
+$background-color-menu: rgba(0, 8, 24, 1); //menu bcg  rgba(22, 23, 23, 1)
+$backgroundColor3: rgba(0, 0, 0, .7); // overlays _lock
+$background-color-button-active: rgba(190, 250, 7, .8); // 
+$backgroundColor5: rgba(10, 250, 215, 0.2); // btn hover cover
+$background-color-other-1: rgba(250, 30, 85, 1); // red accents
+
+// цвета границ
+$border-color-major: rgba(180, 180, 180, 1); //Цвет границ по умолчанию
+$border-color-button: rgba(190, 250, 7, .8);
+$border-color-other-1: rgba(250, 30, 85, 1);
+// $borderColor3: rgba(0, 0, 0, 1);
+// $borderColor4: rgba(0, 160, 255, 1);
+//$borderColor5: ;
+
+
+//================================== blockSizes roots ================================== 
+
+
+	$header-height: 60px;
+	$footer-height: 40px;
+	$menu-width: 70px;
+
+
+
+
+
