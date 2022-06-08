@@ -456,10 +456,16 @@ input::placeholder {
   border: rgba(190, 250, 7, 0.8) 1px solid;
   border-radius: 7px;
   background-color: rgb(0, 8, 24);
+  -webkit-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
 }
 
 .select._select-open::before {
   height: 5.9375rem;
+  -webkit-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
 }
 
 .select__body {
@@ -1132,7 +1138,7 @@ canvas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: calc(100% - 40px);
 }
 
 .section__content {

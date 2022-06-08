@@ -1,4 +1,4 @@
-
+import { isMobile } from "./functions.js";
 
 // функции конкретного проекта
 
@@ -153,7 +153,7 @@
 // const pageWrapper = document.querySelector(".wrapper");
 // const tabs = document.querySelector(".tabs");
 // const tabsBodies = document.querySelectorAll('.tabs__body');
-// let activeTabsContentTitle
+// let activeTabsContentTitle;
 // let timeoutID;
 // let currTubText;
 
@@ -231,8 +231,6 @@ var canvas = document.getElementById('nokey'),
 // console.log(typeof can_w);
 let BALL_NUM
 
-
-import { isMobile } from "./functions.js";
 
 if (isMobile.any()) {
 	BALL_NUM = 15;
@@ -509,8 +507,33 @@ canvas.addEventListener('mousemove', function (e) {
 });
 
 
-//==================languege menu style===================================
+//==================canvas active page===================================
 
+const tabsNavigation = document.querySelector('#tabs__navigation');
+const contentSections = document.getElementsByClassName('section__content')
+
+const activeSectionCanvas = function () {
+	for(let contentSection of contentSections) {
+		if (contentSection.closest('.tabs__body._active-content-tab')){
+			contentSection.prepend(canvas)
+		}
+	}
+}
+
+tabsNavigation.addEventListener('click', (e) => {
+	if (e.target.closest('button')) {
+		setTimeout(activeSectionCanvas, 1)
+	}
+})
+
+
+
+
+
+// activeSection.insertAdjacentHTML(
+// 	'afterbegin',
+// 	`<canvas id='nokey' class='canvas'></canvas>`
+// )
 
 //==================slider navi style===================================
 
@@ -542,7 +565,7 @@ canvas.addEventListener('mousemove', function (e) {
 
 //==================contacts__link style===================================
 
-const contactsLinks = document.querySelectorAll('.contacts__link img')
+/*const contactsLinks = document.querySelectorAll('.contacts__link img')
 
 for (let i = 0; i < contactsLinks.length; i++) {
 	contactsLinks[i].addEventListener('click', e => {
@@ -559,9 +582,9 @@ for (let i = 0; i < contactsLinks.length; i++) {
 		}
 
 	})
-}
+}*/
 
-
+//==================contacts__link style===================================
 
 
 

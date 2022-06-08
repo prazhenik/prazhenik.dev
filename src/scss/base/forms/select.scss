@@ -13,9 +13,11 @@
 		border: $border-color-button 1px solid;
 		border-radius: 7px;
 		background-color: $background-color-major;
+		transition: height .2s ease;
 	}
 	&._select-open::before{
 		height: rem(95);
+		transition: height .2s ease;
 	}
 	// .select__body
 	&__body {

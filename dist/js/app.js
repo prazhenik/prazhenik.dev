@@ -4072,7 +4072,7 @@
                 }
                 selectItem.insertAdjacentHTML("beforeend", `<div class="${this.selectClasses.classSelectBody}"><div hidden class="${this.selectClasses.classSelectOptions}"></div></div>`);
                 this.selectBuild(originalSelect);
-                originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
+                originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "200";
                 originalSelect.addEventListener("change", (function(e) {
                     _this.selectChange(e);
                 }));
@@ -8790,18 +8790,13 @@
             mouse_ball.x = e.pageX;
             mouse_ball.y = e.pageY;
         }));
-        const contactsLinks = document.querySelectorAll(".contacts__link img");
-        for (let i = 0; i < contactsLinks.length; i++) contactsLinks[i].addEventListener("click", (e => {
-            e.preventDefault();
-            addStyle();
-            setTimeout(deleteStyle, 300);
-            function addStyle() {
-                e.target.style.filter = "saturate(100%)";
-            }
-            function deleteStyle() {
-                window.location = e.target.closest("a").href;
-                e.target.style.filter = "";
-            }
+        const tabsNavigation = document.querySelector("#tabs__navigation");
+        const contentSections = document.getElementsByClassName("section__content");
+        const activeSectionCanvas = function() {
+            for (let contentSection of contentSections) if (contentSection.closest(".tabs__body._active-content-tab")) contentSection.prepend(canvas);
+        };
+        tabsNavigation.addEventListener("click", (e => {
+            if (e.target.closest("button")) setTimeout(activeSectionCanvas, 1);
         }));
         window["FLS"] = true;
         isWebp();

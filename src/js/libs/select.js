@@ -158,7 +158,7 @@ class SelectConstructor {
 		this.selectBuild(originalSelect);
 
 		// Запоминаем скорость
-		originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
+		originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "200";
 		// Событие при изменении оригинального select
 		originalSelect.addEventListener('change', function (e) {
 			_this.selectChange(e);
